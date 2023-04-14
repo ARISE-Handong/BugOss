@@ -1,0 +1,7 @@
+error message:
+/src/exiv2/src/pentaxmn_int.cpp:1259:40: runtime error: unsigned integer overflow: 4294967295 * 256 cannot be represented in type 'unsigned int'
+stack trace:
+Exiv2::Internal::printLensType(std::__1::basic_ostream<char, std::__1::char_traits<char> >&, Exiv2::Value const&, Exiv2::ExifData const*) /src/exiv2/src/pentaxmn_int.cpp:1259:40
+Exiv2::Exifdatum::write(std::__1::basic_ostream<char, std::__1::char_traits<char> >&, Exiv2::ExifData const*) const /src/exiv2/src/exif.cpp:190:7
+Exiv2::Metadatum::print(Exiv2::ExifData const*) const /src/exiv2/src/metadatum.cpp:12:3
+LLVMFuzzerTestOneInput /src/exiv2/fuzz/fuzz-read-print-write.cpp:24:10

@@ -1,0 +1,7 @@
+error message:
+/src/exiv2/src/canonmn_int.cpp:2491:33: runtime error: unsigned integer overflow: 0 - 8 cannot be represented in type 'unsigned long'
+stack trace:
+Exiv2::Internal::CanonMakerNote::printFiFileNumber(std::__1::basic_ostream<char, std::__1::char_traits<char> >&, Exiv2::Value const&, Exiv2::ExifData const*) /src/exiv2/src/canonmn_int.cpp:2491:33
+Exiv2::Exifdatum::write(std::__1::basic_ostream<char, std::__1::char_traits<char> >&, Exiv2::ExifData const*) const /src/exiv2/src/exif.cpp:190:7
+Exiv2::Metadatum::print(Exiv2::ExifData const*) const /src/exiv2/src/metadatum.cpp:12:3
+LLVMFuzzerTestOneInput /src/exiv2/fuzz/fuzz-read-print-write.cpp:24:10

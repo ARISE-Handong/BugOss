@@ -1,0 +1,14 @@
+ERROR: AddressSanitizer: SEGV on unknown address 0x000000000000 (pc 0x000000e46bb8 bp 0x7ffc62a88a70 sp 0x7ffc62a88a40 T0)
+==2936539==The signal is caused by a WRITE memory access.
+==2936539==Hint: address points to the zero page.
+#0 JBIG2SymbolDict::setBitmap(unsigned int, JBIG2Bitmap*) /src/poppler/poppler/JBIG2Stream.cc:968:74
+#1 JBIG2Stream::readSymbolDictSeg(unsigned int, unsigned int, unsigned int*, unsigned int) /src/poppler/poppler/JBIG2Stream.cc:1840:25
+#2 JBIG2Stream::readSegments() /src/poppler/poppler/JBIG2Stream.cc:1331:18
+#3 JBIG2Stream::reset() /src/poppler/poppler/JBIG2Stream.cc:1171:5
+#4 XRef::readXRefStream(Stream*, long long*) /src/poppler/poppler/XRef.cc:715:14
+#5 XRef::readXRef(long long*, std::__1::vector<long long, std::__1::allocator<long long> >*, std::__1::vector<int, std::__1::allocator<int> >*) /src/poppler/poppler/XRef.cc:505:16
+#6 XRef::XRef(BaseStream*, long long, long long, bool*, bool, std::__1::function<void ()> const&) /src/poppler/poppler/XRef.cc:290:13
+#7 PDFDoc::setup(GooString const*, GooString const*, std::__1::function<void ()> const&) /src/poppler/poppler/PDFDoc.cc:287:24
+#8 PDFDoc::PDFDoc(BaseStream*, GooString const*, GooString const*, void*, std::__1::function<void ()> const&) /src/poppler/poppler/PDFDoc.cc:250:10
+#9 poppler_document_new_from_data /src/poppler/glib/poppler-document.cc:247:18
+#10 LLVMFuzzerTestOneInput /src/poppler/glib/tests/fuzzing/label_fuzzer.cc:14:11

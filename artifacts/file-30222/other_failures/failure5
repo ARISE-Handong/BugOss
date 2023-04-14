@@ -1,0 +1,7 @@
+is_tar.c:153:11: runtime error: unsigned integer overflow: 0 - 1 cannot be represented in type 'size_t' (aka 'unsigned long')
+#0 from_oct /src/file/src/is_tar.c:153:11
+#1 is_tar /src/file/src/is_tar.c:110:11
+#2 file_is_tar /src/file/src/is_tar.c:77:8
+#3 file_buffer /src/file/src/funcs.c:355:7
+#4 magic_buffer /src/file/src/magic.c:542:6
+#5 LLVMFuzzerTestOneInput /src/magic_fuzzer.cc:56:3

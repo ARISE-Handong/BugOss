@@ -1,0 +1,15 @@
+AddressSanitizer: attempting double-free
+free/src/llvm-project/compiler-rt/lib/asan/asan_malloc_linux.cpp:111:3
+xmlTextReaderFreeNodeList/src/libxml2/xmlreader.c:392:3
+xmlTextReaderFreeNodeList/src/libxml2/xmlreader.c:375:7
+xmlTextReaderFreeNodeList/src/libxml2/xmlreader.c:375:7
+xmlTextReaderFreeNodeList/src/libxml2/xmlreader.c:375:7
+xmlTextReaderFreeNodeList/src/libxml2/xmlreader.c:375:7
+xmlTextReaderFreeDoc/src/libxml2/xmlreader.c:551:32
+xmlFreeTextReader/src/libxml2/xmlreader.c:2280:3
+LLVMFuzzerTestOneInput/src/libxml2_xml_reader_for_file_fuzzer.cc:50:3
+ExecuteFilesOnyByOne/src/aflplusplus/utils/aflpp_driver/aflpp_driver.c:240:7
+LLVMFuzzerRunDriver/src/aflplusplus/utils/aflpp_driver/aflpp_driver.c
+main/src/aflplusplus/utils/aflpp_driver/aflpp_driver.c:274:10
+__libc_start_main/build/glibc-sMfBJT/glibc-2.31/csu/../csu/libc-start.c:308:16
+

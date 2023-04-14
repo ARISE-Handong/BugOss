@@ -1,0 +1,8 @@
+protocols/netbios.c:65:13: runtime error: unsigned integer overflow: 0 - 1 cannot be represented in type 'u_int' (aka 'unsigned int')
+#0 ndpi_netbios_name_interpret /src/ndpi/src/lib/protocols/netbios.c:65:13
+#1 ndpi_int_netbios_add_connection /src/ndpi/src/lib/protocols/netbios.c:103:9
+#2 ndpi_search_netbios /src/ndpi/src/lib/protocols/netbios.c
+#3 check_ndpi_detection_func /src/ndpi/src/lib/ndpi_main.c:5211:4
+#4 ndpi_check_flow_func /src/ndpi/src/lib/ndpi_main.c
+#5 ndpi_detection_process_packet /src/ndpi/src/lib/ndpi_main.c:6158:15
+#6 LLVMFuzzerTestOneInput /src/ndpi/fuzz/fuzz_process_packet.c:29:5

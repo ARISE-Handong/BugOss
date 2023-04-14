@@ -1,0 +1,6 @@
+protocols/snmp_proto.c:77:23: runtime error: signed integer overflow: 6 + 2147483647 cannot be represented in type 'int'
+#0 ndpi_search_snmp /src/ndpi/src/lib/protocols/snmp_proto.c:77:23
+#1 check_ndpi_detection_func /src/ndpi/src/lib/ndpi_main.c:5211:4
+#2 ndpi_check_flow_func /src/ndpi/src/lib/ndpi_main.c
+#3 ndpi_detection_process_packet /src/ndpi/src/lib/ndpi_main.c:6158:15
+#4 LLVMFuzzerTestOneInput /src/ndpi/fuzz/fuzz_process_packet.c:29:5

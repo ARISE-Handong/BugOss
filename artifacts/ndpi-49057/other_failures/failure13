@@ -1,0 +1,7 @@
+third_party/src/ahocorasick.c:855:32: runtime error: unsigned integer overflow: 8167219852353029 - 72340172838076673 cannot be represented in type 'unsigned long long'
+#0 xmemchr /src/ndpi/src/lib/third_party/src/ahocorasick.c:855:32
+#1 node_find_next /src/ndpi/src/lib/third_party/src/ahocorasick.c:886:8
+#2 ac_automata_add /src/ndpi/src/lib/third_party/src/ahocorasick.c:244:18
+#3 load_common_alpns /src/ndpi/src/lib/ndpi_utils.c:2499:8
+#4 ndpi_init_detection_module /src/ndpi/src/lib/ndpi_main.c:2625:3
+#5 LLVMFuzzerTestOneInput /src/ndpi/fuzz/fuzz_process_packet.c:14:21

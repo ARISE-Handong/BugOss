@@ -1,0 +1,5 @@
+error message:
+/src/exiv2/src/jp2image.cpp:445:48: runtime error: unsigned integer overflow: 0 - 8 cannot be represented in type 'unsigned long'
+stack trace:
+Exiv2::Jp2Image::printStructure(std::__1::basic_ostream<char, std::__1::char_traits<char> >&, Exiv2::PrintStructureOption, unsigned long) /src/exiv2/src/jp2image.cpp:445:48
+LLVMFuzzerTestOneInput /src/exiv2/fuzz/fuzz-read-print-write.cpp:37:12

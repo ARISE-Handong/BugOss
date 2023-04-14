@@ -1,0 +1,8 @@
+softmagic.c:1952:13: runtime error: unsigned integer overflow: 0 - 1 cannot be represented in type 'size_t' (aka 'unsigned long')
+#0 file_strncmp /src/file/src/softmagic.c:1952:13
+#1 magiccheck /src/file/src/softmagic.c:2134:7
+#2 match /src/file/src/softmagic.c:260:12
+#3 file_softmagic /src/file/src/softmagic.c:134:13
+#4 file_buffer /src/file/src/funcs.c:425:7
+#5 magic_buffer /src/file/src/magic.c:542:6
+#6 LLVMFuzzerTestOneInput /src/magic_fuzzer.cc:56:3

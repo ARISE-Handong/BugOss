@@ -1,0 +1,7 @@
+ERROR: AddressSanitizer: heap-buffer-overflow on address 0x619000000482 at pc 0x000000569bc2 bp 0x7ffcecce7a10 sp 0x7ffcecce7a08
+READ of size 4 at 0x619000000482 thread T0
+#0 sas_read4 /src/readstat/src/sas/readstat_sas.c:92:5
+#1 sas7bdat_parse_page_pass2 /src/readstat/src/sas/readstat_sas7bdat_read.c:762:33
+#2 sas7bdat_parse_all_pages_pass2 /src/readstat/src/sas/readstat_sas7bdat_read.c:969:23
+#3 readstat_parse_sas7bdat /src/readstat/src/sas/readstat_sas7bdat_read.c:1081:19
+#4 LLVMFuzzerTestOneInput /src/readstat/src/fuzz/fuzz_format_sas7bdat.c:17:5

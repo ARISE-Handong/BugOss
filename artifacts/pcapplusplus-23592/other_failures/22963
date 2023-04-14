@@ -1,0 +1,14 @@
+ERROR: libFuzzer: out-of-memory (used: 2183Mb; limit: 2048Mb)
+   To change the out-of-memory limit use -rss_limit_mb=<N>
+
+Live Heap Allocations: 1367897836 bytes in 50425989 chunks; quarantined: 32 bytes in 1 chunks; 5278 other chunks; total chunks: 50431268; showing top 95% (at most 8 unique contexts)
+806788352 byte(s) (58%) in 50424272 allocation(s)
+#0 0x56b11d in operator new(unsigned long) /src/llvm-project/compiler-rt/lib/asan/asan_new_delete.cpp:95:3
+#1 0x6e78ae in pcpp::SSLClientHelloMessage::SSLClientHelloMessage(unsigned char*, unsigned long, pcpp::SSLHandshakeLayer*) /src/PcapPlusPlus/Packet++/src/SSLHandshake.cpp:1191:13
+#2 0x6e6e19 in pcpp::SSLHandshakeMessage::createHandhakeMessage(unsigned char*, unsigned long, pcpp::SSLHandshakeLayer*) /src/PcapPlusPlus/Packet++/src/SSLHandshake.cpp:1108:14
+#3 0x673312 in pcpp::SSLHandshakeLayer::SSLHandshakeLayer(unsigned char*, unsigned long, pcpp::Layer*, pcpp::Packet*) /src/PcapPlusPlus/Packet++/src/SSLLayer.cpp:153:34
+#4 0x67145c in pcpp::SSLLayer::createSSLMessage(unsigned char*, unsigned long, pcpp::Layer*, pcpp::Packet*) /src/PcapPlusPlus/Packet++/src/SSLLayer.cpp:52:15
+#5 0x6023d8 in pcpp::TcpLayer::parseNextLayer() /src/PcapPlusPlus/Packet++/src/TcpLayer.cpp:349:17
+#6 0x59eefd in pcpp::Packet::setRawPacket(pcpp::RawPacket*, bool, unsigned long, pcpp::OsiModelLayer) /src/PcapPlusPlus/Packet++/src/Packet.cpp:63:13
+#7 0x5a0139 in pcpp::Packet::Packet(pcpp::RawPacket*, bool, unsigned long, pcpp::OsiModelLayer) /src/PcapPlusPlus/Packet++/src/Packet.cpp:109:2
+#8 0x56da91 in LLVMFuzzerTestOneInput /src/PcapPlusPlus/Tests/Fuzzers/FuzzTarget.cpp:52:15

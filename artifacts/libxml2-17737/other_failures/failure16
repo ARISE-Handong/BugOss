@@ -1,0 +1,15 @@
+AddressSanitizer: heap-use-after-free
+READ
+xmlSearchNs/src/libxml2/tree.c:6085:17
+xmlSAX2StartElementNs/src/libxml2/SAX2.c:2375:19
+xmlTextReaderStartElementNs/src/libxml2/xmlreader.c:739:2
+xmlParseStartTag2/src/libxml2/parser.c:9599:6
+xmlParseTryOrFinish/src/libxml2/parser.c:11385:14
+xmlParseChunk/src/libxml2/parser.c:12287:13
+xmlTextReaderRead/src/libxml2/xmlreader.c:1465:12
+LLVMFuzzerTestOneInput/src/libxml2_xml_reader_for_file_fuzzer.cc:45:10
+ExecuteFilesOnyByOne/src/aflplusplus/utils/aflpp_driver/aflpp_driver.c:240:7
+LLVMFuzzerRunDriver/src/aflplusplus/utils/aflpp_driver/aflpp_driver.c
+main/src/aflplusplus/utils/aflpp_driver/aflpp_driver.c:274:10
+__libc_start_main/build/glibc-sMfBJT/glibc-2.31/csu/../csu/libc-start.c:308:16
+

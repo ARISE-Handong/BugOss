@@ -1,0 +1,11 @@
+ERROR: AddressSanitizer: use-after-poison on address 0x7f210abef8fd at pc 0x0000005661dd bp 0x7ffe329a13b0 sp 0x7ffe329a13a8
+READ of size 1 at 0x7f210abef8fd thread T0
+#0 pe_get_section_full_name /src/yara/libyara/modules/pe/pe.c:1947:9
+#1 pe_parse_header /src/yara/libyara/modules/pe/pe.c:2215:37
+#2 pe__load /src/yara/libyara/modules/pe/pe.c:3962:9
+#3 yr_modules_load /src/yara/libyara/modules.c:158:16
+#4 yr_execute_code /src/yara/libyara/exec.c:1552:16
+#5 yr_scanner_scan_mem_blocks /src/yara/libyara/scanner.c:515:3
+#6 yr_scanner_scan_mem /src/yara/libyara/scanner.c:659:16
+#7 yr_rules_scan_mem /src/yara/libyara/rules.c:223:12
+#8 LLVMFuzzerTestOneInput /src/yara/tests/oss-fuzz/pe_fuzzer.cc:77:3

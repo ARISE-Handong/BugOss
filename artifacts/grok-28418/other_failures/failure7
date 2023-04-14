@@ -1,0 +1,12 @@
+AddressSanitizer: heap-buffer-overflow
+READ
+grk::jp2_apply_palette_clr(_grk_image*,_grk_jp2_color*)/src/grok/src/lib/jp2/codestream/FileFormat.cpp:1492:14
+grk::FileFormat::postDecompress(_grk_image*)/src/grok/src/lib/jp2/codestream/FileFormat.cpp:2604:9
+grk::FileFormat::decompress(_grk_plugin_tile*,_grk_image*)/src/grok/src/lib/jp2/codestream/FileFormat.cpp:2628:9
+grk_decompress/src/grok/src/lib/jp2/grok.cpp:276:35
+LLVMFuzzerTestOneInput/src/grok/./tests/fuzzers/grk_decompress_fuzzer.cpp:154:14
+ExecuteFilesOnyByOne/src/aflplusplus/utils/aflpp_driver/aflpp_driver.c:240:7
+LLVMFuzzerRunDriver/src/aflplusplus/utils/aflpp_driver/aflpp_driver.c
+main/src/aflplusplus/utils/aflpp_driver/aflpp_driver.c:274:10
+__libc_start_main/build/glibc-sMfBJT/glibc-2.31/csu/../csu/libc-start.c:308:16
+

@@ -1,0 +1,10 @@
+ERROR: AddressSanitizer: heap-buffer-overflow on address 0x60700000006f at pc 0x000000706413 bp 0x7ffd8150ecf0 sp 0x7ffd8150ece8
+READ of size 1 at 0x60700000006f thread T0
+#0 0x706412 in pcpp::SSLCertificateRequestMessage::SSLCertificateRequestMessage(unsigned char*, unsigned long, pcpp::SSLHandshakeLayer*) /src/PcapPlusPlus/Packet++/src/SSLHandshake.cpp:1614:22
+#1 0x701113 in pcpp::SSLHandshakeMessage::createHandhakeMessage(unsigned char*, unsigned long, pcpp::SSLHandshakeLayer*) /src/PcapPlusPlus/Packet++/src/SSLHandshake.cpp:1118:14
+#2 0x684512 in pcpp::SSLHandshakeLayer::SSLHandshakeLayer(unsigned char*, unsigned long, pcpp::Layer*, pcpp::Packet*) /src/PcapPlusPlus/Packet++/src/SSLLayer.cpp:153:34
+#3 0x68265c in pcpp::SSLLayer::createSSLMessage(unsigned char*, unsigned long, pcpp::Layer*, pcpp::Packet*) /src/PcapPlusPlus/Packet++/src/SSLLayer.cpp:52:15
+#4 0x5faa58 in pcpp::TcpLayer::parseNextLayer() /src/PcapPlusPlus/Packet++/src/TcpLayer.cpp:349:17
+#5 0x5a018d in pcpp::Packet::setRawPacket(pcpp::RawPacket*, bool, unsigned long, pcpp::OsiModelLayer) /src/PcapPlusPlus/Packet++/src/Packet.cpp:63:13
+#6 0x5a13c9 in pcpp::Packet::Packet(pcpp::RawPacket*, bool, unsigned long, pcpp::OsiModelLayer) /src/PcapPlusPlus/Packet++/src/Packet.cpp:109:2
+#7 0x56da91 in LLVMFuzzerTestOneInput /src/PcapPlusPlus/Tests/Fuzzers/FuzzTarget.cpp:52:15

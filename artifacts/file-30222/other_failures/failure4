@@ -1,0 +1,9 @@
+der.c:165:19: runtime error: unsigned integer overflow: 4294967168 + 255 cannot be represented in type 'unsigned int'
+#0 gettag /src/file/src/der.c:165:19
+#1 der_cmp /src/file/src/der.c:311:8
+#2 magiccheck /src/file/src/softmagic.c:2254:13
+#3 match /src/file/src/softmagic.c:260:12
+#4 file_softmagic /src/file/src/softmagic.c:134:13
+#5 file_buffer /src/file/src/funcs.c:425:7
+#6 magic_buffer /src/file/src/magic.c:542:6
+#7 LLVMFuzzerTestOneInput /src/magic_fuzzer.cc:56:3

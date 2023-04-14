@@ -1,0 +1,11 @@
+third_party/src/ndpi_sha1.c:138:5: runtime error: unsigned integer overflow: 3376210873 + 1518500249 cannot be represented in type 'unsigned int'
+#0 SHA1Transform /src/ndpi/src/lib/third_party/src/ndpi_sha1.c:138:5
+#1 SHA1Update /src/ndpi/src/lib/third_party/src/ndpi_sha1.c:200:9
+#2 processCertificate /src/ndpi/src/lib/protocols/tls.c:792:7
+#3 processTLSBlock /src/ndpi/src/lib/protocols/tls.c:878:13
+#4 ndpi_search_tls_tcp /src/ndpi/src/lib/protocols/tls.c:1023:2
+#5 ndpi_search_tls_wrapper /src/ndpi/src/lib/protocols/tls.c:2466:5
+#6 check_ndpi_detection_func /src/ndpi/src/lib/ndpi_main.c:5228:6
+#7 ndpi_check_flow_func /src/ndpi/src/lib/ndpi_main.c
+#8 ndpi_detection_process_packet /src/ndpi/src/lib/ndpi_main.c:6158:15
+#9 LLVMFuzzerTestOneInput /src/ndpi/fuzz/fuzz_process_packet.c:29:5

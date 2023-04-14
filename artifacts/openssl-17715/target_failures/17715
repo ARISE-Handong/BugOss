@@ -1,0 +1,14 @@
+ERROR: AddressSanitizer: heap-buffer-overflow on address 0x6020000007bd at pc 0x000000434f86 bp 0x7fffdfc83900 sp 0x7fffdfc830c0
+READ of size 14 at 0x6020000007bd thread T0
+#0 0x434f85 in strlen /src/llvm-project/compiler-rt/lib/asan/../sanitizer_common/sanitizer_common_interceptors.inc:389:5
+#1 0x580566 in CRYPTO_strdup /src/openssl/crypto/o_str.c:21:25
+#2 0x59e61d in X509V3_add_value /src/openssl/crypto/x509/v3_utl.c:46:28
+#3 0x59eb44 in X509V3_add_value_uchar /src/openssl/crypto/x509/v3_utl.c:73:12
+#4 0xb15cff in i2v_GENERAL_NAME /src/openssl/crypto/x509/v3_alt.c:80:18
+#5 0xb14c45 in i2v_GENERAL_NAMES /src/openssl/crypto/x509/v3_alt.c:57:15
+#6 0x59d843 in X509V3_EXT_print /src/openssl/crypto/x509/v3_prn.c:117:21
+#7 0x59e141 in X509V3_extensions_print /src/openssl/crypto/x509/v3_prn.c:164:14
+#8 0x59ae19 in X509_print_ex /src/openssl/crypto/x509/t_x509.c:201:9
+#9 0x59b19b in X509_print /src/openssl/crypto/x509/t_x509.c:44:12
+#10 0x4d977c in FuzzerTestOneInput /src/openssl/fuzz/x509.c:37:9
+#11 0x4d9454 in LLVMFuzzerTestOneInput /src/openssl/fuzz/driver.c:28:12

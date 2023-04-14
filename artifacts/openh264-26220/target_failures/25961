@@ -1,0 +1,14 @@
+ERROR: AddressSanitizer: heap-buffer-overflow on address 0x629000031a20 at pc 0x00000065c8f5 bp 0x7fffcd4e2dd0 sp 0x7fffcd4e2dc8
+WRITE of size 4 at 0x629000031a20 thread T0
+#0 0x65c8f4 in WelsDec::UpdateP16x16MotionInfo(WelsDec::TagDqLayer*, int, signed char, short*) /src/openh264/codec/decoder/core/src/mv_pred.cpp:813:7
+#1 0x67b95a in WelsDec::ParseInterPMotionInfoCabac(WelsDec::TagWelsDecoderContext*, WelsDec::TagNeighborAvail*, unsigned char*, short (*) [30][2], short (*) [30][2], signed char (*) [30]) /src/openh264/codec/decoder/core/src/parse_mb_syn_cabac.cpp:562:5
+#2 0x62cb82 in WelsDec::WelsDecodeMbCabacPSliceBaseMode0(WelsDec::TagWelsDecoderContext*, WelsDec::TagNeighborAvail*, unsigned int&) /src/openh264/codec/decoder/core/src/decode_slice.cpp:883:5
+#3 0x6374a0 in WelsDec::WelsDecodeMbCabacPSlice(WelsDec::TagWelsDecoderContext*, WelsDec::TagNalUnit*, unsigned int&) /src/openh264/codec/decoder/core/src/decode_slice.cpp:1397:3
+#4 0x63ba15 in WelsDec::WelsDecodeSlice(WelsDec::TagWelsDecoderContext*, bool, WelsDec::TagNalUnit*) /src/openh264/codec/decoder/core/src/decode_slice.cpp:1595:12
+#5 0x5203b4 in WelsDec::DecodeCurrentAccessUnit(WelsDec::TagWelsDecoderContext*, unsigned char**, TagBufferInfo*) /src/openh264/codec/decoder/core/src/decoder_core.cpp:2755:18
+#6 0x51a5c4 in WelsDec::ConstructAccessUnit(WelsDec::TagWelsDecoderContext*, unsigned char**, TagBufferInfo*) /src/openh264/codec/decoder/core/src/decoder_core.cpp:2353:10
+#7 0x4f7855 in WelsDecodeBs /src/openh264/codec/decoder/core/src/decoder.cpp:917:7
+#8 0x4e35ca in WelsDec::CWelsDecoder::DecodeFrame2WithCtx(WelsDec::TagWelsDecoderContext*, unsigned char const*, int, unsigned char**, TagBufferInfo*) /src/openh264/codec/decoder/plus/src/welsDecoderExt.cpp:794:3
+#9 0x4e7537 in WelsDec::CWelsDecoder::DecodeFrame2(unsigned char const*, int, unsigned char**, TagBufferInfo*) /src/openh264/codec/decoder/plus/src/welsDecoderExt.cpp:908:10
+#10 0x4df399 in WelsDec::CWelsDecoder::DecodeFrameNoDelay(unsigned char const*, int, unsigned char**, TagBufferInfo*) /src/openh264/codec/decoder/plus/src/welsDecoderExt.cpp:712:11
+#11 0x4d88f9 in LLVMFuzzerTestOneInput /src/decoder_fuzzer.cpp:75:15

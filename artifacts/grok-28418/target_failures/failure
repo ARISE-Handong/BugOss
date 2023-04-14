@@ -1,0 +1,21 @@
+ERROR: LeakSanitizer: detected memory leaks
+
+Direct leak of 5 byte(s) in 1 object(s) allocated from:
+#0 operator new[](unsigned long) /src/llvm-project/compiler-rt/lib/asan/asan_new_delete.cpp:98:3
+#1 grk::PacketIter::get_include(unsigned short) /src/grok/src/lib/jp2/codestream/PacketIter.cpp:1447:14
+#2 grk::PacketIter::update_include() /src/grok/src/lib/jp2/codestream/PacketIter.cpp:1459:17
+#3 grk::pi_next_pcrl(grk::PacketIter*) /src/grok/src/lib/jp2/codestream/PacketIter.cpp:433:15
+#4 grk::pi_next(grk::PacketIter*) /src/grok/src/lib/jp2/codestream/PacketIter.cpp:1414:11
+#5 grk::T2Decompress::decompress_packets(unsigned short, grk::ChunkBuffer*, unsigned long*) /src/grok/src/lib/jp2/t2/T2Decompress.cpp:71:10
+#6 grk::TileProcessor::t2_decompress(grk::ChunkBuffer*, unsigned long*) /src/grok/src/lib/jp2/tile/TileProcessor.cpp:945:16
+#7 grk::TileProcessor::decompress_tile_t2(grk::ChunkBuffer*) /src/grok/src/lib/jp2/tile/TileProcessor.cpp:860:8
+#8 grk::CodeStream::decompress_tile_t2t1(grk::TileProcessor*, bool) /src/grok/src/lib/jp2/codestream/CodeStream.cpp:2509:22
+#9 grk::CodeStream::decompress_tiles() /src/grok/src/lib/jp2/codestream/CodeStream.cpp:2775:9
+#10 grk::j2k_decompress_tiles(grk::CodeStream*) /src/grok/src/lib/jp2/codestream/CodeStream.cpp:374:21
+#11 grk::CodeStream::exec(std::__1::vector<bool (*)(grk::CodeStream*), std::__1::allocator<bool (*)(grk::CodeStream*)> >&)::$_0::operator()(bool (* const&)(grk::CodeStream*)) const /src/grok/src/lib/jp2/codestream/CodeStream.cpp:2669:45
+#12 bool std::__1::all_of<std::__1::__wrap_iter<bool (**)(grk::CodeStream*)>, grk::CodeStream::exec(std::__1::vector<bool (*)(grk::CodeStream*), std::__1::allocator<bool (*)(grk::CodeStream*)> >&)::$_0>(std::__1::__wrap_iter<bool (**)(grk::CodeStream*)>, std::__1::__wrap_iter<bool (**)(grk::CodeStream*)>, grk::CodeStream::exec(std::__1::vector<bool (*)(grk::CodeStream*), std::__1::allocator<bool (*)(grk::CodeStream*)> >&)::$_0) /usr/local/bin/../include/c++/v1/__algorithm/all_of.h:25:10
+#13 grk::CodeStream::exec(std::__1::vector<bool (*)(grk::CodeStream*), std::__1::allocator<bool (*)(grk::CodeStream*)> >&) /src/grok/src/lib/jp2/codestream/CodeStream.cpp:2668:19
+#14 grk::CodeStream::do_decompress(_grk_image*) /src/grok/src/lib/jp2/codestream/CodeStream.cpp:1105:7
+#15 grk::CodeStream::decompress(_grk_plugin_tile*, _grk_image*) /src/grok/src/lib/jp2/codestream/CodeStream.cpp:1129:9
+#16 grk_decompress /src/grok/src/lib/jp2/grok.cpp:276:35
+#17 LLVMFuzzerTestOneInput /src/grok/./tests/fuzzers/grk_decompress_fuzzer.cpp:154:14

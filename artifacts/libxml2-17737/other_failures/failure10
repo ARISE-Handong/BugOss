@@ -1,0 +1,18 @@
+AddressSanitizer: heap-buffer-overflow
+WRITE
+xmlSAX2Characters/src/libxml2/SAX2.c:2629:40
+xmlTextReaderCharacters/src/libxml2/xmlreader.c:796:2
+xmlParseCharDataComplex/src/libxml2/parser.c:4595:7
+xmlParseCharData/src/libxml2/parser.c:4516:5
+xmlParseTryOrFinish/src/libxml2/parser.c:11551:7
+xmlParseChunk/src/libxml2/parser.c:12287:13
+xmlTextReaderPushData/src/libxml2/xmlreader.c:879:12
+xmlTextReaderDoExpand/src/libxml2/xmlreader.c:1227:8
+xmlTextReaderExpand/src/libxml2/xmlreader.c:1656:9
+xmlTextReaderRead/src/libxml2/xmlreader.c:1534:6
+LLVMFuzzerTestOneInput/src/libxml2_xml_reader_for_file_fuzzer.cc:45:10
+ExecuteFilesOnyByOne/src/aflplusplus/utils/aflpp_driver/aflpp_driver.c:240:7
+LLVMFuzzerRunDriver/src/aflplusplus/utils/aflpp_driver/aflpp_driver.c
+main/src/aflplusplus/utils/aflpp_driver/aflpp_driver.c:274:10
+__libc_start_main/build/glibc-sMfBJT/glibc-2.31/csu/../csu/libc-start.c:308:16
+

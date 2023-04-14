@@ -1,0 +1,7 @@
+ERROR: AddressSanitizer: heap-buffer-overflow
+#0 0x6f92f8 in sctp_process_asconf_delete_ip /src/usrsctp/usrsctplib/netinet/sctp_asconf.c:347:15
+#1 0x6f661c in sctp_handle_asconf /src/usrsctp/usrsctplib/netinet/sctp_asconf.c:765:15
+#2 0x50d6a8 in sctp_process_control /src/usrsctp/usrsctplib/netinet/sctp_input.c:5492:5
+#3 0x506823 in sctp_common_input_processing /src/usrsctp/usrsctplib/netinet/sctp_input.c:5899:10
+#4 0x4f8c3f in usrsctp_conninput /src/usrsctp/usrsctplib/user_socket.c:3518:2
+#5 0x4d99e1 in LLVMFuzzerTestOneInput /src/usrsctp/fuzzer/fuzzer_connect.c:458:2

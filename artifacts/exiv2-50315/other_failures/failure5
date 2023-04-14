@@ -1,0 +1,23 @@
+error message:
+/src/exiv2/src/tiffvisitor_int.cpp:1307:46: runtime error: unsigned integer overflow
+stack trace:
+Exiv2::Internal::TiffReader::readTiffEntry(Exiv2::Internal::TiffEntryBase*)/src/exiv2/src/tiffvisitor_int.cpp:1307:46
+Exiv2::Internal::TiffComponent::accept(Exiv2::Internal::TiffVisitor&)/src/exiv2/src/tiffcomposite_int.cpp:654:5
+Exiv2::Internal::TiffDirectory::doAccept(Exiv2::Internal::TiffVisitor&)/src/exiv2/src/tiffcomposite_int.cpp:678:16
+Exiv2::Internal::TiffComponent::accept(Exiv2::Internal::TiffVisitor&)/src/exiv2/src/tiffcomposite_int.cpp:654:5
+Exiv2::Internal::TiffIfdMakernote::doAccept(Exiv2::Internal::TiffVisitor&)/src/exiv2/src/tiffcomposite_int.cpp:712:10
+Exiv2::Internal::TiffComponent::accept(Exiv2::Internal::TiffVisitor&)/src/exiv2/src/tiffcomposite_int.cpp:654:5
+Exiv2::Internal::TiffMnEntry::doAccept(Exiv2::Internal::TiffVisitor&)/src/exiv2/src/tiffcomposite_int.cpp:700:10
+Exiv2::Internal::TiffComponent::accept(Exiv2::Internal::TiffVisitor&)/src/exiv2/src/tiffcomposite_int.cpp:654:5
+Exiv2::Internal::TiffDirectory::doAccept(Exiv2::Internal::TiffVisitor&)/src/exiv2/src/tiffcomposite_int.cpp:678:16
+Exiv2::Internal::TiffComponent::accept(Exiv2::Internal::TiffVisitor&)/src/exiv2/src/tiffcomposite_int.cpp:654:5
+Exiv2::Internal::TiffSubIfd::doAccept(Exiv2::Internal::TiffVisitor&)/src/exiv2/src/tiffcomposite_int.cpp:693:10
+Exiv2::Internal::TiffComponent::accept(Exiv2::Internal::TiffVisitor&)/src/exiv2/src/tiffcomposite_int.cpp:654:5
+Exiv2::Internal::TiffDirectory::doAccept(Exiv2::Internal::TiffVisitor&)/src/exiv2/src/tiffcomposite_int.cpp:678:16
+Exiv2::Internal::TiffComponent::accept(Exiv2::Internal::TiffVisitor&)/src/exiv2/src/tiffcomposite_int.cpp:654:5
+Exiv2::Internal::TiffParserWorker::parse(unsignedcharconst*,unsignedlong,unsignedint,Exiv2::Internal::TiffHeaderBase*)/src/exiv2/src/tiffimage_int.cpp:2064:14
+Exiv2::Internal::TiffParserWorker::decode(Exiv2::ExifData&,Exiv2::IptcData&,Exiv2::XmpData&,unsignedcharconst*,unsignedlong,unsignedint,void(Exiv2::Internal::TiffDecoder::*(*)(std::__1::basic_string<char,std::__1::char_traits<char>,std::__1::allocator<char>>const&,unsignedint,Exiv2::IfdId))(Exiv2::Internal::TiffEntryBaseconst*),Exiv2::Internal::TiffHeaderBase*)/src/exiv2/src/tiffimage_int.cpp:1988:18
+Exiv2::TiffParser::decode(Exiv2::ExifData&,Exiv2::IptcData&,Exiv2::XmpData&,unsignedcharconst*,unsignedlong)/src/exiv2/src/tiffimage.cpp:212:10
+Exiv2::ExifParser::decode(Exiv2::ExifData&,unsignedcharconst*,unsignedlong)/src/exiv2/src/exif.cpp:490:18
+Exiv2::JpegBase::readMetadata()/src/exiv2/src/jpgimage.cpp:161:22
+LLVMFuzzerTestOneInput/src/exiv2/fuzz/fuzz-read-print-write.cpp:22:12

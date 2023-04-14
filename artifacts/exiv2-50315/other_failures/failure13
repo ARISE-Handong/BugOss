@@ -1,0 +1,11 @@
+error message:
+/src/exiv2/xmpsdk/src/XMPMeta-Parse.cpp:191:16: runtime error: unsigned integer overflow: 4000000000000000000 * 10 cannot be represented in type 'unsigned long'
+stack trace:
+FindRootNode(XMPMeta*, XMLParserAdapter const&, unsigned long) /src/exiv2/xmpsdk/src/XMPMeta-Parse.cpp:191:16
+XMPMeta::ParseFromBuffer(char const*, unsigned long, unsigned long) /src/exiv2/xmpsdk/src/XMPMeta-Parse.cpp:1266:31
+WXMPMeta_ParseFromBuffer_1 /src/exiv2/xmpsdk/src/WXMPMeta.cpp:1274:9
+TXMPMeta<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > >::ParseFromBuffer(char const*, unsigned long, unsigned long) /src/exiv2/xmpsdk/include/client-glue/TXMPMeta.incl_cpp:903:2
+TXMPMeta<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > >::TXMPMeta(char const*, unsigned long) /src/exiv2/xmpsdk/include/client-glue/TXMPMeta.incl_cpp:169:9
+Exiv2::XmpParser::decode(Exiv2::XmpData&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) /src/exiv2/src/xmp.cpp:692:14
+Exiv2::JpegBase::readMetadata() /src/exiv2/src/jpgimage.cpp:174:34
+LLVMFuzzerTestOneInput /src/exiv2/fuzz/fuzz-read-print-write.cpp:22:12

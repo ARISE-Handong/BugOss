@@ -1,0 +1,8 @@
+protocols/edonkey.c:77:26: runtime error: unsigned integer overflow: 1 - 2 cannot be represented in type 'unsigned int'
+#0 ndpi_edonkey_payload_check /src/ndpi/src/lib/protocols/edonkey.c:77:26
+#1 ndpi_check_edonkey /src/ndpi/src/lib/protocols/edonkey.c:177:8
+#2 ndpi_search_edonkey /src/ndpi/src/lib/protocols/edonkey.c:211:5
+#3 check_ndpi_detection_func /src/ndpi/src/lib/ndpi_main.c:5228:6
+#4 ndpi_check_flow_func /src/ndpi/src/lib/ndpi_main.c
+#5 ndpi_detection_process_packet /src/ndpi/src/lib/ndpi_main.c:6158:15
+#6 LLVMFuzzerTestOneInput /src/ndpi/fuzz/fuzz_process_packet.c:29:5

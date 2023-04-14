@@ -1,0 +1,6 @@
+protocols/ayiya.c:64:25: runtime error: unsigned integer overflow: 0 - 157680000 cannot be represented in type 'unsigned int'
+#0 ndpi_search_ayiya /src/ndpi/src/lib/protocols/ayiya.c:64:25
+#1 check_ndpi_detection_func /src/ndpi/src/lib/ndpi_main.c:5228:6
+#2 ndpi_check_flow_func /src/ndpi/src/lib/ndpi_main.c
+#3 ndpi_detection_process_packet /src/ndpi/src/lib/ndpi_main.c:6158:15
+#4 LLVMFuzzerTestOneInput /src/ndpi/fuzz/fuzz_process_packet.c:29:5

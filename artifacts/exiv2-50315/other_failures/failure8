@@ -1,0 +1,13 @@
+error message:
+/src/exiv2/src/tiffcomposite_int.cpp:1082:73: runtime error: unsigned integer overflow: 18446744073709551606 + 18 cannot be represented in type 'unsigned long'
+stack trace:
+Exiv2::Internal::TiffIfdMakernote::doWrite(Exiv2::Internal::IoWrapper&, Exiv2::ByteOrder, unsigned long, unsigned int, unsigned int, unsigned int&) /src/exiv2/src/tiffcomposite_int.cpp:1082:73
+Exiv2::Internal::TiffDirectory::doWrite(Exiv2::Internal::IoWrapper&, Exiv2::ByteOrder, unsigned long, unsigned int, unsigned int, unsigned int&) /src/exiv2/src/tiffcomposite_int.cpp:921:31
+Exiv2::Internal::TiffSubIfd::doWriteData(Exiv2::Internal::IoWrapper&, Exiv2::ByteOrder, unsigned long, unsigned int, unsigned int&) const /src/exiv2/src/tiffcomposite_int.cpp:1206:17
+Exiv2::Internal::TiffDirectory::doWriteData(Exiv2::Internal::IoWrapper&, Exiv2::ByteOrder, unsigned long, unsigned int, unsigned int&) const /src/exiv2/src/tiffcomposite_int.cpp:1166:23
+Exiv2::Internal::TiffDirectory::doWrite(Exiv2::Internal::IoWrapper&, Exiv2::ByteOrder, unsigned long, unsigned int, unsigned int, unsigned int&) /src/exiv2/src/tiffcomposite_int.cpp:937:10
+Exiv2::Internal::TiffParserWorker::encode(Exiv2::BasicIo&, unsigned char const*, unsigned long, Exiv2::ExifData const&, Exiv2::IptcData const&, Exiv2::XmpData const&, unsigned int, void (Exiv2::Internal::TiffEncoder::* (*)(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, unsigned int, Exiv2::IfdId))(Exiv2::Internal::TiffEntryBase*, Exiv2::Exifdatum const*), Exiv2::Internal::TiffHeaderBase*, Exiv2::Internal::OffsetWriter*) /src/exiv2/src/tiffimage_int.cpp:2035:18
+Exiv2::ExifParser::encode(std::__1::vector<unsigned char, std::__1::allocator<unsigned char> >&, unsigned char const*, unsigned long, Exiv2::ByteOrder, Exiv2::ExifData const&) /src/exiv2/src/exif.cpp:569:20
+Exiv2::JpegBase::doWriteMetadata(Exiv2::BasicIo&) /src/exiv2/src/jpgimage.cpp:719:26
+Exiv2::JpegBase::writeMetadata() /src/exiv2/src/jpgimage.cpp:556:3
+LLVMFuzzerTestOneInput /src/exiv2/fuzz/fuzz-read-print-write.cpp:43:12

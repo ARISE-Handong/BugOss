@@ -1,0 +1,11 @@
+ERROR: AddressSanitizer: heap-buffer-overflow on address 0x614000001be7 at pc 0x0000004fd307 bp 0x7ffe7aae5820 sp 0x7ffe7aae5818
+READ of size 1 at 0x614000001be7 thread T0
+#0 0x4fd306 in UpdateDecStatNoFreezingInfo /src/openh264/codec/decoder/core/src/decoder.cpp:1215:34
+#1 0x4fd4e3 in UpdateDecStat /src/openh264/codec/decoder/core/src/decoder.cpp:1243:5
+#2 0x528835 in WelsDec::DecodeFrameConstruction(WelsDec::TagWelsDecoderContext*, unsigned char**, TagBufferInfo*) /src/openh264/codec/decoder/core/src/decoder_core.cpp:280:5
+#3 0x52af0a in WelsDec::CheckAndFinishLastPic(WelsDec::TagWelsDecoderContext*, unsigned char**, TagBufferInfo*) /src/openh264/codec/decoder/core/src/decoder_core.cpp:2947:7
+#4 0x4f8f56 in WelsDecodeBs /src/openh264/codec/decoder/core/src/decoder.cpp:877:9
+#5 0x4e35ca in WelsDec::CWelsDecoder::DecodeFrame2WithCtx(WelsDec::TagWelsDecoderContext*, unsigned char const*, int, unsigned char**, TagBufferInfo*) /src/openh264/codec/decoder/plus/src/welsDecoderExt.cpp:794:3
+#6 0x4e7537 in WelsDec::CWelsDecoder::DecodeFrame2(unsigned char const*, int, unsigned char**, TagBufferInfo*) /src/openh264/codec/decoder/plus/src/welsDecoderExt.cpp:908:10
+#7 0x4df35d in WelsDec::CWelsDecoder::DecodeFrameNoDelay(unsigned char const*, int, unsigned char**, TagBufferInfo*) /src/openh264/codec/decoder/plus/src/welsDecoderExt.cpp:707:15
+#8 0x4d88f9 in LLVMFuzzerTestOneInput /src/decoder_fuzzer.cpp:75:15

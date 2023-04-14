@@ -1,0 +1,16 @@
+ERROR: AddressSanitizer: SEGV on unknown address 0x000000000000 (pc 0x7f86b7aacaf3 bp 0x7ffed78698d0 sp 0x7ffed7869098 T0)
+==875019==The signal is caused by a WRITE memory access.
+==875019==Hint: address points to the zero page.
+#0 memcpy /build/glibc-SzIz7B/glibc-2.31/string/../sysdeps/x86_64/multiarch/memmove-vec-unaligned-erms.S:144
+#1 __asan_memcpy /src/llvm-project/compiler-rt/lib/asan/asan_interceptors_memintrinsics.cpp:22:3
+#2 ZSTD_copy16 /src/zstd/tests/fuzz/../../lib/common/zstd_internal.h:199:55
+#3 ZSTD_execSequence /src/zstd/tests/fuzz/../../lib/decompress/zstd_decompress_block.c:731:5
+#4 ZSTD_decompressSequences_body /src/zstd/tests/fuzz/../../lib/decompress/zstd_decompress_block.c:1020:39
+#5 ZSTD_decompressSequences_bmi2 /src/zstd/tests/fuzz/../../lib/decompress/zstd_decompress_block.c:1166:12
+#6 ZSTD_decompressSequences /src/zstd/tests/fuzz/../../lib/decompress/zstd_decompress_block.c:1198:16
+#7 ZSTD_decompressBlock_internal /src/zstd/tests/fuzz/../../lib/decompress/zstd_decompress_block.c:1323:16
+#8 ZSTD_decompressFrame /src/zstd/tests/fuzz/../../lib/decompress/zstd_decompress.c:647:27
+#9 ZSTD_decompressMultiFrame /src/zstd/tests/fuzz/../../lib/decompress/zstd_decompress.c:755:32
+#10 ZSTD_decompress_usingDDict /src/zstd/tests/fuzz/../../lib/decompress/zstd_decompress.c:1248:12
+#11 ZSTD_decompressStream /src/zstd/tests/fuzz/../../lib/decompress/zstd_decompress.c:1677:53
+#12 LLVMFuzzerTestOneInput /src/zstd/tests/fuzz/stream_decompress.c:106:31

@@ -1,0 +1,10 @@
+ERROR: AddressSanitizer: heap-use-after-free on address 0x611000004064 at pc 0x0000005243fc bp 0x7ffcfc2ea150 sp 0x7ffcfc2e9918
+WRITE of size 20 at 0x611000004064 thread T0
+#0 __asan_memset /src/llvm-project/compiler-rt/lib/asan/asan_interceptors_memintrinsics.cpp:26:3
+#1 sctp_fill_hmac_digest_m /src/usrsctp/usrsctplib/netinet/sctp_auth.c:1549:2
+#2 sctp_lowlevel_chunk_output /src/usrsctp/usrsctplib/netinet/sctp_output.c:4174:3
+#3 sctp_med_chunk_output /src/usrsctp/usrsctplib/netinet/sctp_output.c:9360:17
+#4 sctp_chunk_output /src/usrsctp/usrsctplib/netinet/sctp_output.c:10726:11
+#5 sctp_common_input_processing /src/usrsctp/usrsctplib/netinet/sctp_input.c:6126:3
+#6 usrsctp_conninput /src/usrsctp/usrsctplib/user_socket.c:3518:2
+#7 LLVMFuzzerTestOneInput /src/usrsctp/fuzzer/fuzzer_connect.c:458:2

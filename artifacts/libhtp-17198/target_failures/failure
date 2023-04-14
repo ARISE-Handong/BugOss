@@ -1,0 +1,10 @@
+ERROR: AddressSanitizer: heap-buffer-overflow on address 0x6210000028a1 at pc 0x0000005d6694 bp 0x7ffcb02fd780 sp 0x7ffcb02fd778
+READ of size 1 at 0x6210000028a1 thread T0
+#0 LzmaDec_WriteRem /src/libhtp/htp/lzma/LzmaDec.c:611:21
+#1 LzmaDec_DecodeToDic /src/libhtp/htp/lzma/LzmaDec.c:918:3
+#2 LzmaDec_DecodeToBuf /src/libhtp/htp/lzma/LzmaDec.c:1064:11
+#3 htp_gzip_decompressor_decompress /src/libhtp/htp/htp_decompressors.c:292:22
+#4 htp_tx_res_process_body_data_ex /src/libhtp/htp/htp_transaction.c:831:13
+#5 htp_connp_RES_BODY_IDENTITY_STREAM_CLOSE /src/libhtp/htp/htp_response.c:505:27
+#6 htp_connp_res_data /src/libhtp/htp/htp_response.c:1240:27
+#7 LLVMFuzzerTestOneInput /src/libhtp/test/fuzz/fuzz_htp.c:210:18

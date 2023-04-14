@@ -1,0 +1,5 @@
+error message:
+/src/exiv2/src/pgfimage.cpp:91:32: runtime error: unsigned integer overflow: 9 - 24 cannot be represented in type 'unsigned long'
+stack trace:
+Exiv2::PgfImage::readMetadata() /src/exiv2/src/pgfimage.cpp:91:32
+LLVMFuzzerTestOneInput /src/exiv2/fuzz/fuzz-read-print-write.cpp:22:12

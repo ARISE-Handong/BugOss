@@ -1,0 +1,9 @@
+ERROR: AddressSanitizer: SEGV on unknown address 0x000000000000 (pc 0x0000005669b8 bp 0x7ffd234ac250 sp 0x7ffd234ac0a0 T0)
+==3578846==The signal is caused by a READ memory access.
+==3578846==Hint: address points to the zero page.
+#0 sas7bdat_parse_single_row /src/readstat/src/sas/readstat_sas7bdat_read.c:440:45
+#1 sas7bdat_parse_subheader_rle /src/readstat/src/sas/readstat_sas7bdat_read.c:498:14
+#2 sas7bdat_parse_page_pass2 /src/readstat/src/sas/readstat_sas7bdat_read.c:788:35
+#3 sas7bdat_parse_all_pages_pass2 /src/readstat/src/sas/readstat_sas7bdat_read.c:969:23
+#4 readstat_parse_sas7bdat /src/readstat/src/sas/readstat_sas7bdat_read.c:1081:19
+#5 LLVMFuzzerTestOneInput /src/readstat/src/fuzz/fuzz_format_sas7bdat.c:17:5

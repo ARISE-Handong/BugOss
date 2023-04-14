@@ -1,0 +1,6 @@
+ERROR: AddressSanitizer: SEGV on unknown address 0x000000000000
+#0 sas7bdat_parse_single_row /src/readstat/src/sas/readstat_sas7bdat_read.c:440:45
+#1 sas7bdat_parse_page_pass2 /src/readstat/src/sas/readstat_sas7bdat_read.c:774:39
+#2 sas7bdat_parse_all_pages_pass2 /src/readstat/src/sas/readstat_sas7bdat_read.c:969:23
+#3 readstat_parse_sas7bdat /src/readstat/src/sas/readstat_sas7bdat_read.c:1081:19
+#4 LLVMFuzzerTestOneInput /src/readstat/src/fuzz/fuzz_format_sas7bdat.c:17:5

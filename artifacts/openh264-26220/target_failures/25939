@@ -1,0 +1,13 @@
+ERROR: AddressSanitizer: attempting double-free on 0x7f08673a6800 in thread T0:
+#0 0x49eb12 in free /src/llvm-project/compiler-rt/lib/asan/asan_malloc_linux.cpp:111:3
+#1 0x4ec62b in WelsCommon::WelsFree(void*, char const*) /src/openh264/codec/common/src/memory_align.cpp:113:5
+#2 0x4ec62b in WelsCommon::CMemoryAlign::WelsFree(void*, char const*) /src/openh264/codec/common/src/memory_align.cpp:154:3
+#3 0x561357 in WelsDec::FreePicture(WelsDec::SPicture*, WelsCommon::CMemoryAlign*) /src/openh264/codec/decoder/core/src/pic_queue.cpp:141:12
+#4 0x4ef7b3 in DestroyPicBuff /src/openh264/codec/decoder/core/src/decoder.cpp:272:9
+#5 0x4f5a26 in WelsFreeDynamicMemory /src/openh264/codec/decoder/core/src/decoder.cpp:561:5
+#6 0x4f7393 in WelsDec::WelsCloseDecoder(WelsDec::TagWelsDecoderContext*) /src/openh264/codec/decoder/core/src/decoder.cpp:627:3
+#7 0x4f7393 in WelsEndDecoder /src/openh264/codec/decoder/core/src/decoder.cpp:707:3
+#8 0x4db3be in WelsDec::CWelsDecoder::UninitDecoderCtx(WelsDec::TagWelsDecoderContext*&) /src/openh264/codec/decoder/plus/src/welsDecoderExt.cpp:351:5
+#9 0x4db0ae in WelsDec::CWelsDecoder::UninitDecoder() /src/openh264/codec/decoder/plus/src/welsDecoderExt.cpp:290:7
+#10 0x4db0ae in WelsDec::CWelsDecoder::Uninitialize() /src/openh264/codec/decoder/plus/src/welsDecoderExt.cpp:279:3
+#11 0x4d89fc in LLVMFuzzerTestOneInput /src/decoder_fuzzer.cpp:80:13

@@ -1,0 +1,11 @@
+#0 __asan_memcpy /src/llvm-project/compiler-rt/lib/asan/asan_interceptors_memintrinsics.cpp:22:3
+#1 acommon::ObjStack::dup_top(acommon::ParmString) /src/aspell/./common/objstack.hpp:95:20
+#2 acommon::ObjStack::dup(acommon::ParmString) /src/aspell/./common/objstack.hpp:103:38
+#3 acommon::StringMap::add(acommon::ParmString const&) /src/aspell/./common/string_map.hpp:78:35
+#4 acommon::Config::lookup_list(acommon::KeyInfo const*, acommon::MutableContainer&, bool) const /src/aspell/common/config.cpp:418:9
+#5 acommon::Config::retrieve_list(acommon::ParmString const&, acommon::MutableContainer*) const /src/aspell/common/config.cpp:444:5
+#6 (anonymous namespace)::SgmlFilter::setup(acommon::Config*) /src/aspell/modules/filter/sgml.cpp:142:11
+#7 acommon::setup_filter(acommon::Filter&, acommon::Config*, bool, bool, bool) /src/aspell/lib/new_filter.cpp:191:9
+#8 acommon::new_document_checker(acommon::Speller*) /src/aspell/lib/new_checker.cpp:21:5
+#9 new_aspell_document_checker /src/aspell/lib/document_checker-c.cpp:42:37
+#10 LLVMFuzzerTestOneInput /src/aspell-fuzz/aspell_fuzzer.cpp:95:13

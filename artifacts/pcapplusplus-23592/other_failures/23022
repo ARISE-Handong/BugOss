@@ -1,0 +1,10 @@
+WARNING: MemorySanitizer: use-of-uninitialized-value
+#0 0x8c2eed in pcpp::SSLClientHelloMessage::getSessionIDLength() const /src/PcapPlusPlus/Packet++/src/SSLHandshake.cpp:1208:6
+#1 0x8c10b2 in pcpp::SSLClientHelloMessage::SSLClientHelloMessage(unsigned char*, unsigned long, pcpp::SSLHandshakeLayer*) /src/PcapPlusPlus/Packet++/src/SSLHandshake.cpp:1169:89
+#2 0x8bc342 in pcpp::SSLHandshakeMessage::createHandhakeMessage(unsigned char*, unsigned long, pcpp::SSLHandshakeLayer*) /src/PcapPlusPlus/Packet++/src/SSLHandshake.cpp:1108:14
+#3 0x861bab in pcpp::SSLHandshakeLayer::SSLHandshakeLayer(unsigned char*, unsigned long, pcpp::Layer*, pcpp::Packet*) /src/PcapPlusPlus/Packet++/src/SSLLayer.cpp:153:34
+#4 0x85c619 in pcpp::SSLLayer::createSSLMessage(unsigned char*, unsigned long, pcpp::Layer*, pcpp::Packet*) /src/PcapPlusPlus/Packet++/src/SSLLayer.cpp:52:15
+#5 0x70a6de in pcpp::TcpLayer::parseNextLayer() /src/PcapPlusPlus/Packet++/src/TcpLayer.cpp:349:17
+#6 0x5ec4df in pcpp::Packet::setRawPacket(pcpp::RawPacket*, bool, unsigned long, pcpp::OsiModelLayer) /src/PcapPlusPlus/Packet++/src/Packet.cpp:63:13
+#7 0x5f2827 in pcpp::Packet::Packet(pcpp::RawPacket*, bool, unsigned long, pcpp::OsiModelLayer) /src/PcapPlusPlus/Packet++/src/Packet.cpp:109:2
+#8 0x547234 in LLVMFuzzerTestOneInput /src/PcapPlusPlus/Tests/Fuzzers/FuzzTarget.cpp:52:15

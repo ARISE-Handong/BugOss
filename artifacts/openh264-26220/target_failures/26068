@@ -1,0 +1,17 @@
+ERROR: AddressSanitizer: heap-buffer-overflow on address 0x7f3d7b1e9c23 at pc 0x0000006b9043 bp 0x7ffe24b46e30 sp 0x7ffe24b46e28
+READ of size 1 at 0x7f3d7b1e9c23 thread T0
+#0 0x6b9042 in DeblockChromaLt42_c(unsigned char*, int, int, int, int, signed char*) /src/openh264/codec/common/src/deblocking_common.cpp:192:12
+#1 0x6b9042 in DeblockChromaLt4H2_c(unsigned char*, int, int, int, signed char*) /src/openh264/codec/common/src/deblocking_common.cpp:239:3
+#2 0x5f909d in WelsDec::FilteringEdgeChromaHV(WelsDec::TagDqLayer*, WelsDec::tagDeblockingFilter*, int) /src/openh264/codec/decoder/core/src/deblocking.cpp:1085:9
+#3 0x5faa32 in WelsDec::DeblockingIntraMb(WelsDec::TagDqLayer*, WelsDec::tagDeblockingFilter*, int) /src/openh264/codec/decoder/core/src/deblocking.cpp:1131:3
+#4 0x5faa32 in WelsDec::WelsDeblockingMb(WelsDec::TagDqLayer*, WelsDec::tagDeblockingFilter*, int) /src/openh264/codec/decoder/core/src/deblocking.cpp:1151:5
+#5 0x61908b in WelsDec::WelsDeblockingFilterSlice(WelsDec::TagWelsDecoderContext*, void (*)(WelsDec::TagDqLayer*, WelsDec::tagDeblockingFilter*, int)) /src/openh264/codec/decoder/core/src/deblocking.cpp:1257:7
+#6 0x61d959 in WelsDec::WelsTargetSliceConstruction(WelsDec::TagWelsDecoderContext*) /src/openh264/codec/decoder/core/src/decode_slice.cpp:170:5
+#7 0x5205c1 in WelsDec::WelsDecodeConstructSlice(WelsDec::TagWelsDecoderContext*, WelsDec::TagNalUnit*) /src/openh264/codec/decoder/core/src/decoder_core.cpp:311:19
+#8 0x5205c1 in WelsDec::DecodeCurrentAccessUnit(WelsDec::TagWelsDecoderContext*, unsigned char**, TagBufferInfo*) /src/openh264/codec/decoder/core/src/decoder_core.cpp:2773:23
+#9 0x51a5c4 in WelsDec::ConstructAccessUnit(WelsDec::TagWelsDecoderContext*, unsigned char**, TagBufferInfo*) /src/openh264/codec/decoder/core/src/decoder_core.cpp:2353:10
+#10 0x4f7855 in WelsDecodeBs /src/openh264/codec/decoder/core/src/decoder.cpp:917:7
+#11 0x4e35ca in WelsDec::CWelsDecoder::DecodeFrame2WithCtx(WelsDec::TagWelsDecoderContext*, unsigned char const*, int, unsigned char**, TagBufferInfo*) /src/openh264/codec/decoder/plus/src/welsDecoderExt.cpp:794:3
+#12 0x4e7537 in WelsDec::CWelsDecoder::DecodeFrame2(unsigned char const*, int, unsigned char**, TagBufferInfo*) /src/openh264/codec/decoder/plus/src/welsDecoderExt.cpp:908:10
+#13 0x4df399 in WelsDec::CWelsDecoder::DecodeFrameNoDelay(unsigned char const*, int, unsigned char**, TagBufferInfo*) /src/openh264/codec/decoder/plus/src/welsDecoderExt.cpp:712:11
+#14 0x4d88f9 in LLVMFuzzerTestOneInput /src/decoder_fuzzer.cpp:75:15

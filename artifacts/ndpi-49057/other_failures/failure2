@@ -1,0 +1,6 @@
+protocols/amqp.c:54:16: runtime error: unsigned integer overflow: 4294967294 + 8 cannot be represented in type 'unsigned int'
+#0 ndpi_search_amqp /src/ndpi/src/lib/protocols/amqp.c:54:16
+#1 check_ndpi_detection_func /src/ndpi/src/lib/ndpi_main.c:5228:6
+#2 ndpi_check_flow_func /src/ndpi/src/lib/ndpi_main.c
+#3 ndpi_detection_process_packet /src/ndpi/src/lib/ndpi_main.c:6158:15
+#4 LLVMFuzzerTestOneInput /src/ndpi/fuzz/fuzz_process_packet.c:29:5

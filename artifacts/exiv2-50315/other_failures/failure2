@@ -1,0 +1,8 @@
+error message:
+/src/exiv2/src/pngchunk_int.cpp:523:34: runtime error: unsigned integer overflow
+stack trace:
+Exiv2::Internal::PngChunk::readRawProfile(Exiv2::DataBufconst&,bool)/src/exiv2/src/pngchunk_int.cpp:523:34
+Exiv2::Internal::PngChunk::parseChunkContent(Exiv2::Image*,unsignedcharconst*,unsignedlong,Exiv2::DataBufconst&)/src/exiv2/src/pngchunk_int.cpp:192:24
+Exiv2::Internal::PngChunk::decodeTXTChunk(Exiv2::Image*,Exiv2::DataBufconst&,Exiv2::Internal::PngChunk::TxtChunkType)/src/exiv2/src/pngchunk_int.cpp:60:5
+Exiv2::PngImage::readMetadata()/src/exiv2/src/pngimage.cpp:439:9
+LLVMFuzzerTestOneInput/src/exiv2/fuzz/fuzz-read-print-write.cpp:22:12

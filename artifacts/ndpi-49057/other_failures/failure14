@@ -1,0 +1,16 @@
+third_party/src/gcrypt/digest.c:154:5: runtime error: unsigned integer overflow: 2543263823 + 4124623140 cannot be represented in type 'unsigned int'
+#0 sha256_transform /src/ndpi/src/lib/third_party/src/gcrypt/digest.c:154:5
+#1 sha256_write_byte_block /src/ndpi/src/lib/third_party/src/gcrypt/digest.c:196:3
+#2 sha256_update /src/ndpi/src/lib/third_party/src/gcrypt/digest.c:211:7
+#3 hmac_sha256 /src/ndpi/src/lib/third_party/src/gcrypt/digest.c:296:5
+#4 gcry_md_read /src/ndpi/src/lib/third_party/src/gcrypt_light.c:154:5
+#5 ws_hmac_buffer /src/ndpi/src/lib/protocols/quic.c:340:18
+#6 hkdf_extract /src/ndpi/src/lib/protocols/quic.c:393:10
+#7 quic_derive_initial_secrets /src/ndpi/src/lib/protocols/quic.c
+#8 decrypt_initial_packet /src/ndpi/src/lib/protocols/quic.c:942:6
+#9 get_clear_payload /src/ndpi/src/lib/protocols/quic.c:1300:21
+#10 ndpi_search_quic /src/ndpi/src/lib/protocols/quic.c:1668:19
+#11 check_ndpi_detection_func /src/ndpi/src/lib/ndpi_main.c:5211:4
+#12 ndpi_check_flow_func /src/ndpi/src/lib/ndpi_main.c
+#13 ndpi_detection_process_packet /src/ndpi/src/lib/ndpi_main.c:6158:15
+#14 LLVMFuzzerTestOneInput /src/ndpi/fuzz/fuzz_process_packet.c:29:5

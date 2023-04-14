@@ -1,0 +1,5 @@
+ERROR: AddressSanitizer: SEGV on unknown address 0x000000000000 (pc 0x0000005f921e bp 0x7fff65bb25e0 sp 0x7fff65bb2480 T0)
+==3271845==The signal is caused by a READ memory access.
+==3271845==Hint: address points to the zero page.
+#0 pixGetBinnedComponentRange /src/leptonica/src/pix4.c:2536:22
+#1 LLVMFuzzerTestOneInput /src/leptonica/prog/fuzzing/pix4_fuzzer.cc:81:5

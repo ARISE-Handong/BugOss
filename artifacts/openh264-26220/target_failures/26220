@@ -1,0 +1,13 @@
+AddressSanitizer: heap-buffer-overflow on address 0x7f0eb4283c1b at pc 0x00000049e43c bp 0x7ffc130e6f40 sp 0x7ffc130e6708
+WRITE of size 32000 at 0x7f0eb4283c1b thread T0
+#0 __asan_memset /src/llvm-project/compiler-rt/lib/asan/asan_interceptors_memintrinsics.cpp:26:3
+#1 WelsDec::WelsCheckAndRecoverForFutureDecoding(WelsDec::TagWelsDecoderContext*) /src/openh264/codec/decoder/core/src/manage_dec_ref.cpp:182:11
+#2 WelsDec::WelsInitBSliceRefList(WelsDec::TagWelsDecoderContext*, int) /src/openh264/codec/decoder/core/src/manage_dec_ref.cpp:232:17
+#3 WelsDec::InitRefPicList(WelsDec::TagWelsDecoderContext*, unsigned char, int) /src/openh264/codec/decoder/core/src/decoder_core.cpp:2428:12
+#4 WelsDec::DecodeCurrentAccessUnit(WelsDec::TagWelsDecoderContext*, unsigned char**, TagBufferInfo*) /src/openh264/codec/decoder/core/src/decoder_core.cpp:2729:18
+#5 WelsDec::ConstructAccessUnit(WelsDec::TagWelsDecoderContext*, unsigned char**, TagBufferInfo*) /src/openh264/codec/decoder/core/src/decoder_core.cpp:2353:10
+#6 WelsDecodeBs /src/openh264/codec/decoder/core/src/decoder.cpp:917:7
+#7 WelsDec::CWelsDecoder::DecodeFrame2WithCtx(WelsDec::TagWelsDecoderContext*, unsigned char const*, int, unsigned char**, TagBufferInfo*) /src/openh264/codec/decoder/plus/src/welsDecoderExt.cpp:794:3
+#8 WelsDec::CWelsDecoder::DecodeFrame2(unsigned char const*, int, unsigned char**, TagBufferInfo*) /src/openh264/codec/decoder/plus/src/welsDecoderExt.cpp:908:10
+#9 WelsDec::CWelsDecoder::DecodeFrameNoDelay(unsigned char const*, int, unsigned char**, TagBufferInfo*) /src/openh264/codec/decoder/plus/src/welsDecoderExt.cpp:712:11
+#10 LLVMFuzzerTestOneInput /src/decoder_fuzzer.cpp:75:15

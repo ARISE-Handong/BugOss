@@ -1,0 +1,6 @@
+ERROR: AddressSanitizer: heap-buffer-overflow
+#0 0x4e4b47 in sas_read8 /src/readstat/src/sas/readstat_sas.c:86:5
+#1 0x4db923 in sas7bdat_parse_page_pass2 /src/readstat/src/sas/readstat_sas7bdat_read.c:742:26
+#2 0x4db923 in sas7bdat_parse_all_pages_pass2 /src/readstat/src/sas/readstat_sas7bdat_read.c:967:23
+#3 0x4d8ce9 in readstat_parse_sas7bdat /src/readstat/src/sas/readstat_sas7bdat_read.c:1079:19
+#4 0x4d6d2f in LLVMFuzzerTestOneInput /src/readstat/src/fuzz/fuzz_format_sas7bdat.c:17:5

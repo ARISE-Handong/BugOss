@@ -1,0 +1,8 @@
+ERROR: UndefinedBehaviorSanitizer: SEGV on unknown address 0x000000000000 (pc 0x7f51bf4066e5 bp 0x7fffe2b17bf0 sp 0x7fffe2b17b68 T870785)
+The signal is caused by a READ memory access.
+Hint: address points to the zero page.
+#0 build/glibc-SzIz7B/glibc-2.31/string/../sysdeps/x86_64/multiarch/strlen-avx2.S:65
+#1 trim_separator /src/file/src/funcs.c:262:13
+#2 file_buffer /src/file/src/funcs.c:472:2
+#3 magic_buffer /src/file/src/magic.c:542:6
+#4 LLVMFuzzerTestOneInput /src/magic_fuzzer.cc:52:3

@@ -1,0 +1,7 @@
+protocols/bittorrent.c:146:25: runtime error: unsigned integer overflow: 1230547136 + 3233630464 cannot be represented in type 'unsigned int'
+#0 ndpi_add_connection_as_bittorrent /src/ndpi/src/lib/protocols/bittorrent.c:146:25
+#1 ndpi_search_bittorrent /src/ndpi/src/lib/protocols/bittorrent.c:602:6
+#2 check_ndpi_detection_func /src/ndpi/src/lib/ndpi_main.c:5228:6
+#3 ndpi_check_flow_func /src/ndpi/src/lib/ndpi_main.c
+#4 ndpi_detection_process_packet /src/ndpi/src/lib/ndpi_main.c:6158:15
+#5 LLVMFuzzerTestOneInput /src/ndpi/fuzz/fuzz_process_packet.c:29:5

@@ -1,0 +1,4 @@
+funcs.c:558:25: runtime error: unsigned integer overflow: 0 - 1 cannot be represented in type 'size_t' (aka 'unsigned long')
+#0 file_getbuffer /src/file/src/funcs.c:558:25
+#1 magic_buffer /src/file/src/magic.c:545:9
+#2 LLVMFuzzerTestOneInput /src/magic_fuzzer.cc:56:3

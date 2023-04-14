@@ -1,0 +1,8 @@
+ERROR: AddressSanitizer: heap-buffer-overflow on address 0x603000013140 at pc 0x000000cc3b22 bp 0x7ffc92614d10 sp 0x7ffc92614d08
+WRITE of size 4 at 0x603000013140 thread T0
+#0 RMFDataset::WriteHeader() /src/gdal/frmts/rmf/rmfdataset.cpp:990:9
+#1 RMFDataset::FlushCache(bool) /src/gdal/frmts/rmf/rmfdataset.cpp:1070:5
+#2 RMFDataset::~RMFDataset() /src/gdal/frmts/rmf/rmfdataset.cpp:766:17
+#3 RMFDataset::~RMFDataset() /src/gdal/frmts/rmf/rmfdataset.cpp:765:1
+#4 GDALClose /src/gdal/gcore/gdaldataset.cpp
+#5 LLVMFuzzerTestOneInput /src/gdal/./fuzzers/gdal_fuzzer.cpp:400:9

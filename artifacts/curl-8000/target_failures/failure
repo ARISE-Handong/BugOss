@@ -1,0 +1,9 @@
+ERROR: AddressSanitizer: heap-buffer-overflow on address 0x60c000000a78 at pc 0x000000621ea8 bp 0x7ffd99be3a80 sp 0x7ffd99be3a78
+WRITE of size 1 at 0x60c000000a78 thread T0
+#0 strcpy_url /src/curl/lib/transfer.c:1540:9
+#1 concat_url /src/curl/lib/transfer.c:1707:3
+#2 Curl_follow /src/curl/lib/transfer.c:1771:22
+#3 multi_runsingle /src/curl/lib/multi.c:1982:22
+#4 curl_multi_perform /src/curl/lib/multi.c:2160:14
+#5 fuzz_handle_transfer(fuzz_data*) /src/curl_fuzzer/curl_fuzzer.cc:382:5
+#6 LLVMFuzzerTestOneInput /src/curl_fuzzer/curl_fuzzer.cc:93:3

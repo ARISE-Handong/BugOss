@@ -1,0 +1,11 @@
+apprentice.c:3489:7: runtime error: unsigned integer overflow: 0 - 2 cannot be represented in type 'unsigned long'
+#0 file_pstring_get_length /src/file/src/apprentice.c:3489:7
+#1 mconvert /src/file/src/softmagic.c:1191:9
+#2 mget /src/file/src/softmagic.c:1919:7
+#3 match /src/file/src/softmagic.c:353:12
+#4 mget /src/file/src/softmagic.c:1891:8
+#5 match /src/file/src/softmagic.c:353:12
+#6 file_softmagic /src/file/src/softmagic.c:134:13
+#7 file_buffer /src/file/src/funcs.c:425:7
+#8 magic_buffer /src/file/src/magic.c:542:6
+#9 LLVMFuzzerTestOneInput /src/magic_fuzzer.cc:56:3

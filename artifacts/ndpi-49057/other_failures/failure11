@@ -1,0 +1,8 @@
+protocols/tls.c:206:92: runtime error: unsigned integer overflow: 4294967295 + 364 cannot be represented in type 'unsigned int'
+#0 ndpi_search_tls_tcp_memory /src/ndpi/src/lib/protocols/tls.c:206:92
+#1 ndpi_search_tls_tcp /src/ndpi/src/lib/protocols/tls.c:920:3
+#2 ndpi_search_tls_wrapper /src/ndpi/src/lib/protocols/tls.c:2466:5
+#3 check_ndpi_detection_func /src/ndpi/src/lib/ndpi_main.c:5228:6
+#4 ndpi_check_flow_func /src/ndpi/src/lib/ndpi_main.c
+#5 ndpi_detection_process_packet /src/ndpi/src/lib/ndpi_main.c:6158:15
+#6 LLVMFuzzerTestOneInput /src/ndpi/fuzz/fuzz_process_packet.c:29:5

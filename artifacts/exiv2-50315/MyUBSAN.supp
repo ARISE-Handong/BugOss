@@ -1,0 +1,11 @@
+unsigned-integer-overflow:/src/exiv2/src/basicio.cpp
+unsigned-integer-overflow:/src/exiv2/src/tiffvisitor_int.cpp
+unsigned-integer-overflow:/src/exiv2/src/pngchunk_int.cpp
+unsigned-integer-overflow:/src/exiv2/src/tiffcomposite_int.cpp
+unsigned-integer-overflow:/src/exiv2/src/canonmn_int.cpp
+unsigned-integer-overflow:/src/exiv2/src/jp2image.cpp
+unsigned-integer-overflow:/src/exiv2/src/pgfimage.cpp
+unsigned-integer-overflow:/src/exiv2/src/pentaxmn_int.cpp
+unsigned-integer-overflow:/src/exiv2/src/webpimage.cpp
+unsigned-integer-overflow:/src/exiv2/src/makernote_int.cpp
+unsigned-integer-overflow:/src/exiv2/xmpsdk/src/XMPMeta-Parse.cpp

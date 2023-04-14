@@ -1,0 +1,10 @@
+ERROR: AddressSanitizer: heap-use-after-free
+#0 sctp_notify_peer_addr_change /src/usrsctp/usrsctplib/netinet/sctputil.c:2993:14
+#1 sctp_ulp_notify /src/usrsctp/usrsctplib/netinet/sctputil.c
+#2 sctp_asconf_del_remote_addrs_except /src/usrsctp/usrsctplib/netinet/sctp_asconf.c:314:4
+#3 sctp_process_asconf_delete_ip /src/usrsctp/usrsctplib/netinet/sctp_asconf.c:423:12
+#4 sctp_handle_asconf /src/usrsctp/usrsctplib/netinet/sctp_asconf.c:765:15
+#5 sctp_process_control /src/usrsctp/usrsctplib/netinet/sctp_input.c:5492:5
+#6 sctp_common_input_processing /src/usrsctp/usrsctplib/netinet/sctp_input.c:5899:10
+#7 usrsctp_conninput /src/usrsctp/usrsctplib/user_socket.c:3518:2
+#8 LLVMFuzzerTestOneInput /src/usrsctp/fuzzer/fuzzer_connect.c:458:2

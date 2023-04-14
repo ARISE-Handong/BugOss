@@ -1,0 +1,12 @@
+ERROR: AddressSanitizer: heap-buffer-overflow on address 0x61800000339b at pc 0x00000049e43c bp 0x7ffdb37c8e30 sp 0x7ffdb37c85f8
+WRITE of size 16 at 0x61800000339b thread T0
+#0 0x49e43b in __asan_memset /src/llvm-project/compiler-rt/lib/asan/asan_interceptors_memintrinsics.cpp:26:3
+#1 0x6373d2 in WelsDec::WelsDecodeMbCabacPSlice(WelsDec::TagWelsDecoderContext*, WelsDec::TagNalUnit*, unsigned int&) /src/openh264/codec/decoder/core/src/decode_slice.cpp:1367:5
+#2 0x63ba15 in WelsDec::WelsDecodeSlice(WelsDec::TagWelsDecoderContext*, bool, WelsDec::TagNalUnit*) /src/openh264/codec/decoder/core/src/decode_slice.cpp:1595:12
+#3 0x5203b4 in WelsDec::DecodeCurrentAccessUnit(WelsDec::TagWelsDecoderContext*, unsigned char**, TagBufferInfo*) /src/openh264/codec/decoder/core/src/decoder_core.cpp:2755:18
+#4 0x51a5c4 in WelsDec::ConstructAccessUnit(WelsDec::TagWelsDecoderContext*, unsigned char**, TagBufferInfo*) /src/openh264/codec/decoder/core/src/decoder_core.cpp:2353:10
+#5 0x4f7855 in WelsDecodeBs /src/openh264/codec/decoder/core/src/decoder.cpp:917:7
+#6 0x4e35ca in WelsDec::CWelsDecoder::DecodeFrame2WithCtx(WelsDec::TagWelsDecoderContext*, unsigned char const*, int, unsigned char**, TagBufferInfo*) /src/openh264/codec/decoder/plus/src/welsDecoderExt.cpp:794:3
+#7 0x4e7537 in WelsDec::CWelsDecoder::DecodeFrame2(unsigned char const*, int, unsigned char**, TagBufferInfo*) /src/openh264/codec/decoder/plus/src/welsDecoderExt.cpp:908:10
+#8 0x4df399 in WelsDec::CWelsDecoder::DecodeFrameNoDelay(unsigned char const*, int, unsigned char**, TagBufferInfo*) /src/openh264/codec/decoder/plus/src/welsDecoderExt.cpp:712:11
+#9 0x4d88f9 in LLVMFuzzerTestOneInput /src/decoder_fuzzer.cpp:75:15

@@ -1,0 +1,5 @@
+#0 acommon::DecodeDirect<unsigned short>::decode(char const*, int, acommon::FilterCharVector&) const /src/aspell/common/convert.cpp:555:22
+#1 acommon::Convert::convert(char const*, int, acommon::String&, acommon::FilterCharVector&) const /src/aspell/./common/convert.hpp:160:18
+#2 acommon::Convert::convert(char const*, int, acommon::String&) /src/aspell/./common/convert.hpp:188:9
+#3 aspell_speller_suggest /src/aspell/lib/speller-c.cpp:146:22
+#4 LLVMFuzzerTestOneInput /src/aspell-fuzz/aspell_fuzzer.cpp:119:22

@@ -1,0 +1,7 @@
+error message:
+/src/exiv2/src/webpimage.cpp:755:22: runtime error: unsigned integer overflow: 0 - 1 cannot be represented in type 'unsigned int'
+stack trace:
+Exiv2::WebPImage::inject_VP8X(Exiv2::BasicIo&, bool, bool, bool, bool, unsigned int, unsigned int) /src/exiv2/src/webpimage.cpp:755:22
+Exiv2::WebPImage::doWriteMetadata(Exiv2::BasicIo&) /src/exiv2/src/webpimage.cpp:282:5
+Exiv2::WebPImage::writeMetadata() /src/exiv2/src/webpimage.cpp:100:3
+LLVMFuzzerTestOneInput /src/exiv2/fuzz/fuzz-read-print-write.cpp:43:12
