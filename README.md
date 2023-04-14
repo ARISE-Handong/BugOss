@@ -8,6 +8,7 @@ We belive that BugOSS offers a useful basis for empirically investigating regres
 
 ## Citing BugOSS
 
+BugOSS will be presented at the poster session in 2023 IEEE International Conference on Software Testing, Verification, and Validation (ICST). Please use the following bibtex entry when you cite BugOSS.
 
     @INPROCEEDINGS{BugOSS,
          author={Kim, Jeewoong and Hong, Shin},
