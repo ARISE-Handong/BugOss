@@ -1,8 +1,34 @@
-# BugOSS
-BugOSS: A Regression Bug Benchmark for Evaluating Fuzzing Techniques
-Currently, 18 artifacts from 18 C/C++ programs are registered for the BugOSS benchmark. These artifacts originated real-word regression bugs detected by Google [OSS-Fuzz](https://github.com/google/oss-fuzz) from open-source projects. 
+# BugOSS: A Regression Bug Benchmark for Evaluating Fuzzing Techniques
 
-BugOSS encompass various cases of real-world regression bugs.  
+BugOSS is a benchmark of real-world regression bugs found in [OSS-Fuzz](https://github.com/google/oss-fuzz) for experimenting with regression fuzzing techniques. 
+To reproduce the real project
+context where the bugs were introduced, each study artifact of BugOSS indicates the exact bug-inducing commit, and provides the information about the target bug, together with the existing bugs in the same commit. Currently, 18 artifacts from 18 C/C++ programs are registered. 
+These 18 bug artifacts encompass various cases of regression bugs in real-world. 
+We belive that BugOSS offers a useful basis for empirically investigating regression fuzzing techniques.
+
+## Citing BugOSS
+
+
+    @INPROCEEDINGS{BugOSS,
+         author={Kim, Jeewoong and Hong, Shin},
+         booktitle={IEEE International Conference on Software Testing, Verification, and Validation (ICST)}, 
+         title={{Poster}: {BugOSS}: A Regression Bug Benchmark for Evaluating Fuzzing Techniques}, 
+         year={2023}
+    }
+
+
+## Bug artifact
+Each artifact provides a realistic regression bug context to reproduce the reported failure: 
+- fuzz target: the latest version before the oss-fuzz issue report time which successfully reproduce a failure
+- bug-revealing input: an input for a fuzz target, that induces a failure (attached in an OSS-Fuzz issue)
+- bug-inducing commit: the program change that newly adds the target bug to the target program
+- fix-inducing commit: the program change that repairs the target bug
+- failure symptom: failure type, crash message, or patterns of stack trace for the expected failure
+- other failures by pre-existing bugs
+- an initial seed corpus at a bug-inducing commit (`seed_corpus.tar`)
+- experiment results with 2 baseline fuzzers (libFuzzer, AFL++) using the initial seed corpus
+
+
 | artifact           | failure type     | changed lines in BIC | changed lines in FIC | 
 | ------------------ | ---------------- | --------------------:| --------------------:|
 | aspell-18462       | buffer-overrun   |               5      |               18     |
@@ -23,18 +49,6 @@ BugOSS encompass various cases of real-world regression bugs.
 | usrsctp-18080      | use-after-free   |               6      |                8     |
 | yara-38952         | buffer-overrun   |             277      |               17     |
 | zstd-21970         | null-dereference |             280      |              247     |
-
-
-## Study artifacts of BugOSS
-Each artifact provides a realistic regression bug context to reproduce the reported failure: 
-- fuzz target: the latest version before the oss-fuzz issue report time which successfully reproduce a failure
-- bug-revealing input: an input for a fuzz target, that induces a failure (attached in an OSS-Fuzz issue)
-- bug-inducing commit: the program change that newly adds the target bug to the target program
-- fix-inducing commit: the program change that repairs the target bug
-- failure symptom: failure type, crash message, or patterns of stack trace for the expected failure
-- other failures by pre-existing bugs
-- an initial seed corpus at a bug-inducing commit (`seed_corpus.tar`)
-- experiment results with 2 baseline fuzzers (libFuzzer, AFL++) using the initial seed corpus
 
 
 ## How to build an artifact
