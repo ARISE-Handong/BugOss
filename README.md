@@ -6,6 +6,8 @@ context where the bugs were introduced, each study artifact of BugOSS indicates 
 These 18 bug artifacts encompass various cases of regression bugs in real-world. 
 We belive that BugOSS offers a useful basis for empirically investigating regression fuzzing techniques.
 
+Jeewoong Kim <jeewoong@handong.ac.kr> and Shin Hong <hongshin@handong.edu>
+
 ## Citing BugOSS
 
 BugOSS will be presented at the poster session in 2023 IEEE International Conference on Software Testing, Verification, and Validation (ICST). Please use the following bibtex entry when you cite BugOSS.
