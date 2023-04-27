@@ -44,7 +44,7 @@ RUN git clone --single-branch https://gitlab.freedesktop.org/poppler/poppler.git
 
 RUN git clone https://github.com/mozilla/pdf.js pdf.js && cd pdf.js && \
     git checkout d80651e5724686535ac4fbdfac5d5e280a16dbdb && \
-    zip -q $SRC/poppler_seed_corpus.zip pdf.js/test/pdfs/*.pdf && \
+    zip -q $SRC/poppler_seed_corpus.zip $SRC/pdf.js/test/pdfs/*.pdf && \
     rm -rf pdf.js
 
 ADD https://raw.githubusercontent.com/google/fuzzing/master/dictionaries/pdf.dict $SRC/poppler.dict

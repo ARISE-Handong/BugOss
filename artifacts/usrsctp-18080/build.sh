@@ -16,7 +16,7 @@
 ################################################################################
 
 mv $SRC/fuzzer_connect.c $SRC/usrsctp/fuzzer/
-mv CMakeLists.txt $SRC/usrsctp/
+mv $SRC/CMakeLists.txt $SRC/usrsctp/
 
 CXXFLAGS=$(echo $CXXFLAGS | sed 's/\-O1/\-O0/g')
 CFLAGS=$(echo $CFLAGS | sed 's/\-O1/\-O0/g')
