@@ -1,75 +1,54 @@
-/*
- * Redistribution and use in source and binary forms, with or without
- * modification, are permitted provided that the following conditions
- * are met:
- * 1. Redistributions of source code must retain the above copyright
- *    notice immediately at the beginning of the file, without modification,
- *    this list of conditions, and the following disclaimer.
- * 2. Redistributions in binary form must reproduce the above copyright
- *    notice, this list of conditions and the following disclaimer in the
- *    documentation and/or other materials provided with the distribution.
- *  
- * THIS SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS ``AS IS'' AND
- * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
- * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
- * ARE DISCLAIMED. IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE FOR
- * ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
- * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
- * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
- * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
- * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
- * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
- * SUCH DAMAGE.
- */
-/*
- * LLVM fuzzing integration.
- */
+// Copyright 2016 Google Inc.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//      http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
 
-#include "file.h"
-
-#ifndef	lint
-FILE_RCSID("@(#)$File: magic_fuzzer.c,v 1.1 2017/04/24 19:41:34 christos Exp $")
-#endif	/* lint */
-
-#include "magic.h"
 #include <libgen.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
 #include <stdlib.h>
-#include <err.h>
+#include <string>
 
-int LLVMFuzzerInitialize(int *, char ***);
-int LLVMFuzzerTestOneInput(const uint8_t *, size_t);
+#include <magic.h>
 
-static magic_t magic;
+struct Environment {
+  Environment(std::string data_dir) {
+    magic = magic_open(MAGIC_NONE);
+    std::string magic_path = data_dir + "/magic";
+    if (magic_load(magic, magic_path.c_str())) {
+      fprintf(stderr, "error loading magic file: %s\n", magic_error(magic));
+      exit(1);
+    }
+  }
 
-int
-LLVMFuzzerInitialize(int *argc, char ***argv)
-{
-	char dfile[MAXPATHLEN], mfile[MAXPATHLEN];
+  magic_t magic;
+};
 
-	magic = magic_open(MAGIC_NONE);
-	if (magic == NULL) {
-		warn("magic_open");
-		return -1;
-	}
+static Environment* env;
 
-	// Poor man's strlcpy(3), to avoid potentially destructive dirname(3)
-	snprintf(dfile, sizeof(dfile), "%s", (*argv)[0]);
-	snprintf(mfile, sizeof(mfile), "%s/magic", dirname(dfile));
-
-	if (magic_load(magic, mfile) == -1) {
-		warnx("magic_load: %s", magic_error(magic));
-		return -1;
-	}
-
-	return 0;
+extern "C" int LLVMFuzzerInitialize(int* argc, char*** argv) {
+  char* exe_path = (*argv)[0];
+  // dirname() can modify its argument.
+  char* exe_path_copy = strdup(exe_path);
+  char* dir = dirname(exe_path_copy);
+  env = new Environment(dir);
+  free(exe_path_copy);
+  return 0;
 }
 
-int
-LLVMFuzzerTestOneInput(const uint8_t* data, size_t size)
-{
-	if (size == 0)
-		return 0;
-
-	magic_buffer(magic, data, size);
-	return 0;
+extern "C" int LLVMFuzzerTestOneInput(const uint8_t* data, size_t size) {
+  if (size < 1)
+    return 0;
+  magic_buffer(env->magic, data, size);
+  return 0;
 }
