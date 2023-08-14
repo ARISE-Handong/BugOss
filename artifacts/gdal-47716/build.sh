@@ -21,10 +21,10 @@ mv $SRC/gdal_fuzzer.cpp $SRC/gdal/fuzzers/
 # https://github.com/google/oss-fuzz/blob/master/projects/gdal/Dockerfile
 
 rm -rf proj
-git clone --depth 1 https://github.com/OSGeo/PROJ proj
+git clone https://github.com/OSGeo/PROJ proj && pushd proj && git checkout ced8793aa170dd4792f331633e62726808a2e75d && popd
 
 rm -rf curl
-git clone --depth 1 https://github.com/curl/curl.git curl
+git clone https://github.com/curl/curl.git curl && pushd curl && git checkout 10cd69623a544c83bae6d90acdf141981ae53174 && popd
 
 rm -rf netcdf-c-4.7.4
 # fix_stack_read_overflow_ncindexlookup.patch: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=39189
@@ -36,15 +36,15 @@ curl -L https://github.com/Unidata/netcdf-c/archive/refs/tags/v4.7.4.tar.gz > v4
     cd ..
 
 rm -rf poppler
-git clone --depth 1 https://anongit.freedesktop.org/git/poppler/poppler.git poppler
+git clone https://anongit.freedesktop.org/git/poppler/poppler.git poppler && pushd poppler && git checkout f33cdde7e0e6a6352d724033cc9801c964487bc6 && popd
 
 # Build xerces-c from source to avoid upstream bugs
 rm -rf xerces-c
-git clone --depth 1 https://gitbox.apache.org/repos/asf/xerces-c.git
+git clone https://gitbox.apache.org/repos/asf/xerces-c.git && pushd xerces-c && git checkout 549592880ec8d97f1ab8140cb72b1414ed285768 && popd
 
 # Build sqlite from source to avoid upstream bugs
 rm -rf sqlite
-git clone --depth 1 https://github.com/sqlite/sqlite sqlite
+git clone https://github.com/sqlite/sqlite sqlite && pushd sqlite && git checkout 5af8a86d6280559fcecc4b5e65be4f8cadcb1888 && popd
 
 if [ "$ARCHITECTURE" = "i386" ]; then
     ARCH_SUFFIX=":i386"

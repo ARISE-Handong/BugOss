@@ -17,9 +17,9 @@
 
 # prepare corpus
 #svn export https://github.com/mozillasecurity/fuzzdata.git/trunk/samples/h264 corpus/
-git clone https://github.com/mozillasecurity/fuzzdata.git fuzzdata && cd fuzzdata && \ 
-git checkout 82c53bdf2a3da3b55974b7f56a636840d578f1c9 && mv samples/h264 ../corpus/ && cd ..
-mv ./res/*.264 ./corpus/
+git clone https://github.com/mozillasecurity/fuzzdata.git $SRC/fuzzdata && \
+cd $SRC/fuzzdata && git checkout 82c53bdf2a3da3b55974b7f56a636840d578f1c9 &&  mv samples/h264 $SRC/openh264/corpus/ 
+cd $SRC/openh264 && mv ./res/*.264 ./corpus/
 zip -j0r ${OUT}/decoder_fuzzer_seed_corpus.zip ./corpus/
 
 # build 
