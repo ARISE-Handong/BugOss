@@ -7,10 +7,10 @@
     - `$CFLAGS -fsanitize=address -fsanitize-address-use-after-scope`
     - `$CXXFLAGS -fsanitize=address -fsanitize-address-use-after-scope`
 - reported failure symptom 
-    - type: heap-buffer-overflow  
+    - type: direct-leak 
     - stack trace:  
 		```
-        grk::PacketIter::get_include   
+	        grk::PacketIter::get_include   
 		grk::pi_next   
 		grk::T2Decompress::decompress_packets
 		```
