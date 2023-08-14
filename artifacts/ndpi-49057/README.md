@@ -18,7 +18,8 @@
 ### Bug-inducing commit information
 - bug-inducing commit: [2edfaeba4ada90ca8771a44132d2b9cc85e45570](https://github.com/ntop/nDPI/commit/2edfaeba4ada90ca8771a44132d2b9cc85e45570) (11 Jul 2022)
     - search the first commit that failure occurred by reproducing on the commit history with the fuzz target and the bug-revealing input
-	- changed functions: `get_int(const unsigned char *, int, u_int16_t *)`, `ndpi_search_snmp(struct ndpi_detection_module_struct *, struct ndpi_flow_struct *)`
+    - changed functions: `get_int(const unsigned char *, int, u_int16_t *)`, `ndpi_search_snmp(struct ndpi_detection_module_struct *, struct ndpi_flow_struct *)`
+    - bug locations: [src/lib/protocols/snmp_proto.c:74](https://github.com/ntop/nDPI/commit/2edfaeba4ada90ca8771a44132d2b9cc85e45570#diff-29e696c328b272b53e175a7161d9c9d4fa4a314953a711a919511a1ef5e94020R74), [110](https://github.com/ntop/nDPI/commit/2edfaeba4ada90ca8771a44132d2b9cc85e45570#diff-29e696c328b272b53e175a7161d9c9d4fa4a314953a711a919511a1ef5e94020R110), [113](https://github.com/ntop/nDPI/commit/2edfaeba4ada90ca8771a44132d2b9cc85e45570#diff-29e696c328b272b53e175a7161d9c9d4fa4a314953a711a919511a1ef5e94020R113) 
 - [seed_corpus.tar](https://drive.google.com/file/d/1IPe1pzOZhsPjvNRa75NmvvpzNfu4yyZS/view?usp=share_link): initial seed corpus at bug-inducing commit (351 initial seeds in `seed_corpus/`)
     - \# seed corpus at failure-observed commit: 352
     - \# seed corpus at fix-inducing commit: 352
@@ -29,6 +30,7 @@
     - search the commit that the expected failure by the bug-revealing input does not induce after oss-fuzz issue report time
     - developers explicitly mentioned the bug fixes [here](https://github.com/ntop/nDPI/commit/407155755da29734e9b8a8e7a6960c568b1d3188)
     - changed functions: `ndpi_asn1_ber_decode_length(const unsigned char *, int, u_int16_t *)`, `krb_decode_asn1_length(ndpi_detection_module_struct *, size_t *)`, `ndpi_search_ldap(struct ndpi_detection_module_struct *, struct ndpi_flow_struct *)`, `ndpi_search_snmp(struct ndpi_detection_module_struct *, struct ndpi_flow_struct *)`
+    - fix locations: [src/include/ndpi_main.h:168](https://github.com/ntop/nDPI/commit/407155755da29734e9b8a8e7a6960c568b1d3188#diff-e5b3e31d83d99eb9e80761cc56829d1778f6a96e97550332c56765b971189ce7R168), [src/lib/protocols/snmp_proto.c:72](https://github.com/ntop/nDPI/commit/407155755da29734e9b8a8e7a6960c568b1d3188#diff-29e696c328b272b53e175a7161d9c9d4fa4a314953a711a919511a1ef5e94020R72) 
 - the number of commits between BIC and BFC: 5
 
 ### Failure samples

@@ -18,7 +18,8 @@
 ### Bug-inducing commit information
 - bug-inducing commit: [9e2d1f33c9049e925019a3c0c1e6261968a19758](https://github.com/OSGeo/gdal/commit/9e2d1f33c9049e925019a3c0c1e6261968a19758) (28 May 2022)
     - search the first commit that failure occurred by reproducing on the commit history with the fuzz target and the bug-revealing input
-	- changed functions: `RMFDataset::FlushCache(bool)`
+    - changed functions: `RMFDataset::FlushCache(bool)`
+    - bug locations: [frmts/rmf/rmfdataset.cpp:1055](https://github.com/OSGeo/gdal/commit/9e2d1f33c9049e925019a3c0c1e6261968a19758#diff-25464b5772bae2aa5a78a46f48ce9c49578c6760d77d80f1cc684444a9f39103R1055) 
 - [seed_corpus.tar](https://drive.google.com/file/d/1ZpzLUy8mcbzgiAzOCrSEvzAghFA3cx_2/view?usp=share_link): initial seed corpus at bug-inducing commit (1615 initial seeds in `seed_corpus/`)
 	- \# seed corpus at failure-observed commit: 1615
 	- \# seed corpus at fix-inducing commit: 1615
@@ -27,8 +28,9 @@
 ### Bug-fixing commit information
 - bug-fixing commit: [28d9b1ae40fac1faaf78b1f7ea5de7e55ffae360](https://github.com/OSGeo/gdal/commit/28d9b1ae40fac1faaf78b1f7ea5de7e55ffae360) (30 May 2022)
     - search the commit that the expected failure by the bug-revealing input does not induce after oss-fuzz issue report time
-	- developers explicitly mentioned the bug fixes [here](https://github.com/OSGeo/gdal/commit/28d9b1ae40fac1faaf78b1f7ea5de7e55ffae360)
-	- changed functions: `RMFDataset::WriteHeader()`, `RMFDataset::FlushCache(bool)`
+    - developers explicitly mentioned the bug fixes [here](https://github.com/OSGeo/gdal/commit/28d9b1ae40fac1faaf78b1f7ea5de7e55ffae360) 
+    - changed functions: `RMFDataset::WriteHeader()`, `RMFDataset::FlushCache(bool)` 
+    - fix locations: [frmts/rmf/rmfdataset.cpp:1055](https://github.com/OSGeo/gdal/commit/28d9b1ae40fac1faaf78b1f7ea5de7e55ffae360#diff-25464b5772bae2aa5a78a46f48ce9c49578c6760d77d80f1cc684444a9f39103R1055)  
 - the number of commits between BIC and BFC: 8
 
 ### Failure samples

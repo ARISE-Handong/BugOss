@@ -18,7 +18,8 @@
 ### Bug-inducing commit information
 - bug-inducing commit: [dd7521bcc1b7a6fcb53c31f9bd1192fcc884bd56](https://github.com/curl/curl/commit/dd7521bcc1b7a6fcb53c31f9bd1192fcc884bd56) (24 Apr 2018)
     - search the first commit that failure occurred by reproducing on the commit history with the fuzz target and the bug-revealing input
-	- changed functions: `Curl_httpchunk_read(connectdata *, char *, ssize_t, ssize_t *)`, `strcpy_url(char *, const char *, bool)`
+    - changed functions: `Curl_httpchunk_read(connectdata *, char *, ssize_t, ssize_t *)`, `strcpy_url(char *, const char *, bool)`
+    - bug locations: [lib/transfer.c:1522](https://github.com/curl/curl/commit/dd7521bcc1b7a6fcb53c31f9bd1192fcc884bd56#diff-76e92705200fa8317ac3f635fd17d0ffe976a42e304edfd6c5ce024857a14ca0R1522) 
 - [seed_corpus.tar](https://drive.google.com/file/d/1onSquIuVxm2GLWHjGRi2EDZehqTRNolI/view?usp=share_link): initial seed corpus at bug-inducing commit (4202 initial seeds in `seed_corpus/`)
 	- \# seed corpus at failure-observed commit: 4202
 	- \# seed corpus at fix-inducing commit: 4202
@@ -30,6 +31,7 @@
     - search the commit that the expected failure by the bug-revealing input does not induce after oss-fuzz issue report time
     - developers explicitly mentioned the bug fixes [here](https://github.com/curl/curl/commit/3c630f9b0af097663a64e5c875c580aa9808a92b)
     - changed functions: `strcpy_url(char *, const char *, bool)`
+    - fix locations: [lib/transfer.c:1522](https://github.com/curl/curl/commit/dd7521bcc1b7a6fcb53c31f9bd1192fcc884bd56#diff-76e92705200fa8317ac3f635fd17d0ffe976a42e304edfd6c5ce024857a14ca0R1522) 
 - the number of commits between BIC and BFC: 1
 
 ### Failure samples

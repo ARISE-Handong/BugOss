@@ -18,7 +18,8 @@
 ### Bug-inducing commit information
 - bug-inducing commit: [effb3931c7c67f34b167fe6e0a93253bf075f78c](https://github.com/cisco/openh264/commit/effb3931c7c67f34b167fe6e0a93253bf075f78c) (7 Sep 2020)
     - search the first commit that failure occurred by reproducing on the commit history with the fuzz target and the bug-revealing input
-	- changed functions: `CWelsDecoder::DecodeFrame2WithCtx(PWelsDecoderContext, const unsigned char *, const int, unsigned char **, SBufferInfo *)`
+    - changed functions: `CWelsDecoder::DecodeFrame2WithCtx(PWelsDecoderContext, const unsigned char *, const int, unsigned char **, SBufferInfo *)`
+    - bug locations: [codec/decoder/plus/src/welsDecoderExt.cpp:814-817](https://github.com/cisco/openh264/commit/effb3931c7c67f34b167fe6e0a93253bf075f78c#diff-089ebaf0325c2c30af67611943308f0621afbceb64450c668961b6bd1561b43fL814-L817) 
 - [seed_corpus.tar](https://drive.google.com/file/d/13SyFZwL3cAs7qHD0FQ_W81Li3b1wNg_o/view?usp=share_link): initial seed corpus at bug-inducing commit (174 initial seeds in `seed_corpus/`)  
 	- seed corpus consists of the following files:
 		- `fuzzdata/samples/h264/*` files in [fuzzdata](https://github.com/mozillasecurity/fuzzdata) at [82c53bdf2a3da3b55974b7f56a636840d578f1c9](https://github.com/MozillaSecurity/fuzzdata/commit/82c53bdf2a3da3b55974b7f56a636840d578f1c9)  
@@ -32,6 +33,7 @@
     - search the commit that the expected failure by the bug-revealing input does not induce after oss-fuzz issue report time
     - developers explicitly mentioned the bug fixes [here](https://github.com/cisco/openh264/commit/4c76c67e9b790fd40650c4e8a2a059603e8ce195)
     - changed functions: `CWelsDecoder::DecodeFrame2WithCtx(PWelsDecoderContext, const unsigned char *, const int, unsigned char **, SBufferInfo *)`
+    - fix locations: [codec/decoder/plus/src/welsDecoderExt.cpp:814-817](https://github.com/cisco/openh264/commit/4c76c67e9b790fd40650c4e8a2a059603e8ce195#diff-089ebaf0325c2c30af67611943308f0621afbceb64450c668961b6bd1561b43fR814-R817) 
 - the number of commits between BIC and BFC: 19 
 
 ### Failure samples

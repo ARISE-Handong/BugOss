@@ -18,7 +18,8 @@
 ### Bug-inducing commit information
 - bug-inducing commit: [1de4f389a8ffb07775cb1d99e33cbfa7e96bccf2](https://github.com/WizardMac/ReadStat/commit/1de4f389a8ffb07775cb1d99e33cbfa7e96bccf2) (20 Jan 2019)
     - search the first commit that failure occurred by reproducing on the commit history with the fuzz target and the bug-revealing input
-	- changed functions: `sas7bdat_submit_columns(sas7bdat_ctx_t *, int)`
+    - changed functions: `sas7bdat_submit_columns(sas7bdat_ctx_t *, int)`
+    - bug locations: [src/sas/readstat_sas7bdat_read.c:602-603](https://github.com/WizardMac/ReadStat/commit/1de4f389a8ffb07775cb1d99e33cbfa7e96bccf2#diff-e76aa66cad6b541963367ca4d9882bbe943f0c59803011df35c2ec80c0842fbeR602-R603) 
 - seed_corpus.tar(link): initial seed corpus at bug-inducing commit (94 initial seeds in `seed_corpus/`)
 	- \# seed corpus at failure-observed commit: 94
 	- \# seed corpus at fix-inducing commit: 94
@@ -27,8 +28,9 @@
 ### Bug-fixing commit information
 - bug-fixing commit: [f57262da9966803ee97a5cecfe24512d38c3625e](https://github.com/WizardMac/ReadStat/commit/f57262da9966803ee97a5cecfe24512d38c3625e) (14 Apr 2019)
     - search the commit that the expected failure by the bug-revealing input does not induce after oss-fuzz issue report time
-	- developers explicitly mentioned the bug fixes [here](https://github.com/WizardMac/ReadStat/commit/f57262da9966803ee97a5cecfe24512d38c3625e)
-	- changed functions: `sas7bdat_parse_page_pass1(const char *, size_t, sas7bdat_ctx_t *)`, `sas7bdat_parse_page_pass2(const char *, size_t, sas7bdat_ctx_t *)`
+    - developers explicitly mentioned the bug fixes [here](https://github.com/WizardMac/ReadStat/commit/f57262da9966803ee97a5cecfe24512d38c3625e)
+    - changed functions: `sas7bdat_parse_page_pass1(const char *, size_t, sas7bdat_ctx_t *)`, `sas7bdat_parse_page_pass2(const char *, size_t, sas7bdat_ctx_t *)`
+    - fix locations: [src/sas/readstat_sas7bdat_read.c:788-792](https://github.com/WizardMac/ReadStat/commit/f57262da9966803ee97a5cecfe24512d38c3625e#diff-e76aa66cad6b541963367ca4d9882bbe943f0c59803011df35c2ec80c0842fbeR788-R792)  
 - the number of commits between BIC and BFC: 44
 
 ### Failure samples

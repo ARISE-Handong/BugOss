@@ -18,7 +18,8 @@
 ### Bug-inducing commit information
 - bug-inducing commit: [e0646f9b063b23754951f1254f1ecb7af8ca36f3](https://github.com/GNUAspell/aspell/commit/e0646f9b063b23754951f1254f1ecb7af8ca36f3) (6 Aug 2019)
     - search the first commit that failure occurred by reproducing on the commit history with the fuzz target and the bug-revealing input
-        - changed functions: `Config::merge(const Config)`
+    - changed functions: `Config::merge(const Config)`
+    - bug locations: [common/objstack.hpp:881](https://github.com/GNUAspell/aspell/commit/e0646f9b063b23754951f1254f1ecb7af8ca36f3#diff-074c5653ba8dca085dadb468770e8d4ad22795b35a722c8f064958cefb5c6936R881)  
 - [seed_corpus.tar](https://drive.google.com/file/d/1KKD4fYqTXeykiW01_A3B8nDY5rhBHURU/view?usp=share_link): initial seed corpus at bug-inducing commit (2 initial seeds in `seed_corpus/`)
     - seed corpus at the latest [commit](https://github.com/GNUAspell/aspell-fuzz/commit/576059dab2137514bdd236c8189039b557263bd4) before BIC (4 Aug 2019)
         - \# seed corpus at failure-observed commit: 60 
@@ -30,6 +31,7 @@
     - search the commit that the expected failure by the bug-revealing input does not induce after oss-fuzz issue report time
     - developers explicitly mentioned the bug fixes [here](https://github.com/GNUAspell/aspell/commit/0718b375425aad8e54e1150313b862e4c6fd324a)
     - changed functions: `alloc_bottom(size_t)`, `alloc_top(size_t, size_t)`, `alloc_temp(size_t)`, `resize_temp(size_t)`, `grow_temp(size_t)`
+    - fix locations: [common/objstack.hpp:34](https://github.com/gnuaspell/aspell/commit/0718b375425aad8e54e1150313b862e4c6fd324a#diff-0ab7b2824adb246b13a1b8a014f163b4edff4824fa85063f7a8067e48b4ae9f9R34) 
 - the number of commits between BIC and BFC: 87
 
 ### Failure samples

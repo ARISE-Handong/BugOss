@@ -16,7 +16,8 @@
 ### Bug-inducing commit information
 - bug-inducing commit: [8fc49016cf44ecbbab28979442e2781bd064584e](https://github.com/DanBloomberg/leptonica/commit/8fc49016cf44ecbbab28979442e2781bd064584e) (25 Aug 2020)
     - search the first commit that failure occurred by reproducing on the commit history with the fuzz target and the bug-revealing input
-	- changed functions: `pixGetBinnedColor(PIX *, PIX *, l_int32, l_int32, NUMA *, l_uint32 **, PIXA *)`
+    - changed functions: `pixGetBinnedColor(PIX *, PIX *, l_int32, l_int32, NUMA *, l_uint32 **, PIXA *)`
+    - bug locations: [src/pix4.c:2803-2805](https://github.com/DanBloomberg/leptonica/commit/8fc49016cf44ecbbab28979442e2781bd064584e#diff-4af4b9f67a672e1ea1a119e5d96ec4be38ec64d9b6ac338497c5a18d8fbaa076R2803-R2805) 
 - [seed_corpus.tar](https://drive.google.com/file/d/1l4r5b3JWadhv4rRJld9zz-z8wZJnYkrj/view?usp=share_link): initial seed corpus at bug-inducing commit (10 initial seeds in `seed_corpus/`)
 	- \# seed corpus at failure-observed commit: 10 
 	- \# seed corpus at fix-inducing commit: 10
@@ -27,6 +28,7 @@
     - search the commit that the expected failure by the bug-revealing input does not induce after oss-fuzz issue report time
     - developers explicitly mentioned the bug fixes [here](https://github.com/DanBloomberg/leptonica/commit/f301010cd4495a11d96504642737a85c386e6618)
     - changed functions: `pixGetBinnedComponentRange(PIX *, l_int32, l_int32, l_int32, l_int32 *, l_int32 *, l_uint32 **, l_int32)`, `pixGetRankColorArray(PIX *, l_int32, l_int32, l_int32, l_uint32 **, PIXA *, l_int32)`, `pixGetBinnedColor(PIX *, PIX *, l_int32, l_int32, NUMA *, l_uint32 **, PIXA *)`
+    - fix locations: [src/pix4.c:2813-2814](https://github.com/DanBloomberg/leptonica/commit/f301010cd4495a11d96504642737a85c386e6618#diff-4af4b9f67a672e1ea1a119e5d96ec4be38ec64d9b6ac338497c5a18d8fbaa076R2813-R2814) 
 - the number of commits between BIC and BFC: 5 
 
 ### Failure samples

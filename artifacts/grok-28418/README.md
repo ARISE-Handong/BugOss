@@ -18,7 +18,8 @@
 ### Bug-inducing commit information
 - bug-inducing commit: [93e6af95ec46bbba5e112a1fbdbdb6a1294d61d8](https://github.com/GrokImageCompression/grok/commit/93e6af95ec46bbba5e112a1fbdbdb6a1294d61d8) (7 Dec 2020)
     - search the first commit that failure occurred by reproducing on the commit history with the fuzz target and the bug-revealing input
-	- changed functions: `pi_next_lrcp(PacketIter *)`, `pi_next_rlcp(PacketIter *)`, `pi_next_rpcl(PacketIter *)`, `pi_next_pcrl(PacketIter *)`, `pi_next_pcrl(PacketIter *)`, `pi_next_cprl(PacketIter *)`, `pi_create_decompress(grk_image *, CodingParams *, uint16_t)`, `pi_create_compress(const grk_image *, CodingParams *, uint16_t, J2K_T2_MODE)`, `pi_destroy(PacketIter *)`, `T2Decompress::decompress_packets(uint16_t, ChunkBuffer *, uint64_t *)`
+    - changed functions: `pi_next_lrcp(PacketIter *)`, `pi_next_rlcp(PacketIter *)`, `pi_next_rpcl(PacketIter *)`, `pi_next_pcrl(PacketIter *)`, `pi_next_pcrl(PacketIter *)`, `pi_next_cprl(PacketIter *)`, `pi_create_decompress(grk_image *, CodingParams *, uint16_t)`, `pi_create_compress(const grk_image *, CodingParams *, uint16_t, J2K_T2_MODE)`, `pi_destroy(PacketIter *)`, `T2Decompress::decompress_packets(uint16_t, ChunkBuffer *, uint64_t *)`
+    - bug locations: [src/lib/jp2/codestream/PacketIter.cpp:924-927](https://github.com/GrokImageCompression/grok/commit/93e6af95ec46bbba5e112a1fbdbdb6a1294d61d8#diff-d3dc197db944ac5e717f0d776f5aaff7157ab7b1b22540ecdfadf0facc245d26L924-L928), [1052-1055](https://github.com/GrokImageCompression/grok/commit/93e6af95ec46bbba5e112a1fbdbdb6a1294d61d8#diff-d3dc197db944ac5e717f0d776f5aaff7157ab7b1b22540ecdfadf0facc245d26L1052-L1056) 
 - [seed_corpus.tar](https://drive.google.com/file/d/12hsa8mJkrYwSQovBUVWzS1U7KoHZYFE2/view?usp=share_link): initial seed corpus at bug-inducing commit (178 initial seeds in `seed_corpus/`)
     - seed corpus at the latest [commit](https://github.com/GrokImageCompression/grok-test-data/commit/5118df38d89d26949c82d9143c74d80656781089) before BIC  (1 Dec 2020)
 		- `input/conformance/*.jp2`, `input/conformance/*.j2k`, `input/nonregression/*.jp2`, `input/nonregression/*.j2k`
@@ -31,6 +32,7 @@
     - search the commit that the expected failure by the bug-revealing input does not induce after oss-fuzz issue report time
     - developers explicitly mentioned the bug fixes [here](https://github.com/GrokImageCompression/grok/commit/1cb27625e7237a1a03a1c9ad67bc1f006473aa35)
     - changed functions: `pi_create(const grk_image *, const CodingParams *, uint16_t, std::vector<uint8_t*> *)`, `pi_create_decompress(grk_image *, CodingParams *, uint16_t, std::vector<uint8_t*> *)`, `pi_create_compress(const grk_image *, CodingParams *, uint16_t, J2K_T2_MODE, std::vector<uint8_t*> *)`, `get_include(uint16_t)`, `update_include(void)`, `destroy_include(void)`, `T2Compress:compress_packets(uint16_t, uint16_t, BufferedStream *, uint32_t *, bool, uint32_t,	uint32_t)`, `T2Compress::compress_packets_simulate(uint16_t, uint16_t, uint32_t *, uint32_t, uint32_t, PacketLengthMarkers *)`, `T2Decompress:decompress_packets((uint16_t, ChunkBuffer *, uint64_t *)`
+    - fix locations: [src/lib/jp2/t2/T2Decompress.cpp:40-41](https://github.com/GrokImageCompression/grok/commit/93e6af95ec46bbba5e112a1fbdbdb6a1294d61d8#diff-d3dc197db944ac5e717f0d776f5aaff7157ab7b1b22540ecdfadf0facc245d26L1052-L1056) 
 - the number of commits between BIC and BFC: 3 
 
 ### Failure samples

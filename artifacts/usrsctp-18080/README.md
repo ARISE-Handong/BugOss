@@ -18,7 +18,8 @@
 ### Bug-inducing commit information
 - bug-inducing commit: [05bea46702687f26a81c41c3fb1fd1dd3d9c0aa1](https://github.com/sctplab/usrsctp/commit/05bea46702687f26a81c41c3fb1fd1dd3d9c0aa1) (4 Oct 2019)
     - search the first commit that failure occurred by reproducing on the commit history with the fuzz target and the bug-revealing input
-	- changed functions: `sctp_handle_asconf(struct mbuf *, unsigned int, struct sockaddr *, struct sctp_asconf_chunk *, struct sctp_tcb *, int)`
+    - changed functions: `sctp_handle_asconf(struct mbuf *, unsigned int, struct sockaddr *, struct sctp_asconf_chunk *, struct sctp_tcb *, int)`
+    - bug locations: [usrsctplib/netinet/sctp_asconf.c:720](https://github.com/sctplab/usrsctp/commit/05bea46702687f26a81c41c3fb1fd1dd3d9c0aa1#diff-0ec0b47c46d30f537fb88f47a502ef53ddebfbf04955128d6f72137bb067e63dR720) 
 - [seed_corpus.tar](https://drive.google.com/file/d/1SxgijItVfmXrFmsCbNkoq87xIy9uOh6w/view?usp=share_link): initial seed corpus at bug-inducing commit (156 initial seeds in `seed_corpus/`)
 	- \# seed corpus at failure-observed commit: 167
 	- \# seed corpus at fix-inducing commit: 167
@@ -27,8 +28,9 @@
 ### Bug-fixing commit information
 - bug-fixing commit: [b7e98787c4698521b7adc771ee919a74e83f28ed](https://github.com/weinrank/usrsctp/commit/b7e98787c4698521b7adc771ee919a74e83f28ed) (13 Oct 2019)
     - search the commit that the expected failure by the bug-revealing input does not induce after oss-fuzz issue report time
-	- developers explicitly mentioned the bug fixes [here](https://github.com/weinrank/usrsctp/commit/b7e98787c4698521b7adc771ee919a74e83f28ed)
-	- changed functions: `sctp_med_chunk_output(struct sctp_inpcb *, struct sctp_tcb *, struct sctp_association *, int *, int *, int, int, struct timeval *, int *, int, int)`
+    - developers explicitly mentioned the bug fixes [here](https://github.com/weinrank/usrsctp/commit/b7e98787c4698521b7adc771ee919a74e83f28ed)
+    - changed functions: `sctp_med_chunk_output(struct sctp_inpcb *, struct sctp_tcb *, struct sctp_association *, int *, int *, int, int, struct timeval *, int *, int, int)`
+    - fix locations: [usrsctplib/netinet/sctp_output.c:8380-8381](https://github.com/weinrank/usrsctp/commit/b7e98787c4698521b7adc771ee919a74e83f28ed#diff-ea8890ceccfa6038b6f942b495c91b8c2294475c1af7edbe455e2ed49032e5cdR8380-R8381), [8579-8580](https://github.com/weinrank/usrsctp/commit/b7e98787c4698521b7adc771ee919a74e83f28ed#diff-ea8890ceccfa6038b6f942b495c91b8c2294475c1af7edbe455e2ed49032e5cdR8579-R8580) 
 - the number of commits between BIC and BFC: 9
 
 ### Failure samples

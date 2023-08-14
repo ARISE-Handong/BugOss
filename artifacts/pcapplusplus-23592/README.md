@@ -18,7 +18,8 @@
 ### Bug-inducing commit information
 - bug-inducing commit: [50aab202d24331ef35b9eff68d96ef9f97baf6a1](https://github.com/seladb/PcapPlusPlus/commit/50aab202d24331ef35b9eff68d96ef9f97baf6a1) (31 May 2020)
     - search the first commit that failure occurred by reproducing on the commit history with the fuzz target and the bug-revealing input
-	- changed functions: `SSLClientHelloMessage::SSLClientHelloMessage(uint8_t *, size_t, SSLHandshakeLayer *)`, `SSLServerHelloMessage::SSLServerHelloMessage(uint8_t *, size_t, SSLHandshakeLayer *)`, `SSLServerHelloMessage::getSessionIDLength(void)`, `SSLCertificateRequestMessage::SSLCertificateRequestMessage(uint8_t *, size_t, SSLHandshakeLayer *)`, `SSLLayer::IsSSLMessage(uint16_t, uint16_t, uint8_t *, size_t, bool)`, `SSLLayer::parseNextLayer(void)`
+    - changed functions: `SSLClientHelloMessage::SSLClientHelloMessage(uint8_t *, size_t, SSLHandshakeLayer *)`, `SSLServerHelloMessage::SSLServerHelloMessage(uint8_t *, size_t, SSLHandshakeLayer *)`, `SSLServerHelloMessage::getSessionIDLength(void)`, `SSLCertificateRequestMessage::SSLCertificateRequestMessage(uint8_t *, size_t, SSLHandshakeLayer *)`, `SSLLayer::IsSSLMessage(uint16_t, uint16_t, uint8_t *, size_t, bool)`, `SSLLayer::parseNextLayer(void)`
+    - bug locations: [Packet++/src/SSLHandshake.cpp:1608-1609](https://github.com/seladb/PcapPlusPlus/commit/50aab202d24331ef35b9eff68d96ef9f97baf6a1#diff-1d3e491c3afd45f303781820cb09f1ac73284aa377e0ef11fc7571ea35da47e8R1608-R1609) 
 - [seed_corpus.tar](https://drive.google.com/file/d/1t0ZJIsrZTGCOqNFLkAEZCj58mvgS_f4U/view?usp=share_link): initial seed corpus at bug-inducing commit (615 initial seeds in `seed_corpus/`)
 	- \# seed corpus at failure-observed commit: 619
 	- \# seed corpus at fix-inducing commit: 622
@@ -27,8 +28,9 @@
 ### Bug-fixing commit information
 - bug-fixing commit: [31406a092868f87d714910e349ab0b4dc683722b](https://github.com/seladb/PcapPlusPlus/commit/31406a092868f87d714910e349ab0b4dc683722b) (13 Sep 2020)
     - search the commit that the expected failure by the bug-revealing input does not induce after oss-fuzz issue report time
-	- developers explicitly mentioned the bug fixes [here](https://github.com/seladb/PcapPlusPlus/commit/31406a092868f87d714910e349ab0b4dc683722b)
-	- changed functions: `SSLClientHelloMessage::getSessionIDLength(void)`, `SSLCertificateRequestMessage::SSLCertificateRequestMessage(uint8_t *, size_t, SSLHandshakeLayer *)`
+    - developers explicitly mentioned the bug fixes [here](https://github.com/seladb/PcapPlusPlus/commit/31406a092868f87d714910e349ab0b4dc683722b)
+    - changed functions: `SSLClientHelloMessage::getSessionIDLength(void)`, `SSLCertificateRequestMessage::SSLCertificateRequestMessage(uint8_t *, size_t, SSLHandshakeLayer *)`
+    - fix locations: [Packet++/src/SSLHandshake.cpp:1617-1618](https://github.com/seladb/PcapPlusPlus/commit/50aab202d24331ef35b9eff68d96ef9f97baf6a1#diff-1d3e491c3afd45f303781820cb09f1ac73284aa377e0ef11fc7571ea35da47e8R1608-R1609) 
 - the number of commits between BIC and BFC: 130
 
 ### Failure samples

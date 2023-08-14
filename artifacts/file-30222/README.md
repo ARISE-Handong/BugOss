@@ -19,7 +19,8 @@
 - bug-inducing commit: [6de3683de955277c4be4be350ec683b3203d3f31](https://github.com/file/file/commit/6de3683de955277c4be4be350ec683b3203d3f31) (2 Feb 2021)
     - search the oldest commit that failure occurred by reproducing on the commit history with the fuzz target and the bug-revealing input
     - changed functions: `file_seperator(magic_set *)`, `file_buffer(magic_set *, int, stat *, const char *, const void *, size_t)`
-- [seed_corpus.tar](https://drive.google.com/file/d/1L9mPefcGuZsHUbZF54EXx6gwIvBi-zNc/view?usp=share_link): initial seed corpus at bug-inducing commit (34 initial seeds in `seed_corpus/`)
+    - bug locations: [src/funcs.c:262](https://github.com/file/file/commit/6de3683de955277c4be4be350ec683b3203d3f31#diff-bf9637e92c916cc2e734fad6c3c26124df3b45b891adba2fa4f95c8393de914aR262) 
+- [seed_corpus.tar](https://drive.google.com/file/d/1L9mPefcGuZsHUbZF54EXx6gwIvBi-zNc/view?usp=share_link): initial seed corpus at bug-inducing commit (34 initial seeds in `seed_corpus/`) 
     - \# seed corpus at failure-observed commit: 34
     - \# seed corpus at fix-inducing commit: 34
 - the number of commits between failure-observed commit and BIC: 0 (the same commit)
@@ -29,6 +30,7 @@
     - search the first commit that the expected failure by the bug-revealing input does not induce after oss-fuzz issue report time
     - developers explicitly mentioned the bug fixes [here](https://github.com/file/file/commit/9c74f7b258cfe17b8c7f6eaaf6bbbf4ed14017d0)
     - changed functions: `trim_separator(magic_set *)`
+    - fix locations: [src/funcs.c:264-265](https://github.com/file/file/commit/6de3683de955277c4be4be350ec683b3203d3f31#diff-bf9637e92c916cc2e734fad6c3c26124df3b45b891adba2fa4f95c8393de914aR262) 
 - the number of commits between BIC and BFC: 0
     - BFC is a commit right after BIC
 

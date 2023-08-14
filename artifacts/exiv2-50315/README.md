@@ -18,7 +18,8 @@
 ### Bug-inducing commit information
 - bug-inducing commit: [10a62b23500954abf7eb2cc3e577bebb21bb0b72](https://github.com/Exiv2/exiv2/commit/10a62b23500954abf7eb2cc3e577bebb21bb0b72) (16 Aug 2022)
     - search the first commit that failure occurred by reproducing on the commit history with the fuzz target and the bug-revealing input
-	- changed functions: `gcd(IntType, IntType)`, `print0x9204(std::ostream, const Value, const ExifData *)`, `floatToRationalCast(float)`
+    - changed functions: `gcd(IntType, IntType)`, `print0x9204(std::ostream, const Value, const ExifData *)`, `floatToRationalCast(float)`
+    - bug locations: [src/types.cpp:633](https://github.com/curl/curl/commit/dd7521bcc1b7a6fcb53c31f9bd1192fcc884bd56#diff-76e92705200fa8317ac3f635fd17d0ffe976a42e304edfd6c5ce024857a14ca0R1522) 
 - [seed_corpus.tar](https://drive.google.com/file/d/171Y1RVFmlhelQwRDNwI8Spdi0axqZ4Aa/view?usp=share_link): initial seed corpus at bug-inducing commit (454 initial seeds in `seed_corpus/`)
 	- \# seed corpus at failure-observed commit: 454
 	- \# seed corpus at fix-inducing commit: 460
@@ -29,6 +30,7 @@
     - search the commit that the expected failure by the bug-revealing input does not induce after oss-fuzz issue report time
     - developers explicitly mentioned the bug fixes [here](https://github.com/Exiv2/exiv2/commit/7a92e1bd0f8a1435eed7743e3aeadcb73f63182d)
     - changed functions: `floatToRationalCast(float)`
+    - fix locations: [src/types.cpp:619](https://github.com/Exiv2/exiv2/commit/7a92e1bd0f8a1435eed7743e3aeadcb73f63182d#diff-4c575f75027941ed21671483f71480f4413ff82d6561996a00899e9d510e0a5cR619) 
 - the number of commits between BIC and BFC: 18
 
 ### Failure samples

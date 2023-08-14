@@ -18,7 +18,8 @@
 ### Bug-inducing commit information
 - bug-inducing commit: [2b2808719d2c91283ae358381391bb0b37d9061d](https://gitlab.freedesktop.org/poppler/poppler/-/commit/2b2808719d2c91283ae358381391bb0b37d9061d) (2 Jul 2021)
     - search the first commit that failure occurred by reproducing on the commit history with the fuzz target and the bug-revealing input
-	- changed functions: `isOk(void)`, `JBIG2Stream::readSegments(void)`
+    - changed functions: `isOk(void)`, `JBIG2Stream::readSegments(void)`
+    - bug locations: [poppler/JBIC2Stream.cc:970](https://gitlab.freedesktop.org/poppler/poppler/-/commit/2b2808719d2c91283ae358381391bb0b37d9061d#f620460273a22459b3b2454ed648695f6c0cfe49_971_970) 
 - [seed_corpus.tar](https://drive.google.com/file/d/1N-oMQ-a3UyxZ-BReLxsw5foGnpiZ5woM/view?usp=share_link): initial seed corpus at bug-inducing commit (476 initial seeds in `seed_corpus/`)
 	- \# seed corpus at failure-observed commit: 476
 	- \# seed corpus at fix-inducing commit: 476
@@ -27,8 +28,9 @@
 ### Bug-fixing commit information
 - bug-fixing commit: [f2a6c6fe06ba2279f8509c56a11d649f02d1500c ](https://gitlab.freedesktop.org/poppler/poppler/-/commit/f2a6c6fe06ba2279f8509c56a11d649f02d1500c) (5 Jul 2021)
     - search the commit that the expected failure by the bug-revealing input does not induce after oss-fuzz issue report time
-	- developers explicitly mentioned the bug fixes [here](https://gitlab.freedesktop.org/poppler/poppler/-/commit/f2a6c6fe06ba2279f8509c56a11d649f02d1500c)
-	- changed functions: `isOk(void)`, `JBIG2SymbolDict::JBIG2SymbolDict(unsigned int, unsigned int)`
+    - developers explicitly mentioned the bug fixes [here](https://gitlab.freedesktop.org/poppler/poppler/-/commit/f2a6c6fe06ba2279f8509c56a11d649f02d1500c)
+    - changed functions: `isOk(void)`, `JBIG2SymbolDict::JBIG2SymbolDict(unsigned int, unsigned int)`
+    - fix locations: [poppler/JBIG2Stream.cc:970](https://gitlab.freedesktop.org/poppler/poppler/-/commit/f2a6c6fe06ba2279f8509c56a11d649f02d1500c#f620460273a22459b3b2454ed648695f6c0cfe49_971_970), [977](https://gitlab.freedesktop.org/poppler/poppler/-/commit/f2a6c6fe06ba2279f8509c56a11d649f02d1500c#f620460273a22459b3b2454ed648695f6c0cfe49_977_977), [988-995](https://gitlab.freedesktop.org/poppler/poppler/-/commit/f2a6c6fe06ba2279f8509c56a11d649f02d1500c#f620460273a22459b3b2454ed648695f6c0cfe49_992_988) 
 - the number of commits between BIC and BFC: 4
 
 ### Failure samples

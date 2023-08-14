@@ -18,7 +18,8 @@
 ### Bug-inducing commit information
 - bug-inducing commit: [3c6555078ec30e0baa4855ec69d55a22fc8d3589](https://github.com/OISF/libhtp/commit/3c6555078ec30e0baa4855ec69d55a22fc8d3589) (13 Sep 2019)
     - search the first commit that failure occurred by reproducing on the commit history with the fuzz target and the bug-revealing input
-	- changed functions: `LzmaDec_DecodeToBuf(CLzmaDec *, Byte *, SizeT *, const Byte *, SizeT *, ELzmaFinishMode, ELzmaStatus *)`, `LzmaDec_Allocate(CLzmaDec *, const Byte *, unsigned, ISzAllocPtr)`
+    - changed functions: `LzmaDec_DecodeToBuf(CLzmaDec *, Byte *, SizeT *, const Byte *, SizeT *, ELzmaFinishMode, ELzmaStatus *)`, `LzmaDec_Allocate(CLzmaDec *, const Byte *, unsigned, ISzAllocPtr)`
+    - bug locations: [htp/lzma/LzmaDec.c:1034-1051](https://github.com/OISF/libhtp/commit/3c6555078ec30e0baa4855ec69d55a22fc8d3589#diff-f7316cfca3a599b2f152594caabbef1f2f80c8d4ede71b11e6222ace3f20e629R1034-R1051) 
 - [seed_corpus.tar](https://drive.google.com/file/d/1Mc36cDr5PvIUfSf9oN6SqwlqZYTPicbM/view?usp=share_link): initial seed corpus at bug-inducing commit (97 initial seeds in `seed_corpus/`)
 	- \# seed corpus at failure-observed commit: 97
 	- \# seed corpus at fix-inducing commit: 97
@@ -27,8 +28,9 @@
 ### Bug-fixing commit information
 - bug-fixing commit: [fe16fa764f7cea57be5a288ee85b27dffc460f6f](https://github.com/OISF/libhtp/commit/fe16fa764f7cea57be5a288ee85b27dffc460f6f) (17 Sep 2019)
     - search the commit that the expected failure by the bug-revealing input does not induce after oss-fuzz issue report time
-	- reference \[[AFLChurn, CCS'21](https://dl.acm.org/doi/abs/10.1145/3460120.3484596)\]
-	- changed functions: `LzmaDec_DecodeReal2(CLzmaDec *, SizeT, const Byte *, SizeT)`, `LzmaDec_DecodeToDic(CLzmaDec *, SizeT, const Byte *, SizeT *, ELzmaFinishMode, ELzmaStatus *, SizeT)`, `LzmaDec_DecodeToBuf`, `LzmaDec_Allocate(CLzmaDec *, const Byte *, unsigned, ISzAllocPtr)`, `LzmaDecode(Byte *, SizeT *, const Byte *, SizeT *, const Byte *, unsigned, ELzmaFinishMode, ELzmaStatus *, ISzAllocPtr)`
+    - reference \[[AFLChurn, CCS'21](https://dl.acm.org/doi/abs/10.1145/3460120.3484596)\]
+    - changed functions: `LzmaDec_DecodeReal2(CLzmaDec *, SizeT, const Byte *, SizeT)`, `LzmaDec_DecodeToDic(CLzmaDec *, SizeT, const Byte *, SizeT *, ELzmaFinishMode, ELzmaStatus *, SizeT)`, `LzmaDec_DecodeToBuf`, `LzmaDec_Allocate(CLzmaDec *, const Byte *, unsigned, ISzAllocPtr)`, `LzmaDecode(Byte *, SizeT *, const Byte *, SizeT *, const Byte *, unsigned, ELzmaFinishMode, ELzmaStatus *, ISzAllocPtr)`
+    - fix locations: [htp/lzma/LzmaDec.c:980](https://github.com/OISF/libhtp/commit/fe16fa764f7cea57be5a288ee85b27dffc460f6f#diff-f7316cfca3a599b2f152594caabbef1f2f80c8d4ede71b11e6222ace3f20e629R980), [1009](https://github.com/OISF/libhtp/commit/fe16fa764f7cea57be5a288ee85b27dffc460f6f#diff-f7316cfca3a599b2f152594caabbef1f2f80c8d4ede71b11e6222ace3f20e629R1009), [1078](https://github.com/OISF/libhtp/commit/fe16fa764f7cea57be5a288ee85b27dffc460f6f#diff-f7316cfca3a599b2f152594caabbef1f2f80c8d4ede71b11e6222ace3f20e629R1078), [1215](https://github.com/OISF/libhtp/commit/fe16fa764f7cea57be5a288ee85b27dffc460f6f#diff-f7316cfca3a599b2f152594caabbef1f2f80c8d4ede71b11e6222ace3f20e629R1215) 
 - the number of commits between BIC and BFC: 3 
 
 ### Failure samples

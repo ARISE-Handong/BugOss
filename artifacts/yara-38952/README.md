@@ -18,7 +18,8 @@
 ### Bug-inducing commit information
 - bug-inducing commit: [5cc28d24a251370218448100de4e9817e0d9233e](https://github.com/VirusTotal/yara/commit/5cc28d24a251370218448100de4e9817e0d9233e) (17 Sep 2021)
     - search the first commit that failure occurred by reproducing on the commit history with the fuzz target and the bug-revealing input
-	- changed functions: `pe_parse_header(PE *, uint64_t, int)`
+    - changed functions: `pe_parse_header(PE *, uint64_t, int)`
+    - bug locations: [libyara/modules/pe/pe.c:1937-1938](https://github.com/VirusTotal/yara/commit/5cc28d24a251370218448100de4e9817e0d9233e#diff-a20bb88d25ed536935383bd979fdcd18dd1fb83b766eeccbddf3d1f4ed15514bR1937-R1938) 
 - [seed_corpus.tar](https://drive.google.com/file/d/1-HGfAARLzsgXEC7EHWtoX_voMdBydecb/view?usp=share_link): initial seed corpus at bug-inducing commit (9 initial seeds in `seed_corpus/`)
 	- \# seed corpus at failure-observed commit: 9
 	- \# seed corpus at fix-inducing commit: 9
@@ -27,9 +28,11 @@
 ### Bug-fixing commit information
 - bug-fixing commit: [ae503e9671b274802cb07dc032b5e5cea28773bd](https://github.com/VirusTotal/yara/commit/ae503e9671b274802cb07dc032b5e5cea28773bd) (20 Sep 2021)
     - search the commit that the expected failure by the bug-revealing input does not induce after oss-fuzz issue report time
-	- reference [AFLChurn, CCS'21](https://dl.acm.org/doi/abs/10.1145/3460120.3484596)
+    - reference [AFLChurn, CCS'21](https://dl.acm.org/doi/abs/10.1145/3460120.3484596)
 - the number of commits between BIC and BFC: 0
 	- BFC is a commit right after BIC
+    - changed functions: undefined 
+    - fix locations: [libyara/modules/pe/pe.c:1944](https://github.com/VirusTotal/yara/commit/5cc28d24a251370218448100de4e9817e0d9233e#diff-a20bb88d25ed536935383bd979fdcd18dd1fb83b766eeccbddf3d1f4ed15514bR1944) 
 
 ### Failure samples
 - failure by a target bug: 1 failure in `target_failures/`

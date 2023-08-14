@@ -18,7 +18,8 @@
 ### Bug-inducing commit information
 - bug-inducing commit: [4baee2d72e0c82bfd6de085df23a1bdc6af887ba](https://github.com/openssl/openssl/commit/4baee2d72e0c82bfd6de085df23a1bdc6af887ba) (24 Sep 2019)
     - search the first commit that failure occurred by reproducing on the commit history with the fuzz target and the bug-revealing input
-	- changed functions: `i2v_GENERAL_NAME(X509V3_EXT_METHOD *, GENERAL_NAME *, STACK_OF(CONF_VALUE) *)`, `GENERAL_NAME_print(BIO *, GENERAL_NAME *)`
+    - changed functions: `i2v_GENERAL_NAME(X509V3_EXT_METHOD *, GENERAL_NAME *, STACK_OF(CONF_VALUE) *)`, `GENERAL_NAME_print(BIO *, GENERAL_NAME *)`
+    - bug locations: [crypto/x509/v3_alt.c:76](https://github.com/openssl/openssl/commit/4baee2d72e0c82bfd6de085df23a1bdc6af887ba#diff-51bd8df033a4f347adf2b0e9b316d9abd423e1a94518f9e8449ac22d9f860c6dR76), [80](https://github.com/openssl/openssl/commit/4baee2d72e0c82bfd6de085df23a1bdc6af887ba#diff-51bd8df033a4f347adf2b0e9b316d9abd423e1a94518f9e8449ac22d9f860c6dR80), [84](https://github.com/openssl/openssl/commit/4baee2d72e0c82bfd6de085df23a1bdc6af887ba#diff-51bd8df033a4f347adf2b0e9b316d9abd423e1a94518f9e8449ac22d9f860c6dR84), [88](https://github.com/openssl/openssl/commit/4baee2d72e0c82bfd6de085df23a1bdc6af887ba#diff-51bd8df033a4f347adf2b0e9b316d9abd423e1a94518f9e8449ac22d9f860c6dR88)  
 - [seed_corpus.tar](https://drive.google.com/file/d/1Wi_-tVzGeIUPEE35EkSA2HYL0xoFsr_P/view?usp=share_link): initial seed corpus at bug-inducing commit (2240 initial seeds in `seed_corpus/`)
 	- \# seed corpus at failure-observed commit: 2240
 	- \# seed corpus at fix-inducing commit: 2241
@@ -27,8 +28,9 @@
 ### Bug-fixing commit information
 - bug-fixing commit: [aec9667bd19a8ca9bdd519db3a231a95b9e92674](https://github.com/openssl/openssl/commit/aec9667bd19a8ca9bdd519db3a231a95b9e92674) (4 Nov 2019)
     - search the commit that the expected failure by the bug-revealing input does not induce after oss-fuzz issue report time
-	- developers explicitly mentioned the bug fixes [here](https://github.com/openssl/openssl/commit/aec9667bd19a8ca9bdd519db3a231a95b9e92674)
-	- changed functions: `i2v_GENERAL_NAME(X509V3_EXT_METHOD *, GENERAL_NAME *, STACK_OF(CONF_VALUE) *)`, `GENERAL_NAME_print(BIO *, GENERAL_NAME *)`
+    - developers explicitly mentioned the bug fixes [here](https://github.com/openssl/openssl/commit/aec9667bd19a8ca9bdd519db3a231a95b9e92674)
+    - changed functions: `i2v_GENERAL_NAME(X509V3_EXT_METHOD *, GENERAL_NAME *, STACK_OF(CONF_VALUE) *)`, `GENERAL_NAME_print(BIO *, GENERAL_NAME *)`
+    - fix locations: [crypto/x509/v3_alt.c:89](https://github.com/openssl/openssl/commit/aec9667bd19a8ca9bdd519db3a231a95b9e92674#diff-51bd8df033a4f347adf2b0e9b316d9abd423e1a94518f9e8449ac22d9f860c6dR89), [96](https://github.com/openssl/openssl/commit/aec9667bd19a8ca9bdd519db3a231a95b9e92674#diff-51bd8df033a4f347adf2b0e9b316d9abd423e1a94518f9e8449ac22d9f860c6dR96), [103](https://github.com/openssl/openssl/commit/aec9667bd19a8ca9bdd519db3a231a95b9e92674#diff-51bd8df033a4f347adf2b0e9b316d9abd423e1a94518f9e8449ac22d9f860c6dR103), [110](https://github.com/openssl/openssl/commit/aec9667bd19a8ca9bdd519db3a231a95b9e92674#diff-51bd8df033a4f347adf2b0e9b316d9abd423e1a94518f9e8449ac22d9f860c6dR110) 
 - the number of commits between BIC and BFC: 267
 
 ### Failure samples
