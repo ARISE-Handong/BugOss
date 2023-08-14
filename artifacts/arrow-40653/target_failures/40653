@@ -1,0 +1,28 @@
+ERROR: AddressSanitizer: ABRT on unknown address 0x03e90001c8b9 (pc 0x7f3abaaf200b bp 0x7ffeb73be700 sp 0x7ffeb73be3d0 T0)
+#0 0x7f3abaaf200b in raise /build/glibc-SzIz7B/glibc-2.31/signal/../sysdeps/unix/sysv/linux/raise.c:51:1
+#1 0x7f3abaad1858 in abort /build/glibc-SzIz7B/glibc-2.31/stdlib/abort.c:79:7
+#2 0xb5bab8 in arrow::util::CerrLog::~CerrLog() /src/arrow/cpp/src/arrow/util/logging.cc:72:7
+#3 0xb5bab8 in arrow::util::CerrLog::~CerrLog() /src/arrow/cpp/src/arrow/util/logging.cc:66:22
+#4 0xb5b171 in arrow::util::ArrowLog::~ArrowLog() /src/arrow/cpp/src/arrow/util/logging.cc:250:5
+#5 0x655114 in arrow::MapArray::SetData(std::__1::shared_ptr<arrow::ArrayData> const&) /src/arrow/cpp/src/arrow/array/array_nested.cc:375:3
+#6 0x65449b in arrow::MapArray::MapArray(std::__1::shared_ptr<arrow::ArrayData> const&) /src/arrow/cpp/src/arrow/array/array_nested.cc:272:62
+#7 0x6f9ecd in std::__1::__shared_ptr_emplace<arrow::MapArray, std::__1::allocator<arrow::MapArray> >::__shared_ptr_emplace<std::__1::shared_ptr<arrow::ArrayData> const&>(std::__1::allocator<arrow::MapArray>, std::__1::shared_ptr<arrow::ArrayData> const&) /usr/local/bin/../include/c++/v1/__memory/shared_ptr.h:295:37
+#8 0x6f9ecd in std::__1::shared_ptr<arrow::MapArray> std::__1::allocate_shared<arrow::MapArray, std::__1::allocator<arrow::MapArray>, std::__1::shared_ptr<arrow::ArrayData> const&, void>(std::__1::allocator<arrow::MapArray> const&, std::__1::shared_ptr<arrow::ArrayData> const&) /usr/local/bin/../include/c++/v1/__memory/shared_ptr.h:1103:55
+#9 0x6f9ecd in std::__1::shared_ptr<arrow::MapArray> std::__1::make_shared<arrow::MapArray, std::__1::shared_ptr<arrow::ArrayData> const&, void>(std::__1::shared_ptr<arrow::ArrayData> const&) /usr/local/bin/../include/c++/v1/__memory/shared_ptr.h:1112:12
+#10 0x6f9ecd in arrow::Status arrow::(anonymous namespace)::ArrayDataWrapper::Visit<arrow::MapType>(arrow::MapType const&) /src/arrow/cpp/src/arrow/array/util.cc:66:13
+#11 0x6f9ecd in arrow::Status arrow::VisitTypeInline<arrow::(anonymous namespace)::ArrayDataWrapper>(arrow::DataType const&, arrow::(anonymous namespace)::ArrayDataWrapper*) /src/arrow/cpp/src/arrow/visitor_inline.h:90:5
+#12 0x6f9ecd in arrow::MakeArray(std::__1::shared_ptr<arrow::ArrayData> const&) /src/arrow/cpp/src/arrow/array/util.cc:311:3
+#13 0xc91119 in arrow::Array::Slice(long, long) const /src/arrow/cpp/src/arrow/array/array_base.cc:258:10
+#14 0x101bbc0 in std::__1::enable_if<is_list_like_type<arrow::FixedSizeListType>::value, arrow::Status>::type arrow::(anonymous namespace)::ArrayPrinter::WriteDataValues<arrow::FixedSizeListArray, arrow::FixedSizeListType>(arrow::FixedSizeListArray const&)::'lambda'(long)::operator()(long) const /src/arrow/cpp/src/arrow/pretty_print.cc:257:24
+#15 0x101bbc0 in arrow::Status arrow::(anonymous namespace)::ArrayPrinter::WriteValues<std::__1::enable_if<is_list_like_type<arrow::FixedSizeListType>::value, arrow::Status>::type arrow::(anonymous namespace)::ArrayPrinter::WriteDataValues<arrow::FixedSizeListArray, arrow::FixedSizeListType>(arrow::FixedSizeListArray const&)::'lambda'(long)>(arrow::Array const&, arrow::FixedSizeListArray&&, bool) /src/arrow/cpp/src/arrow/pretty_print.cc:159:9
+#16 0x101bbc0 in std::__1::enable_if<is_list_like_type<arrow::FixedSizeListType>::value, arrow::Status>::type arrow::(anonymous namespace)::ArrayPrinter::WriteDataValues<arrow::FixedSizeListArray, arrow::FixedSizeListType>(arrow::FixedSizeListArray const&) /src/arrow/cpp/src/arrow/pretty_print.cc:251:12
+#17 0xfea826 in std::__1::enable_if<(((((((std::is_base_of<arrow::PrimitiveArray, arrow::FixedSizeListArray>::value) || (std::is_base_of<arrow::FixedSizeBinaryArray, arrow::FixedSizeListArray>::value)) || (std::is_base_of<arrow::BinaryArray, arrow::FixedSizeListArray>::value)) || (std::is_base_of<arrow::LargeBinaryArray, arrow::FixedSizeListArray>::value)) || (std::is_base_of<arrow::ListArray, arrow::FixedSizeListArray>::value)) || (std::is_base_of<arrow::LargeListArray, arrow::FixedSizeListArray>::value)) || (std::is_base_of<arrow::MapArray, arrow::FixedSizeListArray>::value)) || (std::is_base_of<arrow::FixedSizeListArray, arrow::FixedSizeListArray>::value), arrow::Status>::type arrow::(anonymous namespace)::ArrayPrinter::Visit<arrow::FixedSizeListArray>(arrow::FixedSizeListArray const&) /src/arrow/cpp/src/arrow/pretty_print.cc:307:7
+#18 0xfea826 in arrow::Status arrow::VisitArrayInline<arrow::(anonymous namespace)::ArrayPrinter>(arrow::Array const&, arrow::(anonymous namespace)::ArrayPrinter*) /src/arrow/cpp/src/arrow/visitor_inline.h:127:5
+#19 0xfbc9de in arrow::(anonymous namespace)::ArrayPrinter::Print(arrow::Array const&) /src/arrow/cpp/src/arrow/pretty_print.cc:372:5
+#20 0xfbc9de in arrow::PrettyPrint(arrow::Array const&, int, std::__1::basic_ostream<char, std::__1::char_traits<char> >*) /src/arrow/cpp/src/arrow/pretty_print.cc:400:18
+#21 0xfbfaee in arrow::PrettyPrint(arrow::RecordBatch const&, int, std::__1::basic_ostream<char, std::__1::char_traits<char> >*) /src/arrow/cpp/src/arrow/pretty_print.cc:481:5
+#22 0x78376d in arrow::RecordBatch::ToString() const /src/arrow/cpp/src/arrow/record_batch.cc:281:3
+#23 0x53b489 in arrow::ipc::internal::(anonymous namespace)::ValidateFuzzBatch(arrow::RecordBatch const&) /src/arrow/cpp/src/arrow/ipc/reader.cc:2032:11
+#24 0x53b489 in arrow::ipc::internal::FuzzIpcFile(unsigned char const*, long) /src/arrow/cpp/src/arrow/ipc/reader.cc:2070:78
+#25 0x4da837 in LLVMFuzzerTestOneInput /src/arrow/cpp/src/arrow/ipc/file_fuzz.cc:25:17
+

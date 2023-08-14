@@ -1,0 +1,8 @@
+/src/libarchive/libarchive/archive_read_support_format_iso9660.c:1809:39: runtime error: unsigned integer overflow: 2048 * 18446744073306898432 cannot be represented in type 'unsigned long'
+#0 0x4756b1 in parse_file_info /src/libarchive/libarchive/archive_read_support_format_iso9660.c:1809:39
+#1 0x46ec8e in choose_volume /src/libarchive/libarchive/archive_read_support_format_iso9660.c:1116:9
+#2 0x46ec8e in archive_read_format_iso9660_read_header /src/libarchive/libarchive/archive_read_support_format_iso9660.c:1182:7
+#3 0x4383ed in _archive_read_next_header2 /src/libarchive/libarchive/archive_read.c:647:7
+#4 0x43813a in _archive_read_next_header /src/libarchive/libarchive/archive_read.c:685:8
+#5 0x51408d in archive_read_next_header /src/libarchive/libarchive/archive_virtual.c:149:10
+#6 0x42e1ad in LLVMFuzzerTestOneInput /src/libarchive_fuzzer.cc:50:11

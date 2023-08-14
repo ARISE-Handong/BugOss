@@ -1,0 +1,12 @@
+/src/libarchive/libarchive/archive_string.c:3047:26: runtime error: unsigned integer overflow: 70 - 4352 cannot be represented in type 'unsigned int'
+#0 0x509df9 in archive_string_normalize_C /src/libarchive/libarchive/archive_string.c:3047:26
+#1 0x4fdab2 in archive_strncat_l /src/libarchive/libarchive/archive_string.c:2000:8
+#2 0x4ff99c in archive_strncpy_l /src/libarchive/libarchive/archive_string.c:1955:10
+#3 0x4ff99c in archive_mstring_copy_mbs_len_l /src/libarchive/libarchive/archive_string.c:4181:6
+#4 0x53efba in _archive_entry_copy_pathname_l /src/libarchive/libarchive/archive_entry.c:1199:10
+#5 0x4ec92c in zip_read_local_file_header /src/libarchive/libarchive/archive_read_support_format_zip.c:1016:6
+#6 0x4e764f in archive_read_format_zip_streamable_read_header /src/libarchive/libarchive/archive_read_support_format_zip.c:3316:13
+#7 0x4383ed in _archive_read_next_header2 /src/libarchive/libarchive/archive_read.c:647:7
+#8 0x43813a in _archive_read_next_header /src/libarchive/libarchive/archive_read.c:685:8
+#9 0x51408d in archive_read_next_header /src/libarchive/libarchive/archive_virtual.c:149:10
+#10 0x42e1ad in LLVMFuzzerTestOneInput /src/libarchive_fuzzer.cc:50:11

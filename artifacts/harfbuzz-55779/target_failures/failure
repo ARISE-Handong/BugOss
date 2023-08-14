@@ -1,0 +1,18 @@
+hb-shape-fuzzer: ../../src/harfbuzz/src/OT/Layout/GPOS/GPOS.hh:113: void OT::Layout::propagate_attachment_offsets(hb_glyph_position_t *, unsigned int, unsigned int, hb_direction_t, unsigned int): Assertion `j < i' failed.
+ERROR: AddressSanitizer: ABRT on unknown address 0x03ea003b24d8 (pc 0x7f256521f03b bp 0x7f2565394588 sp 0x7ffeeeff95d0 T0)
+#0 0x7f256521f03b in raise /build/glibc-sMfBJT/glibc-2.31/signal/../sysdeps/unix/sysv/linux/raise.c:51:1
+#1 0x7f25651fe858 in abort /build/glibc-sMfBJT/glibc-2.31/stdlib/abort.c:79:7
+#2 0x7f25651fe728 in __assert_fail_base /build/glibc-sMfBJT/glibc-2.31/assert/assert.c:92:3
+#3 0x7f2565210005 in __assert_fail /build/glibc-sMfBJT/glibc-2.31/assert/assert.c:101:3
+#4 0x6d2c41 in OT::Layout::propagate_attachment_offsets(hb_glyph_position_t*, unsigned int, unsigned int, hb_direction_t, unsigned int) /work/build/../../src/harfbuzz/src/OT/Layout/GPOS/GPOS.hh:113:5
+#5 0x6dfbfe in OT::Layout::GPOS::position_finish_offsets(hb_font_t*, hb_buffer_t*) /work/build/../../src/harfbuzz/src/OT/Layout/GPOS/GPOS.hh:153:7
+#6 0x6b7fe0 in hb_ot_layout_position_finish_offsets(hb_font_t*, hb_buffer_t*) /work/build/../../src/harfbuzz/src/hb-ot-layout.cc:1643:3
+#7 0x8686b0 in hb_ot_position_plan(hb_ot_shape_context_t const*) /work/build/../../src/harfbuzz/src/hb-ot-shape.cc:1085:3
+#8 0x8686b0 in hb_ot_position(hb_ot_shape_context_t const*) /work/build/../../src/harfbuzz/src/hb-ot-shape.cc:1106:3
+#9 0x8686b0 in hb_ot_shape_internal(hb_ot_shape_context_t*) /work/build/../../src/harfbuzz/src/hb-ot-shape.cc:1185:3
+#10 0x8686b0 in _hb_ot_shape /work/build/../../src/harfbuzz/src/hb-ot-shape.cc:1206:3
+#11 0x883f5e in _hb_shape_plan_execute_internal(hb_shape_plan_t*, hb_font_t*, hb_buffer_t*, hb_feature_t const*, unsigned int) /work/build/../../src/harfbuzz/src/hb-shaper-list.hh:42:1
+#12 0x883f5e in hb_shape_plan_execute /work/build/../../src/harfbuzz/src/hb-shape-plan.cc:452:14
+#13 0x886162 in hb_shape_full /work/build/../../src/harfbuzz/src/hb-shape.cc:148:19
+#14 0x886593 in hb_shape /work/build/../../src/harfbuzz/src/hb-shape.cc:195:3
+#15 0x4d7e2e in LLVMFuzzerTestOneInput /work/build/../../src/harfbuzz/test/fuzzing/hb-shape-fuzzer.cc:57:3

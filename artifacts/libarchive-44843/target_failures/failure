@@ -1,0 +1,8 @@
+/src/libarchive/libarchive/archive_read_support_format_rar.c:3332:32: runtime error: member access within null pointer of type 'struct rar_filter'
+#0 0x4a25a3 in run_filters /src/libarchive/libarchive/archive_read_support_format_rar.c:3332:32
+#1 0x4a25a3 in read_data_compressed /src/libarchive/libarchive/archive_read_support_format_rar.c:2082:12
+#2 0x49957d in archive_read_format_rar_read_data /src/libarchive/libarchive/archive_read_support_format_rar.c:1126:11
+#3 0x4387a1 in _archive_read_data_block /src/libarchive/libarchive/archive_read.c:987:9
+#4 0x51424d in archive_read_data_block /src/libarchive/libarchive/archive_virtual.c:162:10
+#5 0x432158 in archive_read_data /src/libarchive/libarchive/archive_read.c:841:8
+#6 0x42e226 in LLVMFuzzerTestOneInput /src/libarchive_fuzzer.cc:55:17

@@ -1,0 +1,12 @@
+/src/libarchive/libarchive/archive_read_support_format_rar5.c:2996:43: runtime error: unsigned integer overflow: 27 - 81 cannot be represented in type 'unsigned long'
+#0 0x4c1d1c in copy_string /src/libarchive/libarchive/archive_read_support_format_rar5.c:2996:43
+#1 0x4b5527 in do_uncompress_block /src/libarchive/libarchive/archive_read_support_format_rar5.c:3171:21
+#2 0x4b5527 in process_block /src/libarchive/libarchive/archive_read_support_format_rar5.c:3572:8
+#3 0x4b5527 in do_uncompress_file /src/libarchive/libarchive/archive_read_support_format_rar5.c:3751:10
+#4 0x4b5527 in uncompress_file /src/libarchive/libarchive/archive_read_support_format_rar5.c:3835:9
+#5 0x4b5527 in do_unpack /src/libarchive/libarchive/archive_read_support_format_rar5.c:3914:12
+#6 0x4b5527 in rar5_read_data /src/libarchive/libarchive/archive_read_support_format_rar5.c:4078:8
+#7 0x4387a1 in _archive_read_data_block /src/libarchive/libarchive/archive_read.c:987:9
+#8 0x51424d in archive_read_data_block /src/libarchive/libarchive/archive_virtual.c:162:10
+#9 0x432158 in archive_read_data /src/libarchive/libarchive/archive_read.c:841:8
+#10 0x42e226 in LLVMFuzzerTestOneInput /src/libarchive_fuzzer.cc:55:17

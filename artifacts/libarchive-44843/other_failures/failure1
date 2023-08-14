@@ -1,0 +1,12 @@
+/src/libarchive/libarchive/xxhash.c:275:21: runtime error: unsigned integer overflow: 100 * 374761393 cannot be represented in type 'unsigned int'
+#0 0x515690 in XXH32_endian_align /src/libarchive/libarchive/xxhash.c:275:21
+#1 0x515690 in XXH32 /src/libarchive/libarchive/xxhash.c:311:16
+#2 0x43ebfd in lz4_filter_read_descriptor /src/libarchive/libarchive/archive_read_support_filter_lz4.c:449:10
+#3 0x43ebfd in lz4_filter_read_default_stream /src/libarchive/libarchive/archive_read_support_filter_lz4.c:625:13
+#4 0x43e3e7 in lz4_filter_read /src/libarchive/libarchive/archive_read_support_filter_lz4.c:345:11
+#5 0x434586 in __archive_read_filter_ahead /src/libarchive/libarchive/archive_read.c:1389:17
+#6 0x439078 in bzip2_reader_bid /src/libarchive/libarchive/archive_read_support_filter_bzip2.c:124:11
+#7 0x42fb94 in choose_filters /src/libarchive/libarchive/archive_read.c:567:10
+#8 0x42fb94 in archive_read_open1 /src/libarchive/libarchive/archive_read.c:506:7
+#9 0x42f38b in archive_read_open /src/libarchive/libarchive/archive_read.c:141:9
+#10 0x42e144 in LLVMFuzzerTestOneInput /src/libarchive_fuzzer.cc:45:3

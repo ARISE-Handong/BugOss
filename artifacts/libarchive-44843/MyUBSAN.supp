@@ -1,0 +1,7 @@
+unsigned-integer-overflow:src/libarchive/libarchive/archive_string.c
+unsigned-integer-overflow:src/libarchive/libarchive/archive_ppmd8.c
+unsigned-integer-overflow:src/libarchive/libarchive/archive_read_support_format_cpio.c
+unsigned-integer-overflow:src/libarchive/libarchive/xxhash.c
+unsigned-integer-overflow:src/libarchive/libarchive/archive_read_support_format_rar5.c
+unsigned-integer-overflow:src/libarchive/libarchive/archive_read_support_format_ar.c
+unsigned-integer-overflow:src/libarchive/libarchive/archive_read_support_format_iso9660.c

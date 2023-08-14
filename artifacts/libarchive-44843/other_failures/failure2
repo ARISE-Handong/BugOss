@@ -1,0 +1,9 @@
+/src/libarchive/libarchive/archive_ppmd8.c:1147:28: runtime error: unsigned integer overflow: 4294713856 + 253440 cannot be represented in type 'unsigned int'
+#0 0x54dd8c in RangeDec_Decode /src/libarchive/libarchive/archive_ppmd8.c:1147:28
+#1 0x54c5ba in Ppmd8_DecodeSymbol /src/libarchive/libarchive/archive_ppmd8.c:1182:9
+#2 0x4f80fb in zip_read_data_zipx_ppmd /src/libarchive/libarchive/archive_read_support_format_zip.c:2061:13
+#3 0x4e7c1e in archive_read_format_zip_read_data /src/libarchive/libarchive/archive_read_support_format_zip.c:3012:7
+#4 0x4387a1 in _archive_read_data_block /src/libarchive/libarchive/archive_read.c:987:9
+#5 0x51424d in archive_read_data_block /src/libarchive/libarchive/archive_virtual.c:162:10
+#6 0x432158 in archive_read_data /src/libarchive/libarchive/archive_read.c:841:8
+#7 0x42e226 in LLVMFuzzerTestOneInput /src/libarchive_fuzzer.cc:55:17

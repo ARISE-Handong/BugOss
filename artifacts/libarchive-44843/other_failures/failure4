@@ -1,0 +1,9 @@
+/src/libarchive/libarchive/archive_read_support_format_cpio.c:672:12: runtime error: unsigned integer overflow: 0 - 1 cannot be represented in type 'size_t' (aka 'unsigned long')
+#0 0x464bd3 in is_octal /src/libarchive/libarchive/archive_read_support_format_cpio.c:672:12
+#1 0x464bd3 in find_odc_header /src/libarchive/libarchive/archive_read_support_format_cpio.c:717:38
+#2 0x464bd3 in header_odc /src/libarchive/libarchive/archive_read_support_format_cpio.c:779:6
+#3 0x463047 in archive_read_format_cpio_read_header /src/libarchive/libarchive/archive_read_support_format_cpio.c:383:7
+#4 0x4383ed in _archive_read_next_header2 /src/libarchive/libarchive/archive_read.c:647:7
+#5 0x43813a in _archive_read_next_header /src/libarchive/libarchive/archive_read.c:685:8
+#6 0x51408d in archive_read_next_header /src/libarchive/libarchive/archive_virtual.c:149:10
+#7 0x42e1ad in LLVMFuzzerTestOneInput /src/libarchive_fuzzer.cc:50:11
