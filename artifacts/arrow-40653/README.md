@@ -38,10 +38,7 @@
 - failure by a target bug: 2 failure in `target_failures/`
     - a failure induced by a failure-reproducing input among attached inputs in oss-fuzz issues between BIC and BFC date, which appears from BIC until BFC
 - failures by other bugs: 4 failures in `other_failures/`
-	- oss-fuzz issue [39677](https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=39677)
-	- oss-fuzz issue [39703](https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=39703)
-	- oss-fuzz issue [39763](https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=39763)
-	- oss-fuzz issue [39773](https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=39773)
+	- oss-fuzz issue [39677](https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=39677), [39703](https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=39703), [39763](https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=39763), [39773](https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=39773) 
 
 - target failure
     - type: abort 
