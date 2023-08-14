@@ -24,16 +24,16 @@
 	- \# seed corpus at fix-inducing commit: 2241
 - the number of commits between failure-observed commit and BIC: 9
 
-### Fix-inducing commit information
-- fix-inducing commit: [aec9667bd19a8ca9bdd519db3a231a95b9e92674](https://github.com/openssl/openssl/commit/aec9667bd19a8ca9bdd519db3a231a95b9e92674) (4 Nov 2019)
+### Bug-fixing commit information
+- bug-fixing commit: [aec9667bd19a8ca9bdd519db3a231a95b9e92674](https://github.com/openssl/openssl/commit/aec9667bd19a8ca9bdd519db3a231a95b9e92674) (4 Nov 2019)
     - search the commit that the expected failure by the bug-revealing input does not induce after oss-fuzz issue report time
 	- developers explicitly mentioned the bug fixes [here](https://github.com/openssl/openssl/commit/aec9667bd19a8ca9bdd519db3a231a95b9e92674)
 	- changed functions: `i2v_GENERAL_NAME(X509V3_EXT_METHOD *, GENERAL_NAME *, STACK_OF(CONF_VALUE) *)`, `GENERAL_NAME_print(BIO *, GENERAL_NAME *)`
-- the number of commits between BIC and FIC: 267
+- the number of commits between BIC and BFC: 267
 
 ### Failure samples
 - failure by a target bug: 2 failure in `target_failures/`
-    - a failure induced by a failure-reproducing input among attached inputs in oss-fuzz issues between BIC and FIC date, which appears from BIC until FIC
+    - a failure induced by a failure-reproducing input among attached inputs in oss-fuzz issues between BIC and BFC date, which appears from BIC until BFC
 		- oss-fuzz issue [17715](https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=17715), [17722](https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=17722)
 - failures by other bugs: 0 failures 
 

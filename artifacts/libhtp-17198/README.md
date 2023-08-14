@@ -24,16 +24,16 @@
 	- \# seed corpus at fix-inducing commit: 97
 - the number of commits between failure-observed commit and BIC: 2
 
-### Fix-inducing commit information
-- fix-inducing commit: [fe16fa764f7cea57be5a288ee85b27dffc460f6f](https://github.com/OISF/libhtp/commit/fe16fa764f7cea57be5a288ee85b27dffc460f6f) (17 Sep 2019)
+### Bug-fixing commit information
+- bug-fixing commit: [fe16fa764f7cea57be5a288ee85b27dffc460f6f](https://github.com/OISF/libhtp/commit/fe16fa764f7cea57be5a288ee85b27dffc460f6f) (17 Sep 2019)
     - search the commit that the expected failure by the bug-revealing input does not induce after oss-fuzz issue report time
 	- reference \[[AFLChurn, CCS'21](https://dl.acm.org/doi/abs/10.1145/3460120.3484596)\]
 	- changed functions: `LzmaDec_DecodeReal2(CLzmaDec *, SizeT, const Byte *, SizeT)`, `LzmaDec_DecodeToDic(CLzmaDec *, SizeT, const Byte *, SizeT *, ELzmaFinishMode, ELzmaStatus *, SizeT)`, `LzmaDec_DecodeToBuf`, `LzmaDec_Allocate(CLzmaDec *, const Byte *, unsigned, ISzAllocPtr)`, `LzmaDecode(Byte *, SizeT *, const Byte *, SizeT *, const Byte *, unsigned, ELzmaFinishMode, ELzmaStatus *, ISzAllocPtr)`
-- the number of commits between BIC and FIC: 3 
+- the number of commits between BIC and BFC: 3 
 
 ### Failure samples
 - failure by a target bug: 1 failure in `target_failures/`
-    - a failure induced by a failure-reproducing input among attached inputs in oss-fuzz issues between BIC and FIC date, which appears from BIC until FIC
+    - a failure induced by a failure-reproducing input among attached inputs in oss-fuzz issues between BIC and BFC date, which appears from BIC until BFC
 - failures by other bugs: 0 failures 
 
 - target failure 

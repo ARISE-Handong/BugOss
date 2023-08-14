@@ -27,16 +27,16 @@
 	- \# seed corpus at fix-inducing commit: 174
 - the number of commits between failure-observed commit and BIC: 18
 
-### Fix-inducing commit information
-- fix-inducing commit: [4c76c67e9b790fd40650c4e8a2a059603e8ce195](https://github.com/cisco/openh264/commit/4c76c67e9b790fd40650c4e8a2a059603e8ce195) (11 Oct 2020)
+### Bug-fixing commit information
+- bug-fixing commit: [4c76c67e9b790fd40650c4e8a2a059603e8ce195](https://github.com/cisco/openh264/commit/4c76c67e9b790fd40650c4e8a2a059603e8ce195) (11 Oct 2020)
     - search the commit that the expected failure by the bug-revealing input does not induce after oss-fuzz issue report time
-	- developers explicitly mentioned the bug fixes [here](https://github.com/cisco/openh264/commit/4c76c67e9b790fd40650c4e8a2a059603e8ce195)
-	- changed functions: `CWelsDecoder::DecodeFrame2WithCtx(PWelsDecoderContext, const unsigned char *, const int, unsigned char **, SBufferInfo *)`
-- the number of commits between BIC and FIC: 19 
+    - developers explicitly mentioned the bug fixes [here](https://github.com/cisco/openh264/commit/4c76c67e9b790fd40650c4e8a2a059603e8ce195)
+    - changed functions: `CWelsDecoder::DecodeFrame2WithCtx(PWelsDecoderContext, const unsigned char *, const int, unsigned char **, SBufferInfo *)`
+- the number of commits between BIC and BFC: 19 
 
 ### Failure samples
 - failure by a target bug: 10 failure in `target_failures/`
-    - a failure induced by a failure-reproducing input among attached inputs in oss-fuzz issues between BIC and FIC date, which appears from BIC until FIC
+    - a failure induced by a failure-reproducing input among attached inputs in oss-fuzz issues between BIC and BFC date, which appears from BIC until BFC
 		- oss-fuzz issue [26220](https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=26220), [25921](https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=25921), [25922](https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=25922), [25923](https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=25923), [25932](https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=25932), [25939](https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=25939), [25961](https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=25961), [25970](https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=25970), [25973](https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=25973), [26068](https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=26068) 
 - failures by other bugs: 0 failures 
 

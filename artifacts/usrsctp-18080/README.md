@@ -24,16 +24,16 @@
 	- \# seed corpus at fix-inducing commit: 167
 - the number of commits between failure-observed commit and BIC: 7
 
-### Fix-inducing commit information
-- fix-inducing commit: [b7e98787c4698521b7adc771ee919a74e83f28ed](https://github.com/weinrank/usrsctp/commit/b7e98787c4698521b7adc771ee919a74e83f28ed) (13 Oct 2019)
+### Bug-fixing commit information
+- bug-fixing commit: [b7e98787c4698521b7adc771ee919a74e83f28ed](https://github.com/weinrank/usrsctp/commit/b7e98787c4698521b7adc771ee919a74e83f28ed) (13 Oct 2019)
     - search the commit that the expected failure by the bug-revealing input does not induce after oss-fuzz issue report time
 	- developers explicitly mentioned the bug fixes [here](https://github.com/weinrank/usrsctp/commit/b7e98787c4698521b7adc771ee919a74e83f28ed)
 	- changed functions: `sctp_med_chunk_output(struct sctp_inpcb *, struct sctp_tcb *, struct sctp_association *, int *, int *, int, int, struct timeval *, int *, int, int)`
-- the number of commits between BIC and FIC: 9
+- the number of commits between BIC and BFC: 9
 
 ### Failure samples
 - failure by a target bug: 1 failure in `target_failures/`
-    - a failure induced by a failure-reproducing input among attached inputs in oss-fuzz issues between BIC and FIC date, which appears from BIC until FIC
+    - a failure induced by a failure-reproducing input among attached inputs in oss-fuzz issues between BIC and BFC date, which appears from BIC until BFC
 - failures by other bugs: 3 failures in `other_failures/`
     - failures detected by AFL++ for 48 hours on a clean version (i.e., commit right before BIC)
 		- [failure1](./other_failures/failure1), [failure2](./other_failures/failure2), [failure3](./other_failures/failure3)

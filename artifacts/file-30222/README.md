@@ -24,17 +24,17 @@
     - \# seed corpus at fix-inducing commit: 34
 - the number of commits between failure-observed commit and BIC: 0 (the same commit)
 
-### Fix-inducing commit information 
-- fix-inducing commit: [9c74f7b258cfe17b8c7f6eaaf6bbbf4ed14017d0](https://github.com/file/file/commit/9c74f7b258cfe17b8c7f6eaaf6bbbf4ed14017d0) (4 Feb 2021) 
+### Bug-fixing commit information 
+- bug-fixing commit: [9c74f7b258cfe17b8c7f6eaaf6bbbf4ed14017d0](https://github.com/file/file/commit/9c74f7b258cfe17b8c7f6eaaf6bbbf4ed14017d0) (4 Feb 2021) 
     - search the first commit that the expected failure by the bug-revealing input does not induce after oss-fuzz issue report time
     - developers explicitly mentioned the bug fixes [here](https://github.com/file/file/commit/9c74f7b258cfe17b8c7f6eaaf6bbbf4ed14017d0)
     - changed functions: `trim_separator(magic_set *)`
-- the number of commits between BIC and FIC: 0
-    - FIC is a commit right after BIC
+- the number of commits between BIC and BFC: 0
+    - BFC is a commit right after BIC
 
 ### Failure samples
 - failure by a target bug: 1 failure in `failures/target/`
-    - a failure induced by a failure-reproducing input among attached inputs in oss-fuzz issues between BIC and FIC date, which appears from BIC until FIC
+    - a failure induced by a failure-reproducing input among attached inputs in oss-fuzz issues between BIC and BFC date, which appears from BIC until BFC
 - failures by other bugs: 7 failures in `failures/others/`
     - failures detected by AFL++ for 48 hours on a clean version (i.e., commit right before BIC)
         - 7 failures are collected

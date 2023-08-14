@@ -26,16 +26,16 @@
 	- \# seed corpus at fix-inducing commit: 178
 - the number of commits between failure-observed commit and BIC: 1
 
-### Fix-inducing commit information
-- fix-inducing commit: [1cb27625e7237a1a03a1c9ad67bc1f006473aa35](https://github.com/GrokImageCompression/grok/commit/1cb27625e7237a1a03a1c9ad67bc1f006473aa35) (8 Dec 2020)
+### Bug-fixing commit information
+- bug-fixing commit: [1cb27625e7237a1a03a1c9ad67bc1f006473aa35](https://github.com/GrokImageCompression/grok/commit/1cb27625e7237a1a03a1c9ad67bc1f006473aa35) (8 Dec 2020)
     - search the commit that the expected failure by the bug-revealing input does not induce after oss-fuzz issue report time
-	- developers explicitly mentioned the bug fixes [here](https://github.com/GrokImageCompression/grok/commit/1cb27625e7237a1a03a1c9ad67bc1f006473aa35)
-	- changed functions: `pi_create(const grk_image *, const CodingParams *, uint16_t, std::vector<uint8_t*> *)`, `pi_create_decompress(grk_image *, CodingParams *, uint16_t, std::vector<uint8_t*> *)`, `pi_create_compress(const grk_image *, CodingParams *, uint16_t, J2K_T2_MODE, std::vector<uint8_t*> *)`, `get_include(uint16_t)`, `update_include(void)`, `destroy_include(void)`, `T2Compress:compress_packets(uint16_t, uint16_t, BufferedStream *, uint32_t *, bool, uint32_t,	uint32_t)`, `T2Compress::compress_packets_simulate(uint16_t, uint16_t, uint32_t *, uint32_t, uint32_t, PacketLengthMarkers *)`, `T2Decompress:decompress_packets((uint16_t, ChunkBuffer *, uint64_t *)`
-- the number of commits between BIC and FIC: 3 
+    - developers explicitly mentioned the bug fixes [here](https://github.com/GrokImageCompression/grok/commit/1cb27625e7237a1a03a1c9ad67bc1f006473aa35)
+    - changed functions: `pi_create(const grk_image *, const CodingParams *, uint16_t, std::vector<uint8_t*> *)`, `pi_create_decompress(grk_image *, CodingParams *, uint16_t, std::vector<uint8_t*> *)`, `pi_create_compress(const grk_image *, CodingParams *, uint16_t, J2K_T2_MODE, std::vector<uint8_t*> *)`, `get_include(uint16_t)`, `update_include(void)`, `destroy_include(void)`, `T2Compress:compress_packets(uint16_t, uint16_t, BufferedStream *, uint32_t *, bool, uint32_t,	uint32_t)`, `T2Compress::compress_packets_simulate(uint16_t, uint16_t, uint32_t *, uint32_t, uint32_t, PacketLengthMarkers *)`, `T2Decompress:decompress_packets((uint16_t, ChunkBuffer *, uint64_t *)`
+- the number of commits between BIC and BFC: 3 
 
 ### Failure samples
 - failure by a target bug: 1 failure in `target_failures/`
-    - a failure induced by a failure-reproducing input among attached inputs in oss-fuzz issues between BIC and FIC date, which appears from BIC until FIC
+    - a failure induced by a failure-reproducing input among attached inputs in oss-fuzz issues between BIC and BFC date, which appears from BIC until BFC
 - failures by other bugs: 36 failures in `other_failures/`
     - failures detected by AFL++ for 48 hours on a clean version (i.e., commit right before BIC)
 		- 36 failures are collected

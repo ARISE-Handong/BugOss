@@ -24,16 +24,16 @@
 	- \# seed corpus at fix-inducing commit: 460
 - the number of commits between failure-observed commit and BIC: 1
 
-### Fix-inducing commit information
-- fix-inducing commit: [7a92e1bd0f8a1435eed7743e3aeadcb73f63182d](https://github.com/Exiv2/exiv2/commit/7a92e1bd0f8a1435eed7743e3aeadcb73f63182d) (29 Aug 2022)
+### Bug-fixinging commit information
+- bug-fixing commit: [7a92e1bd0f8a1435eed7743e3aeadcb73f63182d](https://github.com/Exiv2/exiv2/commit/7a92e1bd0f8a1435eed7743e3aeadcb73f63182d) (29 Aug 2022)
     - search the commit that the expected failure by the bug-revealing input does not induce after oss-fuzz issue report time
-	- developers explicitly mentioned the bug fixes [here](https://github.com/Exiv2/exiv2/commit/7a92e1bd0f8a1435eed7743e3aeadcb73f63182d)
-	- changed functions: `floatToRationalCast(float)`
-- the number of commits between BIC and FIC: 18
+    - developers explicitly mentioned the bug fixes [here](https://github.com/Exiv2/exiv2/commit/7a92e1bd0f8a1435eed7743e3aeadcb73f63182d)
+    - changed functions: `floatToRationalCast(float)`
+- the number of commits between BIC and BFC: 18
 
 ### Failure samples
 - failure by a target bug: 1 failure in `target_failures/`
-    - a failure induced by a failure-reproducing input among attached inputs in oss-fuzz issues between BIC and FIC date, which appears from BIC until FIC
+    - a failure induced by a failure-reproducing input among attached inputs in oss-fuzz issues between BIC and BFC date, which appears from BIC until BFC
 - failures by other bugs: 13 failures in `other_failures/`
     - failures detected by AFL++ for 48 hours on a clean version (i.e., commit right before BIC)
 		- [failure1](./other_failures/failure1), [failure2](./other_failures/failure2), [failure3](./other_failures/failure3), [failure4](./other_failures/failure4), [failure5](./other_failures/failure5), [failure6](./other_failures/failure6), [failure7](./other_failures/failure7), [failure8](./other_failures/failure8), [failure9](./other_failures/failure9), [failure10](./other_failures/failure10), [failure11](./other_failures/failure11), [failure12](./other_failures/failure12), [failure13](./other_failures/failure13)

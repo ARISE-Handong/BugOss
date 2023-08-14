@@ -18,25 +18,25 @@
 ### Bug-inducing commit information
 - bug-inducing commit: [e0646f9b063b23754951f1254f1ecb7af8ca36f3](https://github.com/GNUAspell/aspell/commit/e0646f9b063b23754951f1254f1ecb7af8ca36f3) (6 Aug 2019)
     - search the first commit that failure occurred by reproducing on the commit history with the fuzz target and the bug-revealing input
-	- changed functions: `Config::merge(const Config)`
+        - changed functions: `Config::merge(const Config)`
 - [seed_corpus.tar](https://drive.google.com/file/d/1KKD4fYqTXeykiW01_A3B8nDY5rhBHURU/view?usp=share_link): initial seed corpus at bug-inducing commit (2 initial seeds in `seed_corpus/`)
     - seed corpus at the latest [commit](https://github.com/GNUAspell/aspell-fuzz/commit/576059dab2137514bdd236c8189039b557263bd4) before BIC (4 Aug 2019)
-	- \# seed corpus at failure-observed commit: 60
-	- \# seed corpus at fix-inducing commit: 60
+        - \# seed corpus at failure-observed commit: 60 
+        - \# seed corpus at fix-inducing commit: 60  
 - the number of commits between failure-observed commit and BIC: 82
 
-### Fix-inducing commit information
-- fix-inducing commit: [0718b375425aad8e54e1150313b862e4c6fd324a](https://github.com/GNUAspell/aspell/commit/0718b375425aad8e54e1150313b862e4c6fd324a) (22 Dec 2019)
+### Bug-fixing commit information
+- bug-fixing commit: [0718b375425aad8e54e1150313b862e4c6fd324a](https://github.com/GNUAspell/aspell/commit/0718b375425aad8e54e1150313b862e4c6fd324a) (22 Dec 2019)
     - search the commit that the expected failure by the bug-revealing input does not induce after oss-fuzz issue report time
-	- developers explicitly mentioned the bug fixes [here](https://github.com/GNUAspell/aspell/commit/0718b375425aad8e54e1150313b862e4c6fd324a)
-	- changed functions: `alloc_bottom(size_t)`, `alloc_top(size_t, size_t)`, `alloc_temp(size_t)`, `resize_temp(size_t)`, `grow_temp(size_t)`
-- the number of commits between BIC and FIC: 87
+    - developers explicitly mentioned the bug fixes [here](https://github.com/GNUAspell/aspell/commit/0718b375425aad8e54e1150313b862e4c6fd324a)
+    - changed functions: `alloc_bottom(size_t)`, `alloc_top(size_t, size_t)`, `alloc_temp(size_t)`, `resize_temp(size_t)`, `grow_temp(size_t)`
+- the number of commits between BIC and BFC: 87
 
 ### Failure samples
 - failure by a target bug: 1 failure in `target_failures/`
-    - a failure induced by a failure-reproducing input among attached inputs in oss-fuzz issues between BIC and FIC date, which appears from BIC until FIC
+    - a failure induced by a failure-reproducing input among attached inputs in oss-fuzz issues between BIC and BFC date, which appears from BIC until FIC
 - failures by other bugs: 1 failures in `other_failures/`
-	- oss-fuzz issue [16531](https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=16531)
+    - oss-fuzz issue [16531](https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=16531)
 
 - target failure
     - type: heap-buffer-overflow  

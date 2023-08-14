@@ -24,16 +24,16 @@
 	- \# seed corpus at fix-inducing commit: 9
 - the number of commits between failure-observed commit and BIC: 0 (the same commit)
 
-### Fix-inducing commit information
-- fix-inducing commit: [ae503e9671b274802cb07dc032b5e5cea28773bd](https://github.com/VirusTotal/yara/commit/ae503e9671b274802cb07dc032b5e5cea28773bd) (20 Sep 2021)
+### Bug-fixing commit information
+- bug-fixing commit: [ae503e9671b274802cb07dc032b5e5cea28773bd](https://github.com/VirusTotal/yara/commit/ae503e9671b274802cb07dc032b5e5cea28773bd) (20 Sep 2021)
     - search the commit that the expected failure by the bug-revealing input does not induce after oss-fuzz issue report time
 	- reference [AFLChurn, CCS'21](https://dl.acm.org/doi/abs/10.1145/3460120.3484596)
-- the number of commits between BIC and FIC: 0
-	- FIC is a commit right after BIC
+- the number of commits between BIC and BFC: 0
+	- BFC is a commit right after BIC
 
 ### Failure samples
 - failure by a target bug: 1 failure in `target_failures/`
-    - a failure induced by a failure-reproducing input among attached inputs in oss-fuzz issues between BIC and FIC date, which appears from BIC until FIC
+    - a failure induced by a failure-reproducing input among attached inputs in oss-fuzz issues between BIC and BFC date, which appears from BIC until BFC
 - failures by other bugs: 0 failures 
 
 - target failure 

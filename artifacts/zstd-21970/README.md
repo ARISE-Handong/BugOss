@@ -24,16 +24,16 @@
 	- \# seed corpus at fix-inducing commit: 12462
 - the number of commits between failure-observed commit and BIC: 4
 
-### Fix-inducing commit information
-- fix-inducing commit: [5717bd39ee1bd5d2855023652336deeb722a57d5](https://github.com/facebook/zstd/commit/5717bd39ee1bd5d2855023652336deeb722a57d5) (7 May 2020)
+### Bug-fixing commit information
+- bug-fixing commit: [5717bd39ee1bd5d2855023652336deeb722a57d5](https://github.com/facebook/zstd/commit/5717bd39ee1bd5d2855023652336deeb722a57d5) (7 May 2020)
     - search the commit that the expected failure by the bug-revealing input does not induce after oss-fuzz issue report time
 	- developers explicitly mentioned the bug fixes [here](https://github.com/facebook/zstd/commit/5717bd39ee1bd5d2855023652336deeb722a57d5)
 	- changed functions: `XXH64_update_endian(XXH64_state_t *, const void *, size_t, XXH_endianess)`, `ZSTD_execSequenceEnd(BYTE *, BYTE *, seq_t, const BYTE **, const BYTE *, const BYTE *, const BYTE *, const BYTE *, const BYTE *)`, `ZSTD_execSequence(BYTE *, BYTE *, seq_t, const BYTE **, const BYTE *, const BYTE *, const BYTE *, const BYTE *)`, `ZSTD_decompressSequences_body(ZSTD_DCtx *, void *, size_t, const void *, size_t, int, const ZSTD_longOffset_e)`, `ZSTD_decompressSequencesLong_body(ZSTD_DCtx *, void *, size_t, const void *, size_t, int, const ZSTD_longOffset_e)`, `ZSTD_decompressBlock_internal(ZSTD_DCtx *, void *, size_t, const void *, size_t, const int)`, `HUF_decompress_usingDTable(void *, size_t, const void *, size_t, const U16 *)`, `ZSTD_copyUncompressedBlock(void *, size_t, const void *, size_t)`, `ZSTDv01_decodeLiteralsBlock(void *, void *, size_t, const BYTE **, size_t *, const void *, size_t)`, `ZSTD_decompressSequences(void *, void *, size_t, const void *, size_t, const BYTE *, size_t)`, `ZSTD_copyUncompressedBlock(void *, size_t, const void *, size_t)`, `ZSTD_decompressSequences(void *, void *, size_t, const void *, size_t)`, `ZSTD_copyUncompressedBlock(void *, size_t, const void *, size_t)`, `ZSTD_decompressSequences(void *, void *, size_t, const void *, size_t)`, `ZSTD_copyRawBlock(void *, size_t, const void *, size_t)`, `ZSTD_decompressSequences(ZSTD_DCtx *, void *, size_t, const void *, size_t)`, `ZSTDv05_decompressSequences(ZSTDv05_DCtx *, void *, size_t, const void *, size_t)`, `ZSTDv06_decompressSequences(ZSTDv06_DCtx *, void *, size_t, const void *, size_t)`, `ZSTDv07_copyRawBlock(void *, size_t, const void *, size_t)`, `ZSTDv07_decompressSequences(ZSTDv07_DCtx *, void *, size_t, const void *, size_t)`, `ZSTDv07_generateNxBytes(void *, size_t, BYTE, size_t)`
-- the number of commits between BIC and FIC: 53 
+- the number of commits between BIC and BFC: 53 
 
 ### Failure samples
 - failure by a target bug: 1 failure in `target_failures/`
-    - a failure induced by a failure-reproducing input among attached inputs in oss-fuzz issues between BIC and FIC date, which appears from BIC until FIC
+    - a failure induced by a failure-reproducing input among attached inputs in oss-fuzz issues between BIC and BFC date, which appears from BIC until BFC
 - failures by other bugs: 0 failures 
 
 - target failure 

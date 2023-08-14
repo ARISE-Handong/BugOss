@@ -25,16 +25,16 @@
 - the number of commits between failure-observed commit and BIC: 0
 	- BIC is a commit right before failure-observed commit
 
-### Fix-inducing commit information
-- fix-inducing commit: [3c630f9b0af097663a64e5c875c580aa9808a92b](https://github.com/curl/curl/commit/3c630f9b0af097663a64e5c875c580aa9808a92b) (25 Apr 2018)
+### Bug-fixing commit information
+- bug-fixing commit: [3c630f9b0af097663a64e5c875c580aa9808a92b](https://github.com/curl/curl/commit/3c630f9b0af097663a64e5c875c580aa9808a92b) (25 Apr 2018)
     - search the commit that the expected failure by the bug-revealing input does not induce after oss-fuzz issue report time
-	- developers explicitly mentioned the bug fixes [here](https://github.com/curl/curl/commit/3c630f9b0af097663a64e5c875c580aa9808a92b)
-	- changed functions: `strcpy_url(char *, const char *, bool)`
-- the number of commits between BIC and FIC: 1
+    - developers explicitly mentioned the bug fixes [here](https://github.com/curl/curl/commit/3c630f9b0af097663a64e5c875c580aa9808a92b)
+    - changed functions: `strcpy_url(char *, const char *, bool)`
+- the number of commits between BIC and BFC: 1
 
 ### Failure samples
 - failure by a target bug: 1 failure in `target_failures/`
-    - a failure induced by a failure-reproducing input among attached inputs in oss-fuzz issues between BIC and FIC date, which appears from BIC until FIC
+    - a failure induced by a failure-reproducing input among attached inputs in oss-fuzz issues between BIC and BFC date, which appears from BIC until BFC
 - failures by other bugs: 0 failures
 
 - target failure symptom

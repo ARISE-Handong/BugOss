@@ -24,16 +24,16 @@
 	- \# seed corpus at fix-inducing commit: 622
 - the number of commits between failure-observed commit and BIC: 46
 
-### Fix-inducing commit information
-- fix-inducing commit: [31406a092868f87d714910e349ab0b4dc683722b](https://github.com/seladb/PcapPlusPlus/commit/31406a092868f87d714910e349ab0b4dc683722b) (13 Sep 2020)
+### Bug-fixing commit information
+- bug-fixing commit: [31406a092868f87d714910e349ab0b4dc683722b](https://github.com/seladb/PcapPlusPlus/commit/31406a092868f87d714910e349ab0b4dc683722b) (13 Sep 2020)
     - search the commit that the expected failure by the bug-revealing input does not induce after oss-fuzz issue report time
 	- developers explicitly mentioned the bug fixes [here](https://github.com/seladb/PcapPlusPlus/commit/31406a092868f87d714910e349ab0b4dc683722b)
 	- changed functions: `SSLClientHelloMessage::getSessionIDLength(void)`, `SSLCertificateRequestMessage::SSLCertificateRequestMessage(uint8_t *, size_t, SSLHandshakeLayer *)`
-- the number of commits between BIC and FIC: 130
+- the number of commits between BIC and BFC: 130
 
 ### Failure samples
 - failure by a target bug: 1 failure in `target_failures/`
-    - a failure induced by a failure-reproducing input among attached inputs in oss-fuzz issues between BIC and FIC date, which appears from BIC until FIC
+    - a failure induced by a failure-reproducing input among attached inputs in oss-fuzz issues between BIC and BFC date, which appears from BIC until BFC
 - failures by other bugs: 3 failures in `other_failures/`
 	- [22963](https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=22963), [23022](https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=23022), [23026](https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=23026)
 

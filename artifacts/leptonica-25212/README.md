@@ -22,16 +22,16 @@
 	- \# seed corpus at fix-inducing commit: 10
 - the number of commits between failure-observed commit and BIC: 2
 
-### Fix-inducing commit information
-- fix-inducing commit: [f301010cd4495a11d96504642737a85c386e6618](https://github.com/DanBloomberg/leptonica/commit/f301010cd4495a11d96504642737a85c386e6618) (29 Aug 2020)
+### Bug-fixing commit information
+- bug-fixing commit: [f301010cd4495a11d96504642737a85c386e6618](https://github.com/DanBloomberg/leptonica/commit/f301010cd4495a11d96504642737a85c386e6618) (29 Aug 2020)
     - search the commit that the expected failure by the bug-revealing input does not induce after oss-fuzz issue report time
-	- developers explicitly mentioned the bug fixes [here](https://github.com/DanBloomberg/leptonica/commit/f301010cd4495a11d96504642737a85c386e6618)
-	- changed functions: `pixGetBinnedComponentRange(PIX *, l_int32, l_int32, l_int32, l_int32 *, l_int32 *, l_uint32 **, l_int32)`, `pixGetRankColorArray(PIX *, l_int32, l_int32, l_int32, l_uint32 **, PIXA *, l_int32)`, `pixGetBinnedColor(PIX *, PIX *, l_int32, l_int32, NUMA *, l_uint32 **, PIXA *)`
-- the number of commits between BIC and FIC: 5 
+    - developers explicitly mentioned the bug fixes [here](https://github.com/DanBloomberg/leptonica/commit/f301010cd4495a11d96504642737a85c386e6618)
+    - changed functions: `pixGetBinnedComponentRange(PIX *, l_int32, l_int32, l_int32, l_int32 *, l_int32 *, l_uint32 **, l_int32)`, `pixGetRankColorArray(PIX *, l_int32, l_int32, l_int32, l_uint32 **, PIXA *, l_int32)`, `pixGetBinnedColor(PIX *, PIX *, l_int32, l_int32, NUMA *, l_uint32 **, PIXA *)`
+- the number of commits between BIC and BFC: 5 
 
 ### Failure samples
 - failure by a target bug: 1 failure in `target_failures/`
-    - a failure induced by a failure-reproducing input among attached inputs in oss-fuzz issues between BIC and FIC date, which appears from BIC until FIC
+    - a failure induced by a failure-reproducing input among attached inputs in oss-fuzz issues between BIC and BFC date, which appears from BIC until BFC
 - failures by other bugs: 1 failures in `other_failures/`
 	- oss-fuzz issue [25202](https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=25202)
 

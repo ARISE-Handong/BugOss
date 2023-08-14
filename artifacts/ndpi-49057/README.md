@@ -20,20 +20,20 @@
     - search the first commit that failure occurred by reproducing on the commit history with the fuzz target and the bug-revealing input
 	- changed functions: `get_int(const unsigned char *, int, u_int16_t *)`, `ndpi_search_snmp(struct ndpi_detection_module_struct *, struct ndpi_flow_struct *)`
 - [seed_corpus.tar](https://drive.google.com/file/d/1IPe1pzOZhsPjvNRa75NmvvpzNfu4yyZS/view?usp=share_link): initial seed corpus at bug-inducing commit (351 initial seeds in `seed_corpus/`)
-	- \# seed corpus at failure-observed commit: 352
-	- \# seed corpus at fix-inducing commit: 352
+    - \# seed corpus at failure-observed commit: 352
+    - \# seed corpus at fix-inducing commit: 352
 - the number of commits between failure-observed commit and BIC: 4
 
-### Fix-inducing commit information
-- fix-inducing commit: [407155755da29734e9b8a8e7a6960c568b1d3188](https://github.com/ntop/nDPI/commit/407155755da29734e9b8a8e7a6960c568b1d3188) (13 Jul 2022)
+### Bug-fixing commit information
+- bug-fixing commit: [407155755da29734e9b8a8e7a6960c568b1d3188](https://github.com/ntop/nDPI/commit/407155755da29734e9b8a8e7a6960c568b1d3188) (13 Jul 2022)
     - search the commit that the expected failure by the bug-revealing input does not induce after oss-fuzz issue report time
-	- developers explicitly mentioned the bug fixes [here](https://github.com/ntop/nDPI/commit/407155755da29734e9b8a8e7a6960c568b1d3188)
-	- changed functions: `ndpi_asn1_ber_decode_length(const unsigned char *, int, u_int16_t *)`, `krb_decode_asn1_length(ndpi_detection_module_struct *, size_t *)`, `ndpi_search_ldap(struct ndpi_detection_module_struct *, struct ndpi_flow_struct *)`, `ndpi_search_snmp(struct ndpi_detection_module_struct *, struct ndpi_flow_struct *)`
-- the number of commits between BIC and FIC: 5
+    - developers explicitly mentioned the bug fixes [here](https://github.com/ntop/nDPI/commit/407155755da29734e9b8a8e7a6960c568b1d3188)
+    - changed functions: `ndpi_asn1_ber_decode_length(const unsigned char *, int, u_int16_t *)`, `krb_decode_asn1_length(ndpi_detection_module_struct *, size_t *)`, `ndpi_search_ldap(struct ndpi_detection_module_struct *, struct ndpi_flow_struct *)`, `ndpi_search_snmp(struct ndpi_detection_module_struct *, struct ndpi_flow_struct *)`
+- the number of commits between BIC and BFC: 5
 
 ### Failure samples
 - failure by a target bug: 1 failure in `target_failures/`
-    - a failure induced by a failure-reproducing input among attached inputs in oss-fuzz issues between BIC and FIC date, which appears from BIC until FIC
+    - a failure induced by a failure-reproducing input among attached inputs in oss-fuzz issues between BIC and BFC date, which appears from BIC until BFC
 - failures by other bugs: 16 failures in `other_failures/`
     - failures detected by AFL++ for 48 hours on a clean version (i.e., commit right before BIC)
 		- 16 failures are collected

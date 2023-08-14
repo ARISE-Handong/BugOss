@@ -24,16 +24,16 @@
 	- \# seed corpus at fix-inducing commit: 476
 - the number of commits between failure-observed commit and BIC: 1
 
-### Fix-inducing commit information
-- fix-inducing commit: [f2a6c6fe06ba2279f8509c56a11d649f02d1500c ](https://gitlab.freedesktop.org/poppler/poppler/-/commit/f2a6c6fe06ba2279f8509c56a11d649f02d1500c) (5 Jul 2021)
+### Bug-fixing commit information
+- bug-fixing commit: [f2a6c6fe06ba2279f8509c56a11d649f02d1500c ](https://gitlab.freedesktop.org/poppler/poppler/-/commit/f2a6c6fe06ba2279f8509c56a11d649f02d1500c) (5 Jul 2021)
     - search the commit that the expected failure by the bug-revealing input does not induce after oss-fuzz issue report time
 	- developers explicitly mentioned the bug fixes [here](https://gitlab.freedesktop.org/poppler/poppler/-/commit/f2a6c6fe06ba2279f8509c56a11d649f02d1500c)
 	- changed functions: `isOk(void)`, `JBIG2SymbolDict::JBIG2SymbolDict(unsigned int, unsigned int)`
-- the number of commits between BIC and FIC: 4
+- the number of commits between BIC and BFC: 4
 
 ### Failure samples
 - failure by a target bug: 1 failure in `target_failures/`
-    - a failure induced by a failure-reproducing input among attached inputs in oss-fuzz issues between BIC and FIC date, which appears from BIC until FIC
+    - a failure induced by a failure-reproducing input among attached inputs in oss-fuzz issues between BIC and BFC date, which appears from BIC until BFC
 - failures by other bugs: 0 failures 
 
 - target failure 

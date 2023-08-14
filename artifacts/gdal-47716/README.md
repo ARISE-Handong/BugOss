@@ -24,16 +24,16 @@
 	- \# seed corpus at fix-inducing commit: 1615
 - the number of commits between failure-observed commit and BIC: 7
 
-### Fix-inducing commit information
-- fix-inducing commit: [28d9b1ae40fac1faaf78b1f7ea5de7e55ffae360](https://github.com/OSGeo/gdal/commit/28d9b1ae40fac1faaf78b1f7ea5de7e55ffae360) (30 May 2022)
+### Bug-fixing commit information
+- bug-fixing commit: [28d9b1ae40fac1faaf78b1f7ea5de7e55ffae360](https://github.com/OSGeo/gdal/commit/28d9b1ae40fac1faaf78b1f7ea5de7e55ffae360) (30 May 2022)
     - search the commit that the expected failure by the bug-revealing input does not induce after oss-fuzz issue report time
 	- developers explicitly mentioned the bug fixes [here](https://github.com/OSGeo/gdal/commit/28d9b1ae40fac1faaf78b1f7ea5de7e55ffae360)
 	- changed functions: `RMFDataset::WriteHeader()`, `RMFDataset::FlushCache(bool)`
-- the number of commits between BIC and FIC: 8
+- the number of commits between BIC and BFC: 8
 
 ### Failure samples
 - failure by a target bug: 1 failure in `target_failures/`
-    - a failure induced by a failure-reproducing input among attached inputs in oss-fuzz issues between BIC and FIC date, which appears from BIC until FIC
+    - a failure induced by a failure-reproducing input among attached inputs in oss-fuzz issues between BIC and BFC date, which appears from BIC until BFC
 - failures by other bugs: 0 failures
 
 - target failure 
