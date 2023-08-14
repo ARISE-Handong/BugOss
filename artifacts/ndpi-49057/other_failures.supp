@@ -1,0 +1,17 @@
+unsigned-integer-overflow:ndpi_main.c
+unsigned-integer-overflow:protocols/amqp.c
+unsigned-integer-overflow:protocols/ayiya.c
+unsigned-integer-overflow:protocols/bittorrent.c
+unsigned-integer-overflow:protocols/edonkey.c
+unsigned-integer-overflow:protocols/mining.c
+unsigned-integer-overflow:protocols/netbios.c
+unsigned-integer-overflow:protocols/skinny.c
+unsigned-integer-overflow:protocols/someip.c
+unsigned-integer-overflow:protocols/stun.c
+unsigned-integer-overflow:protocols/tls.c
+unsigned-integer-overflow:protocols/xiaomi.c
+unsigned-integer-overflow:third_party/src/ahocorasick.c
+unsigned-integer-overflow:third_party/src/gcrypt/digest.c
+unsigned-integer-overflow:third_party/src/ndpi_md5.c
+unsigned-integer-overflow:third_party/src/ndpi_sha1.c
+alignment:protocols/riotgames.c

@@ -1,0 +1,6 @@
+unsigned-integer-overflow:softmagic.c
+unsigned-integer-overflow:ascmagic.c
+unsigned-integer-overflow:der.c
+unsigned-integer-overflow:is_tar.c
+unsigned-integer-overflow:funcs.c
+unsigned-integer-overflow:apprentice.c
