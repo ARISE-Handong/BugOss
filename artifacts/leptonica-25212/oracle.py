@@ -1,26 +1,20 @@
 """
-	It receives an execution result of fuzzer with a failing test case
+	- It receives an execution result of fuzzer with a failing test case
+	- Bug-specific test oracles: failure type & top 1 stack trace
 """
 
 import sys
+import re
 
-failure_type = "AddressSanitizer: SEGV on unknown address 0x000000000000"
-failure_stack_trace = [\
-	"pixGetBinnedComponentRange /src/leptonica/src/pix4.c"]
+failure_type = "SEGV on unknown address 0x000000000000"
+failure_stack_trace = "#0.*:2536"
 
 f = open(sys.argv[1], 'r')
 exec_result = ''.join(f.readlines())
+f.close()
 
-if failure_type not in exec_result:
-	print("This is different failure type")
+if failure_type in exec_result and re.search(failure_stack_trace, exec_result):
+	print("Find a failure by a target bug")
 	exit()
 
-n_correct = 0
-for st in failure_stack_trace:
-	if st in exec_result:
-		n_correct += 1
-
-if n_correct == 1:
-	print("Find a failure by a target bug")
-else:
-	print("This is different failure what we want to find")
+print("This is different failure what we want to find")
