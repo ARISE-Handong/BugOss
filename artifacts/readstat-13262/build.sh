@@ -17,8 +17,8 @@
 #!/bin/bash -eu
 
 mv $SRC/fuzz_format_sas7bdat.c $SRC/readstat/src/fuzz/
-sed -i "603d" $SRC/readstat/src/sas/readstat_sas7bdat_read.c
-sed -i "603i { fprintf(stderr, \"[BugOSS] src/sas/readstat_sas7bdat_read.c:602\n\"); goto cleanup; }" $SRC/readstat/src/sas/readstat_sas7bdat_read.c
+sed -i '603d' $SRC/readstat/src/sas/readstat_sas7bdat_read.c
+sed -i '603i { fprintf(stderr, "[BugOSS] src/sas/readstat_sas7bdat_read.c:603\\n"); goto cleanup; }' $SRC/readstat/src/sas/readstat_sas7bdat_read.c
 
 ./autogen.sh
 #CFLAGS=`echo $CFLAGS " -Wno-implicit-int-float-conversion"`
