@@ -36,8 +36,8 @@
 ### Failure samples
 - failure by a target bug: 1 failure in `target_failures/`
     - a failure induced by a failure-reproducing input among attached inputs in oss-fuzz issues between BIC and BFC date, which appears from BIC until BFC
-- failures by other bugs: 7 failures in `other_failures/`
-	- [failure1](./other_failures/failure1), [failure2](./other_failures/failure2), [failure3](./other_failures/failure3), [failure4](./other_failures/failrue4), [failure5](./other_failures/failure4), [failure6](./other_failures/failure6), [failure7](./other_failures/failure7)
+- failures by other bugs: 6 failures in `other_failures/`
+	- [failure1](./other_failures/failure1), [failure2](./other_failures/failure2), [failure3](./other_failures/failure3), [failure4](./other_failures/failrue4), [failure5](./other_failures/failure4), [failure6](./other_failures/failure6)
 
 - target failure
     - type: null-dereference 

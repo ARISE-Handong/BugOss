@@ -38,7 +38,7 @@
 ### Failure samples
 - failure by a target bug: 1 failure in `target_failures/`
     - a failure induced by a failure-reproducing input among attached inputs in oss-fuzz issues between BIC and BFC date, which appears from BIC until BFC
-- failures by other bugs: 36 failures in `other_failures/`
+- failures by other bugs: 23 failures in `other_failures/`
     - failures detected by AFL++ for 48 hours on a clean version (i.e., commit right before BIC)
 		- 36 failures are collected
 
