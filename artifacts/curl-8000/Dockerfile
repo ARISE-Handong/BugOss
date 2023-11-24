@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM gcr.io/oss-fuzz-base/base-builder
+FROM gcr.io/oss-fuzz-base/base-builder@sha256:66fb5b08c6f1f93db5ceabac066c11054f6034664ecb750a9278cf74a07ce96e
 
 RUN git clone https://github.com/curl/curl.git $SRC/curl && cd $SRC/curl && \
     git checkout dd7521bcc1b7a6fcb53c31f9bd1192fcc884bd56

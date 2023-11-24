@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM gcr.io/oss-fuzz-base/base-builder
+FROM gcr.io/oss-fuzz-base/base-builder@sha256:66fb5b08c6f1f93db5ceabac066c11054f6034664ecb750a9278cf74a07ce96e
 RUN apt-get update && apt-get install -y make autoconf automake libtool zlib1g-dev liblzma-dev
 RUN git clone https://github.com/OISF/libhtp.git libhtp && cd libhtp && \
     git checkout 3c6555078ec30e0baa4855ec69d55a22fc8d3589

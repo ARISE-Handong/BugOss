@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM gcr.io/oss-fuzz-base/base-builder
+FROM gcr.io/oss-fuzz-base/base-builder@sha256:66fb5b08c6f1f93db5ceabac066c11054f6034664ecb750a9278cf74a07ce96e
 MAINTAINER kurt@roeckx.be
 RUN apt-get update && apt-get install -y make
 RUN git clone https://github.com/openssl/openssl.git openssl && cd openssl && \

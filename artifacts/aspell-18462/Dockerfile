@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM gcr.io/oss-fuzz-base/base-builder
+FROM gcr.io/oss-fuzz-base/base-builder@sha256:66fb5b08c6f1f93db5ceabac066c11054f6034664ecb750a9278cf74a07ce96e
 
 RUN git clone https://github.com/gnuaspell/aspell.git $SRC/aspell && cd $SRC/aspell && \
     git checkout e0646f9b063b23754951f1254f1ecb7af8ca36f3

@@ -14,7 +14,7 @@
 #
 ################################################################################
 
-FROM gcr.io/oss-fuzz-base/base-builder
+FROM gcr.io/oss-fuzz-base/base-builder@sha256:66fb5b08c6f1f93db5ceabac066c11054f6034664ecb750a9278cf74a07ce96e
 RUN apt-get update && apt-get install -y make autoconf automake autogen pkg-config libtool flex bison cmake
 RUN git clone --depth 1 https://github.com/json-c/json-c.git json-c
 RUN git clone https://github.com/ntop/nDPI.git ndpi && cd ndpi && \
