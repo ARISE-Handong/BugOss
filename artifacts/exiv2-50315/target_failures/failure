@@ -1,6 +1,8 @@
-protocols/snmp_proto.c:77:23: runtime error: signed integer overflow: 6 + 2147483647 cannot be represented in type 'int'
-#0 ndpi_search_snmp /src/ndpi/src/lib/protocols/snmp_proto.c:77:23
-#1 check_ndpi_detection_func /src/ndpi/src/lib/ndpi_main.c:5211:4
-#2 ndpi_check_flow_func /src/ndpi/src/lib/ndpi_main.c
-#3 ndpi_detection_process_packet /src/ndpi/src/lib/ndpi_main.c:6158:15
-#4 LLVMFuzzerTestOneInput /src/ndpi/fuzz/fuzz_process_packet.c:29:5
+/usr/local/bin/../include/c++/v1/numeric:517:59: runtime error: negation of -2147483648 cannot be represented in type 'int'; cast to an unsigned type to negate this value to itself
+#0 std::__1::__ct_abs<int, int, true>::operator()(int) const /usr/local/bin/../include/c++/v1/numeric:517:59
+#1 std::__1::common_type<int, int>::type std::__1::gcd<int, int>(int, int) /usr/local/bin/../include/c++/v1/numeric:549:26
+#2 Exiv2::floatToRationalCast(float) /src/exiv2/src/types.cpp:633:21
+#3 Exiv2::Internal::printDegrees(std::__1::basic_ostream<char, std::__1::char_traits<char> >&, Exiv2::Value const&, Exiv2::ExifData const*) /src/exiv2/src/tags_int.cpp:2515:26
+#4 Exiv2::Exifdatum::write(std::__1::basic_ostream<char, std::__1::char_traits<char> >&, Exiv2::ExifData const*) const /src/exiv2/src/exif.cpp:190:7
+#5 Exiv2::Metadatum::print(Exiv2::ExifData const*) const /src/exiv2/src/metadatum.cpp:12:3
+#6 LLVMFuzzerTestOneInput /src/exiv2/fuzz/fuzz-read-print-write.cpp:24:10
