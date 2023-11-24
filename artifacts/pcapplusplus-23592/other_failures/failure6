@@ -1,0 +1,9 @@
+ERROR: AddressSanitizer: heap-buffer-overflow 
+#0 pcpp::tbp_my_own_strnlen(char const*, unsigned long) /src/PcapPlusPlus/Packet++/src/TextBasedProtocol.cpp:19:8
+#1 pcpp::HeaderField::HeaderField(pcpp::TextBasedProtocolMessage*, int, char, bool) /src/PcapPlusPlus/Packet++/src/TextBasedProtocol.cpp:446:17
+#2 pcpp::TextBasedProtocolMessage::parseFields() /src/PcapPlusPlus/Packet++/src/TextBasedProtocol.cpp:115:31
+#3 pcpp::HttpRequestLayer::HttpRequestLayer(unsigned char*, unsigned long, pcpp::Layer*, pcpp::Packet*) /src/PcapPlusPlus/Packet++/src/HttpLayer.cpp:70:2
+#4 pcpp::TcpLayer::parseNextLayer() /src/PcapPlusPlus/Packet++/src/TcpLayer.cpp:345:21
+#5 pcpp::Packet::setRawPacket(pcpp::RawPacket*, bool, unsigned long, pcpp::OsiModelLayer) /src/PcapPlusPlus/Packet++/src/Packet.cpp:63:13
+#6 pcpp::Packet::Packet(pcpp::RawPacket*, bool, unsigned long, pcpp::OsiModelLayer) /src/PcapPlusPlus/Packet++/src/Packet.cpp:109:2
+#7 LLVMFuzzerTestOneInput /src/PcapPlusPlus/Tests/Fuzzers/FuzzTarget.cpp:52:15

@@ -1,0 +1,6 @@
+ERROR: AddressSanitizer: heap-buffer-overflow 
+#0 pcpp::NullLoopbackLayer::getFamily() const /src/PcapPlusPlus/Packet++/src/NullLoopbackLayer.cpp:28:20
+#1 pcpp::NullLoopbackLayer::parseNextLayer() /src/PcapPlusPlus/Packet++/src/NullLoopbackLayer.cpp:58:10
+#2 pcpp::Packet::setRawPacket(pcpp::RawPacket*, bool, unsigned long, pcpp::OsiModelLayer) /src/PcapPlusPlus/Packet++/src/Packet.cpp:63:13
+#3 pcpp::Packet::Packet(pcpp::RawPacket*, bool, unsigned long, pcpp::OsiModelLayer) /src/PcapPlusPlus/Packet++/src/Packet.cpp:109:2
+#4 LLVMFuzzerTestOneInput /src/PcapPlusPlus/Tests/Fuzzers/FuzzTarget.cpp:52:15

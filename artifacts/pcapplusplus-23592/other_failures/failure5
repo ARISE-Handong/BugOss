@@ -1,0 +1,6 @@
+ERROR: AddressSanitizer: heap-buffer-overflow 
+#0 pcpp::GtpV1Layer::getHeaderLen() const /src/PcapPlusPlus/Packet++/src/GtpLayer.cpp:624:19
+#1 pcpp::GtpV1Layer::parseNextLayer() /src/PcapPlusPlus/Packet++/src/GtpLayer.cpp:568:21
+#2 pcpp::Packet::setRawPacket(pcpp::RawPacket*, bool, unsigned long, pcpp::OsiModelLayer) /src/PcapPlusPlus/Packet++/src/Packet.cpp:63:13
+#3 pcpp::Packet::Packet(pcpp::RawPacket*, bool, unsigned long, pcpp::OsiModelLayer) /src/PcapPlusPlus/Packet++/src/Packet.cpp:109:2
+#4 LLVMFuzzerTestOneInput /src/PcapPlusPlus/Tests/Fuzzers/FuzzTarget.cpp:52:15

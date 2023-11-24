@@ -1,0 +1,9 @@
+ERROR: AddressSanitizer: heap-buffer-overflow 
+#0 pcpp::DnsResource::getDataLength() const /src/PcapPlusPlus/Packet++/src/DnsResource.cpp:275:24
+#1 pcpp::DnsResource::getSize() const /src/PcapPlusPlus/Packet++/./header/DnsResource.h:230:98
+#2 pcpp::DnsLayer::parseResources() /src/PcapPlusPlus/Packet++/src/DnsLayer.cpp:180:35
+#3 pcpp::DnsLayer::DnsLayer(unsigned char*, unsigned long, pcpp::Layer*, pcpp::Packet*) /src/PcapPlusPlus/Packet++/src/DnsLayer.cpp:26:2
+#4 pcpp::UdpLayer::parseNextLayer() /src/PcapPlusPlus/Packet++/src/UdpLayer.cpp:103:21
+#5 pcpp::Packet::setRawPacket(pcpp::RawPacket*, bool, unsigned long, pcpp::OsiModelLayer) /src/PcapPlusPlus/Packet++/src/Packet.cpp:63:13
+#6 pcpp::Packet::Packet(pcpp::RawPacket*, bool, unsigned long, pcpp::OsiModelLayer) /src/PcapPlusPlus/Packet++/src/Packet.cpp:109:2
+#7 LLVMFuzzerTestOneInput /src/PcapPlusPlus/Tests/Fuzzers/FuzzTarget.cpp:52:15

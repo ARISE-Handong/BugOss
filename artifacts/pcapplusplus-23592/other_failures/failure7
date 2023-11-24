@@ -1,0 +1,10 @@
+ERROR: AddressSanitizer: heap-buffer-overflow 
+#0 StrstrCheck(void*, char*, char const*, char const*) /src/llvm-project/compiler-rt/lib/asan/../sanitizer_common/sanitizer_common_interceptors.inc:580:5
+#1 strstr /src/llvm-project/compiler-rt/lib/asan/../sanitizer_common/sanitizer_common_interceptors.inc:597:5
+#2 pcpp::SipRequestFirstLine::parseVersion() /src/PcapPlusPlus/Packet++/src/SipLayer.cpp:290:17
+#3 pcpp::SipRequestFirstLine::SipRequestFirstLine(pcpp::SipRequestLayer*) /src/PcapPlusPlus/Packet++/src/SipLayer.cpp:115:2
+#4 pcpp::SipRequestLayer::SipRequestLayer(unsigned char*, unsigned long, pcpp::Layer*, pcpp::Packet*) /src/PcapPlusPlus/Packet++/src/SipLayer.cpp:425:20
+#5 pcpp::UdpLayer::parseNextLayer() /src/PcapPlusPlus/Packet++/src/UdpLayer.cpp:107:22
+#6 pcpp::Packet::setRawPacket(pcpp::RawPacket*, bool, unsigned long, pcpp::OsiModelLayer) /src/PcapPlusPlus/Packet++/src/Packet.cpp:63:13
+#7 pcpp::Packet::Packet(pcpp::RawPacket*, bool, unsigned long, pcpp::OsiModelLayer) /src/PcapPlusPlus/Packet++/src/Packet.cpp:109:2
+#8 LLVMFuzzerTestOneInput /src/PcapPlusPlus/Tests/Fuzzers/FuzzTarget.cpp:52:15

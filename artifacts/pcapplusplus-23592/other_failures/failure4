@@ -1,0 +1,8 @@
+ERROR: AddressSanitizer: heap-buffer-overflow 
+#0 pcpp::IPv6Extension::getExtensionLen() const /src/PcapPlusPlus/Packet++/./header/IPv6Extensions.h:51:73
+#1 pcpp::IPv6Layer::parseExtensions() /src/PcapPlusPlus/Packet++/src/IPv6Layer.cpp:137:21
+#2 pcpp::IPv6Layer::IPv6Layer(unsigned char*, unsigned long, pcpp::Layer*, pcpp::Packet*) /src/PcapPlusPlus/Packet++/src/IPv6Layer.cpp:35:2
+#3 pcpp::EthLayer::parseNextLayer() /src/PcapPlusPlus/Packet++/src/EthLayer.cpp:50:30
+#4 pcpp::Packet::setRawPacket(pcpp::RawPacket*, bool, unsigned long, pcpp::OsiModelLayer) /src/PcapPlusPlus/Packet++/src/Packet.cpp:63:13
+#5 pcpp::Packet::Packet(pcpp::RawPacket*, bool, unsigned long, pcpp::OsiModelLayer) /src/PcapPlusPlus/Packet++/src/Packet.cpp:109:2
+#6 LLVMFuzzerTestOneInput /src/PcapPlusPlus/Tests/Fuzzers/FuzzTarget.cpp:52:15

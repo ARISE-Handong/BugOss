@@ -1,8 +1,8 @@
 error message:
 /src/exiv2/src/basicio.cpp:758:25: runtime error: unsigned integer overflow: 2 + 18446744073709551614 cannot be represented in type 'unsigned long'
 stack trace:
-Exiv2::MemIo::seek(long, Exiv2::BasicIo::Position) /src/exiv2/src/basicio.cpp
-Exiv2::isJpegType(Exiv2::BasicIo&, bool) /src/exiv2/src/jpgimage.cpp:983:9
-Exiv2::ImageFactory::open(std::__1::unique_ptr<Exiv2::BasicIo, std::__1::default_delete<Exiv2::BasicIo> >) /src/exiv2/src/image.cpp:799:9
-Exiv2::ImageFactory::open(unsigned char const*, unsigned long) /src/exiv2/src/image.cpp:788:16
-LLVMFuzzerTestOneInput /src/exiv2/fuzz/fuzz-read-print-write.cpp:19:37
+#0 Exiv2::MemIo::seek(long, Exiv2::BasicIo::Position) /src/exiv2/src/basicio.cpp
+#1 Exiv2::isJpegType(Exiv2::BasicIo&, bool) /src/exiv2/src/jpgimage.cpp:983:9
+#2 Exiv2::ImageFactory::open(std::__1::unique_ptr<Exiv2::BasicIo, std::__1::default_delete<Exiv2::BasicIo> >) /src/exiv2/src/image.cpp:799:9
+#3 Exiv2::ImageFactory::open(unsigned char const*, unsigned long) /src/exiv2/src/image.cpp:788:16
+#4 LLVMFuzzerTestOneInput /src/exiv2/fuzz/fuzz-read-print-write.cpp:19:37

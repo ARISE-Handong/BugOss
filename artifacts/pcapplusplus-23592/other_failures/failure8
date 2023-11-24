@@ -1,0 +1,6 @@
+ERROR: AddressSanitizer: heap-buffer-overflow 
+#0 pcpp::IgmpLayer::getIGMPVerFromData(unsigned char*, unsigned long, bool&) /src/PcapPlusPlus/Packet++/src/IgmpLayer.cpp:81:7
+#1 pcpp::IPv4Layer::parseNextLayer() /src/PcapPlusPlus/Packet++/src/IPv4Layer.cpp:295:13
+#2 pcpp::Packet::setRawPacket(pcpp::RawPacket*, bool, unsigned long, pcpp::OsiModelLayer) /src/PcapPlusPlus/Packet++/src/Packet.cpp:63:13
+#3 pcpp::Packet::Packet(pcpp::RawPacket*, bool, unsigned long, pcpp::OsiModelLayer) /src/PcapPlusPlus/Packet++/src/Packet.cpp:109:2
+#4 LLVMFuzzerTestOneInput /src/PcapPlusPlus/Tests/Fuzzers/FuzzTarget.cpp:52:15
