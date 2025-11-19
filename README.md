@@ -1,5 +1,7 @@
 # BugOSS: A Regression Bug Benchmark for Evaluating Fuzzing Techniques
 
+### ⚠️ This project has moved to a new repository. Please visit [sdevlab/BugOss](https://github.com/sdevlab/BugOss) for the latest updates.
+
 BugOSS is a benchmark of real-world regression bugs found in [OSS-Fuzz](https://github.com/google/oss-fuzz) for experimenting with regression fuzzing techniques. 
 To reproduce the real project
 context where the bugs were introduced, each study artifact of BugOSS indicates the exact bug-inducing commit, and provides the information about the target bug, together with the existing bugs in the same commit. Currently, 20 artifacts from 20 C/C++ programs are registered. 
